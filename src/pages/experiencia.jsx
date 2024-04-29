@@ -1,4 +1,4 @@
-import {   Box, Grid, Typography } from '@mui/material';
+import {   Box, Grid, Typography, useMediaQuery } from '@mui/material';
 import html from "../assets/html.png";
 import css from "../assets/css.png";
 import github from "../assets/github.png";
@@ -8,6 +8,8 @@ import rct from "../assets/rct.png";
 import { useState } from 'react';
 
 const Experiencia = () => {
+  const isMobile=useMediaQuery('(max-width:600px)')
+
   const itemData = [
     { img: html, title: 'Html' },
     { img: css, title: 'Css' },
@@ -21,14 +23,14 @@ const Experiencia = () => {
   return (
     <div>  
     <Box sx={{height: "100vh",alignContent:"center"  }}>
-        <Box sx={{display:"flex",flexDirection:"column",paddingLeft:"10%"}}>  
+        <Box sx={{display:"flex",flexDirection:"column",paddingLeft:isMobile?"00%":"10%"}}>  
  
- <Typography  variant="h2" sx={{   textAlign:"left" }} >Tecnologías</Typography>
+ <Typography  variant="h2" sx={{   textAlign:isMobile?"center":"left" }} >Tecnologías</Typography>
  
- <Typography variant="h5">Estas son las tecnologías con las cuales he estdo trabajando.</Typography>
+ <Typography variant="h5"  sx={{   textAlign:isMobile?"center":"left" }}>Estas son las tecnologías con las cuales he estdo trabajando.</Typography>
  </Box>
       <Box sx={{ width: '100%' }}>
-        <Grid sx={{display: "flex",justifyContent:"space-evenly",alignItems:"center" }} container rowSpacing={3} padding={5} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
+        <Grid sx={{display: "flex",flexDirection:isMobile?"column":"row",justifyContent:"space-evenly",alignItems:"center" }} container rowSpacing={3} padding={5} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
           {itemData.map((item, index) => (
               <Grid key={index} item xs={3} onMouseEnter={() => setHoveredIndex(index)} onMouseLeave={() => setHoveredIndex(null)}>
                 <Box sx={{   p: 1, display: 'flex',flexDirection:"column", justifyContent: 'center', alignItems: 'center', transition: 'transform 0.3s', transform: hoveredIndex === index ? 'scale(1.1)' : 'scale(1)' }}>

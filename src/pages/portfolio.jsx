@@ -1,4 +1,4 @@
-import { Box, Grid, Typography, Modal } from '@mui/material';
+import { Box, Grid, Typography, Modal, useMediaQuery } from '@mui/material';
 import rifas from "../assets/rifas.png";
 import mdGlobal from "../assets/mdGlobal.png";
 import tiendaTecnologia from "../assets/tiendaTecnologia.png";
@@ -7,6 +7,8 @@ import { useState } from 'react';
 
 
 const Portfolio = () => {
+  const isMobile=useMediaQuery('(max-width:600px)')
+
   const itemData = [
     {
       img: rifas,
@@ -55,21 +57,21 @@ const Portfolio = () => {
 
 
   return (
-    <Box sx={{ height: "100vh", alignContent: "center" }}>
-      <Typography sx={{ paddingLeft: "10%" }} variant="h2" color="white">Portfolio</Typography>
+    <Box sx={{ height: "100vh",flexDirection:isMobile?"column":"row", alignContent: "center" }}>
+      <Typography textAlign={isMobile?"center":"left"} sx={{ paddingLeft: isMobile?"0%":"10%",paddingBottom:"5%" }} variant="h2" color="white">Portfolio</Typography>
 
 
-      <Box sx={{ width: '100%', }}>
-        <Grid sx={{ display: "flex", justifyContent: "space-evenly", alignItems: "center" }} container rowSpacing={3} padding={5} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
+      <Box >
+        <Grid sx={{ display: "flex",flexDirection:isMobile?"column":"row", justifyContent: "space-evenly", alignItems: "center" }} container rowSpacing={10} padding={isMobile?"5":"5"} columnSpacing={{ xs: 0, sm: 2, md: 3 }}>
           {itemData.map((item, index) => (
-            <Grid key={index} item xs={3}    >
-              <Typography variant="h4" sx={{ textAlign: "center" }}  >{item.title} </Typography>
+            <Grid key={index} item xs={3} sx={{ width:"100%",display:"flex",flexDirection:"column",justifyContent: 'center', alignItems: 'center' }}   >
+              <Typography variant={isMobile?"h6":"h4"} sx={{display:isMobile?"flex":"flex", textAlign: "center"  }}  >{item.title} </Typography>
 
-              <Box sx={{ borderRadius: "5%", border: '1px solid grey', display: 'flex', flexDirection: "column", justifyContent: 'center', alignItems: 'center' }}>
+              <Box sx={{  borderRadius: "5%", border: '1px solid grey', display: 'flex', flexDirection: "column", justifyContent: 'center', alignItems: 'center' }}>
                 <a href={item.url} target="_blank" rel="noopener noreferrer">
                   <img src={item.img} style={{ width: "100%", borderRadius: "5%" }} alt={item.title} />
                 </a>
-                <Box sx={{ display: 'flex', gap: "50px", paddingTop: "5%" }}>
+                <Box sx={{ display: isMobile?"none":'flex', gap:isMobile?"15px": "50px", paddingTop: "5%" }}>
                   <Typography variant="h5" onClick={() => handleDescriptionClick(item)}>Descripción</Typography>
 
                   <a href={item.github}>     <Typography variant="h5"  >Código</Typography></a>

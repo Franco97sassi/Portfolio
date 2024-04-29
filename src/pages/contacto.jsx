@@ -1,8 +1,10 @@
- import { Box, Button, CssBaseline, Stack, TextField, Typography } from '@mui/material'
+ import { Box, Button, CssBaseline, Stack, TextField, Typography, useMediaQuery } from '@mui/material'
 import React from 'react'
 import emailjs from 'emailjs-com'; 
 
 const Contacto = () => {
+  const isMobile=useMediaQuery('(max-width:600px)')
+
   // const showError = (fieldName) => {
   //   return submitAttempted && formValues[fieldName] === "";
   // };
@@ -46,13 +48,13 @@ const Contacto = () => {
 };
   return (
     <div>  
-    <Box sx={{ height:"100vh",alignContent:"center"}}> 
+    <Box sx={{ height:"100vh", justifyContent:isMobile?"center":"flex-start",alignContent:"center"}}> 
           <CssBaseline />
-<Box sx={{display:"flex",flexDirection:"column",paddingLeft:"10%"}}>  
+<Box sx={{display:"flex",flexDirection:"column",paddingLeft:isMobile?"0%":"10%"}}>  
  
-    <Typography  variant="h2" sx={{   textAlign:"left" }} >Contacto</Typography>
+    <Typography  variant="h2" sx={{   textAlign:isMobile?"center":"left" }} >Contacto</Typography>
     
-    <Typography variant="h5">Para comunicarte conmigo, completa este formulario.</Typography>
+    <Typography variant="h5"  sx={{   textAlign:isMobile?"center":"left" }}>Para comunicarte conmigo, completa este formulario.</Typography>
     </Box>
     <Box sx={{display:"flex",flexDirection:"column",justifyContent:"center",alignItems:"center" }}>
 
