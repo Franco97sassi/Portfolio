@@ -309,7 +309,7 @@ import { DarkModeContext } from "../../contexts/DarkModeContext"
           <a href="#home" onClick={(e) => handleClickScroll('home', e)} style={{ textDecoration: 'none', color: 'inherit' }}><Typography variant="h4">Home</Typography> </a>
           <a href="#sobre" onClick={(e) => handleClickScroll('sobre', e)}style={{ textDecoration: 'none', color: 'inherit' }}><Typography variant="h4">Sobre Mi</Typography> </a>
           <a href="#portfolio" onClick={(e) => handleClickScroll('portfolio', e)}style={{ textDecoration: 'none', color: 'inherit' }}><Typography variant="h4">Portfolio</Typography></a>
-          <a href="#experiencia" onClick={(e) => handleClickScroll('experiencia', e)}style={{ textDecoration: 'none', color: 'inherit' }}><Typography variant="h4">Experiencia</Typography></a>
+          <a href="#experiencia" onClick={(e) => handleClickScroll('experiencia', e)}style={{ textDecoration: 'none', color: 'inherit' }}><Typography variant="h4">Tecnologías</Typography></a>
           <a href="#contacto" onClick={(e) => handleClickScroll('contacto', e)}style={{ textDecoration: 'none', color: 'inherit' }}><Typography variant="h4">Contacto</Typography></a>
           {/* <button onClick={toggleDarkMode}>
        {isDark ? <BsFillSunFill/>:<BsFillMoonFill/>} Toogle

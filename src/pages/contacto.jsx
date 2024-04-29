@@ -72,7 +72,10 @@ const Contacto = () => {
                     variant="outlined"
                      
                     multiline
-                    sx={{ width: '500%', maxWidth: '400px' }} // Establece el ancho máximo deseado
+                    sx={{ width: '500%', maxWidth: '400px' ,
+                    '& .MuiInputBase-input': {
+                      color: 'white', // Establece el color del texto en blanco
+                    },}} // Establece el ancho máximo deseado
 
                   />    
 <TextField    label="Email"
@@ -87,7 +90,10 @@ variant="outlined"
 //   // disableUnderline: true,
 //   className: classes.customTextField,
 // }}
-multiline                    sx={{ width: '500%', maxWidth: '400px' }} // Establece el ancho máximo deseado
+multiline                    sx={{ width: '500%', maxWidth: '400px',
+'& .MuiInputBase-input': {
+  color: 'white', // Establece el color del texto en blanco
+}, }} // Establece el ancho máximo deseado
 
 />
 <TextField   label="Mensaje"
@@ -102,12 +108,17 @@ variant="outlined"
 //   // disableUnderline: true,
 //   className: classes.customTextField,
 // }}
-sx={{ width: '500%', maxWidth: '400px'  }} // Establece el ancho máximo deseado
+sx={{ width: '500%', maxWidth: '400px' ,
+
+'& .MuiInputBase-input': {
+  color: 'white', // Establece el color del texto en blanco
+},
+}} // Establece el ancho máximo deseado
 
 multiline
 />
 </Stack>  </Box>
-<Button  sx={{marginTop:"1%" ,background: "linear-gradient(#17202A,#1B4F72  )"}}  variant="contained"  onClick={handleSubmit}>Enviar</Button>
+<Button  sx={{marginTop:"1%" ,background: "linear-gradient(#17202A,#1B4F72  )",color:"white"}}  variant="contained"  onClick={handleSubmit}>Enviar</Button>
  
 </Box>
  
