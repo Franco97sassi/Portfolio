@@ -35,7 +35,7 @@ const isMobile=useMediaQuery('(max-width:600px)')
       
    
       
-    <Box sx={{  height: '100vh', display: 'flex',flexDirection:isMobile?"column":"row", alignItems: 'center',justifyContent:isMobile?"center":"flex-start" }}>
+    <Box sx={{  height: isMobile?"150vh":'100vh', display: 'flex',flexDirection:isMobile?"column":"row", alignItems: 'center',justifyContent:isMobile?"center":"flex-start" }}>
 
        <Grid container  spacing={2}       >
         <Grid item xs={12} md={6}sx={{ border: '0px solid white', display: 'flex',flexDirection:"column", justifyContent:"center", alignItems:"center" }}>

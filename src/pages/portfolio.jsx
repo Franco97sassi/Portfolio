@@ -65,7 +65,7 @@ const Portfolio = () => {
         <Grid sx={{ display: "flex",flexDirection:isMobile?"column":"row", justifyContent: "space-evenly", alignItems: "center" }} container rowSpacing={10} padding={isMobile?"5":"5"} columnSpacing={{ xs: 0, sm: 2, md: 3 }}>
           {itemData.map((item, index) => (
             <Grid key={index} item xs={3} sx={{ width:"100%",display:"flex",flexDirection:"column",justifyContent: 'center', alignItems: 'center' }}   >
-              <Typography variant={isMobile?"h6":"h4"} sx={{display:isMobile?"flex":"flex", textAlign: "center"  }}  >{item.title} </Typography>
+              <Typography variant="h4" sx={{display:isMobile?"flex":"flex", textAlign: "center"  }}  >{item.title} </Typography>
 
               <Box sx={{  borderRadius: "5%", border: '1px solid grey', display: 'flex', flexDirection: "column", justifyContent: 'center', alignItems: 'center' }}>
                 <a href={item.url} target="_blank" rel="noopener noreferrer">

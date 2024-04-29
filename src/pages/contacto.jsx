@@ -74,7 +74,7 @@ const Contacto = () => {
                     variant="outlined"
                      
                     multiline
-                    sx={{ width: '500%', maxWidth: '400px' ,
+                    sx={{ width: isMobile?'200%':'500%', maxWidth: '400px' ,
                     '& .MuiInputBase-input': {
                       color: 'white', // Establece el color del texto en blanco
                     },}} // Establece el ancho máximo deseado
@@ -92,7 +92,7 @@ variant="outlined"
 //   // disableUnderline: true,
 //   className: classes.customTextField,
 // }}
-multiline                    sx={{ width: '500%', maxWidth: '400px',
+multiline                    sx={{ width: isMobile?'200%':'500%', maxWidth: '400px',
 '& .MuiInputBase-input': {
   color: 'white', // Establece el color del texto en blanco
 }, }} // Establece el ancho máximo deseado
@@ -110,7 +110,7 @@ variant="outlined"
 //   // disableUnderline: true,
 //   className: classes.customTextField,
 // }}
-sx={{ width: '500%', maxWidth: '400px' ,
+sx={{ width: isMobile?'200%':'500%', maxWidth: '400px' ,
 
 '& .MuiInputBase-input': {
   color: 'white', // Establece el color del texto en blanco
