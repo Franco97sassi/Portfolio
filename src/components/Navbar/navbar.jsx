@@ -286,8 +286,7 @@ import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import { useContext } from "react"
 import { DarkModeContext } from "../../contexts/DarkModeContext"
-import {BsFillMoonFill,BsFillSunFill} from "react-icons/bs"
-function DrawerAppBar({toggleDarkMode}) {
+ function DrawerAppBar({toggleDarkMode}) {
   const handleClickScroll = (id) => {
     event.preventDefault(); // Prevenir el comportamiento predeterminado de los enlaces
 
