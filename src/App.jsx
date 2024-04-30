@@ -14,6 +14,7 @@ import General from './pages/general'
 import { DarkModeContext } from './contexts/DarkModeContext'
 import { ThemeProvider } from '@mui/material'
 import theme from './theme/theme'
+// import { LanguageProvider } from './contexts/languageContext'
 
 function App() {
   const [isDark, setisDark] = useState(false)
@@ -21,6 +22,7 @@ function App() {
     setisDark(!isDark);}
   return (
     <>
+    {/* <LanguageProvider>   */}
              <DarkModeContext.Provider value={isDark}>    
 <ThemeProvider theme={theme}>  
              <Navbar toggleDarkMode={toggleDarkMode} />
@@ -37,7 +39,7 @@ function App() {
     </Routes>
     </ThemeProvider>
     </DarkModeContext.Provider> 
-
+    {/* </LanguageProvider> */}
     </>
   )
 }

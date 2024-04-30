@@ -15,17 +15,24 @@ import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import { NavLink } from 'react-router-dom';
-
-const drawerWidth = 240;
-const navItems = ['Home', 'Perfil', 'Portfolio', 'Experiencia', 'Contacto'];
+// import { useLanguage } from './contexts/languageContext.jsx'; // Import useLanguage hook
+ 
+  const drawerWidth = 240;
+const navItems = ['Home', 'Perfil', 'Portfolio', 'Tecnologías', 'Contacto'];
 
 function DrawerAppBar(props) {
   const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
+  // const { language, changeLanguage } = useLanguage(); // Access language context
 
   const handleDrawerToggle = () => {
     setMobileOpen((prevState) => !prevState);
   };
+
+  // const toggleLanguage = () => {
+  //   // Toggle language using the function provided by the language context
+  //   changeLanguage(language === 'es' ? 'en' : 'es');
+  // };
 
   const scrollToSection = (id) => {
     const element = document.getElementById(id);
@@ -34,6 +41,7 @@ function DrawerAppBar(props) {
     }
     console.log(id);
   };
+  
 
   const drawer = (
     <Box  sx={{textAlign: 'center',backgroundImage:'linear-gradient(#4A235A, #4A235A ,#4A235A )'}}>
@@ -44,8 +52,8 @@ function DrawerAppBar(props) {
       <List>
         {navItems.map((item) => (
           <ListItem key={item} disablePadding>
-            <ListItemButton sx={{ textAlign: 'center' }} onClick={() => scrollToSection(item.toLowerCase())}>
-              <ListItemText primary={item} sx={{color:"white"}}/>
+            <ListItemButton  sx={{ textAlign: 'center' }} onClick={() => scrollToSection(item.toLowerCase())}>
+              <ListItemText primary={item} sx={{color:"white"}}  />
             </ListItemButton>
           </ListItem>
         ))}
@@ -54,7 +62,7 @@ function DrawerAppBar(props) {
   );
 
   const container = window !== undefined ? () => window().document.body : undefined;
-
+   
   return (
     <Box sx={{ display: 'flex', }}>
       <CssBaseline />
@@ -70,23 +78,33 @@ function DrawerAppBar(props) {
             <MenuIcon />
           </IconButton>
           <Typography
-            variant="h6"
+            variant="h3"
             component="div"
             sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}
           >
             Franco Sassi
           </Typography>
+          {/* <IconButton
+            color="inherit"
+            aria-label="change language"
+            onClick={toggleLanguage}
+            sx={{ mr: 2 }}
+          >
+            {language === 'es' ? <span role="img" aria-label="Spanish Flag">🇪🇸</span> : <span role="img" aria-label="English Flag">🇺🇸</span>}
+          </IconButton> */}
           <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
   {navItems.map((page) => {
     
-      
+       
     return (
       <Button
-      key={page}
-      onClick={() => scrollToSection(page.toLowerCase())} // Hace scroll a la sección correspondiente
+      key={page} 
+      onClick={() => scrollToSection(page.toLowerCase())} 
+      // Hace scroll a la sección correspondiente
       sx={{ my: 2, color: 'white' }}
     >
-        {page}
+      <Typography variant="body">
+        {page} </Typography>
       </Button>
        
     );
