@@ -44,18 +44,18 @@ function DrawerAppBar(props) {
   
 
   const drawer = (
-    <Box  sx={{textAlign: 'center',backgroundImage:'linear-gradient(#4A235A, #4A235A ,#4A235A )'}}>
+    <Box  sx={{ textAlign: 'center',backgroundImage:'linear-gradient(#4A235A, #4A235A ,#4A235A )'}}>
       <Typography variant="h6" sx={{ my: 2 }}>
         FMS
       </Typography>
       <Divider />
-      <List>
+      <List >
         {navItems.map((item) => (
-          <ListItem key={item} disablePadding>
+           <ListItem  key={item} disablePadding>
             <ListItemButton  sx={{ textAlign: 'center' }} onClick={() => scrollToSection(item.toLowerCase())}>
               <ListItemText primary={item} sx={{color:"white"}}  />
             </ListItemButton>
-          </ListItem>
+          </ListItem> 
         ))}
       </List>
     </Box>
@@ -112,7 +112,9 @@ function DrawerAppBar(props) {
 </Box>
         </Toolbar>
       </AppBar>
-      <nav style={{backgroundImage:'linear-gradient(#4A235A, #4A235A ,#4A235A )'}}>
+      <nav style={{backgroundImage:'linear-gradient(#4A235A, #4A235A ,#4A235A )',
+     
+    }}>
         <Drawer
           container={container}
           variant="temporary"
@@ -122,7 +124,7 @@ function DrawerAppBar(props) {
             keepMounted: true, // Better open performance on mobile.
           }}
           sx={{
-            display: { xs: 'block', sm: 'none' },
+            display: { xs: 'block', sm: 'none' }, 
             '& .MuiDrawer-paper': { 
               boxSizing: 'border-box', 
               width: drawerWidth,
