@@ -34,14 +34,14 @@ const Portfolio = () => {
       github: "https://github.com/Franco97sassi/EntregaFinal-Sassi-ReactJs",
       description : "Nuestra tienda de aparatos tecnológicos es el destino perfecto para los entusiastas de la tecnología que buscan los últimos dispositivos y gadgets innovadores. Con una amplia gama de productos que van desde teléfonos inteligentes y computadoras portátiles hasta dispositivos domésticos inteligentes y accesorios de alta tecnología, nuestra tienda se enorgullece de ofrecer lo mejor en tecnología de vanguardia"
     },
-    {
-      img: landing,
-      title: 'Landing de Empresa TechX',
-      url: "https://landing-tau-ten.vercel.app/",
-      github: "https://github.com/Franco97sassi/EntregaFinal-Sassi-ReactJs",
-      description: "Somos una empresa líder en tecnología dedicada a ofrecer soluciones innovadoras para satisfacer las necesidades de nuestros  clientes."
-    }   ,
-   
+    // {
+    //   img: landing,
+    //   title: 'Landing de Empresa TechX',
+    //   url: "https://landing-tau-ten.vercel.app/",
+    //   github: "https://github.com/Franco97sassi/EntregaFinal-Sassi-ReactJs",
+    //   description: "Somos una empresa líder en tecnología dedicada a ofrecer soluciones innovadoras para satisfacer las necesidades de nuestros  clientes."
+    // }   ,
+    
   
   ]
 
