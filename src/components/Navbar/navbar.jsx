@@ -15,24 +15,20 @@ import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import { NavLink } from 'react-router-dom';
-// import { useLanguage } from './contexts/languageContext.jsx'; // Import useLanguage hook
- 
+import { useTranslation } from 'react-i18next'; // Importa el hook useTranslation para manejar traducciones
+
   const drawerWidth = 240;
-const navItems = ['Home', 'Perfil', 'Portfolio', 'Tecnologías', 'Contacto'];
+const navItems = ['Inicio', 'Perfil', 'Portfolio', 'Tecnologías', 'Contacto'];
 
 function DrawerAppBar(props) {
   const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
-  // const { language, changeLanguage } = useLanguage(); // Access language context
+  const [language, setLanguage] = React.useState('es'); // Estado para almacenar el idioma actual
 
   const handleDrawerToggle = () => {
     setMobileOpen((prevState) => !prevState);
   };
-
-  // const toggleLanguage = () => {
-  //   // Toggle language using the function provided by the language context
-  //   changeLanguage(language === 'es' ? 'en' : 'es');
-  // };
+ 
 
   const scrollToSection = (id) => {
     const element = document.getElementById(id);
@@ -60,9 +56,23 @@ function DrawerAppBar(props) {
       </List>
     </Box>
   );
+  const toggleLanguage = () => {
+    const newLanguage = language === 'es' ? 'en' : 'es';
+    setLanguage(newLanguage);
+    i18n.changeLanguage(newLanguage); // Agrega esta línea para cambiar el idioma con i18n
+  };
+
+  const { i18n } = useTranslation(); // Obtén el objeto i18n del hook useTranslation
+
+  // Cambia el idioma utilizando i18n.changeLanguage()
+  React.useEffect(() => {
+    i18n.changeLanguage(language);
+  }, [language, i18n]);
+
+
 
   const container = window !== undefined ? () => window().document.body : undefined;
-   
+ 
   return (
     <Box sx={{ display: 'flex', }}>
       <CssBaseline />
@@ -84,14 +94,9 @@ function DrawerAppBar(props) {
           >
             Franco Sassi
           </Typography>
-          {/* <IconButton
-            color="inherit"
-            aria-label="change language"
-            onClick={toggleLanguage}
-            sx={{ mr: 2 }}
-          >
-            {language === 'es' ? <span role="img" aria-label="Spanish Flag">🇪🇸</span> : <span role="img" aria-label="English Flag">🇺🇸</span>}
-          </IconButton> */}
+          {/* <Button onClick={toggleLanguage} sx={{ my: 2, color: 'white' }}>
+            {language === 'es' ? 'English' : 'Español'}
+          </Button> */}
           <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
   {navItems.map((page) => {
     

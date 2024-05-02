@@ -40,7 +40,7 @@ const isMobile=useMediaQuery('(max-width:600px)')
        <Grid container  spacing={2}       >
         <Grid item xs={12} md={6}sx={{ border: '0px solid white', display: 'flex',flexDirection:"column", justifyContent:"center", alignItems:"center" }}>
  <Box sx={{paddingLeft:isMobile?"0%":"10%",width:"75%",paddingBottom:"5%"}}> 
-          <Typography  variant="h1" textAlign={isMobile?"center":"left"} paddingBottom={1} > Desarrollador React Full Stack.</Typography> 
+          <Typography  variant="h1" textAlign={isMobile?"center":"left"} paddingBottom={1} > Desarrollador React Full Stack</Typography> 
           <Typography sx={{display:isMobile?"none":"flex"}} variant="body"textAlign={isMobile?"center":"left"}>  Estudié la carrera de Programación Front End y Programación Full Stack en Academia CoderHouse,
            donde adquirí una sólida base en desarrollo web. Desde entonces, me he especializado en la creación de interfaces de usuario dinámicas y atractivas
             utilizando tecnologías líderes como React y Material UI. He aplicado mis habilidades en una variedad de proyectos, demostrando mi capacidad para traducir

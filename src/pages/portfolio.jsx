@@ -2,6 +2,7 @@ import { Box, Grid, Typography, Modal, useMediaQuery } from '@mui/material';
 import rifas from "../assets/rifas.png";
 import mdGlobal from "../assets/mdGlobal.png";
 import tiendaTecnologia from "../assets/tiendaTecnologia.png";
+import landing from "../assets/landing.png";
 
 import { useState } from 'react';
 
@@ -31,11 +32,18 @@ const Portfolio = () => {
       title: 'Venta de Aparatos Teconológicos',
       url: "https://entrega-final-sassi-react-js.vercel.app/",
       github: "https://github.com/Franco97sassi/EntregaFinal-Sassi-ReactJs",
-      description: "Nuestra tienda de aparatos tecnológicos es el destino perfecto para los entusiastas de la tecnología que buscan los últimos dispositivos y gadgets innovadores. Con una amplia gama de productos que van desde teléfonos inteligentes y computadoras portátiles hasta dispositivos domésticos inteligentes y accesorios de alta tecnología, nuestra tienda se enorgullece de ofrecer lo mejor en tecnología de vanguardia"
+      description : "Nuestra tienda de aparatos tecnológicos es el destino perfecto para los entusiastas de la tecnología que buscan los últimos dispositivos y gadgets innovadores. Con una amplia gama de productos que van desde teléfonos inteligentes y computadoras portátiles hasta dispositivos domésticos inteligentes y accesorios de alta tecnología, nuestra tienda se enorgullece de ofrecer lo mejor en tecnología de vanguardia"
     },
-
-  ];
-
+    {
+      img: landing,
+      title: 'Landing de Empresa TechX',
+      url: "https://landing-tau-ten.vercel.app/",
+      github: "https://github.com/Franco97sassi/EntregaFinal-Sassi-ReactJs",
+      description: "Somos una empresa líder en tecnología dedicada a ofrecer soluciones innovadoras para satisfacer las necesidades de nuestros  clientes."
+    }   ,
+   
+  
+  ]
 
   const [open, setOpen] = useState(false);
   const [selectedItem, setSelectedItem] = useState(null);
@@ -58,14 +66,14 @@ const Portfolio = () => {
  
 
   return (
-    <Box sx={{ height: "100vh",flexDirection:isMobile?"column":"row", alignContent: "center" }}>
+    <Box sx={{  padding: isMobile ? "none" : "2%" ,height: "100vh",flexDirection:isMobile?"column":"row", alignContent: "center",marginBottom:isMobile?"200px":"none" }}>
       <Typography textAlign={isMobile?"center":"left"} sx={{ paddingLeft: isMobile?"0%":"10%",paddingBottom:"5%" }} variant="h2" color="white">Portfolio</Typography>
 
 
       <Box >
         <Grid sx={{ display: "flex",flexDirection:isMobile?"column":"row", justifyContent: "space-evenly", alignItems: "center" }} container rowSpacing={10} padding={isMobile?"5":"5"} columnSpacing={{ xs: 0, sm: 2, md: 3 }}>
           {itemData.map((item, index) => (
-            <Grid key={index} item xs={3} sx={{ width:"100%",display:"flex",flexDirection:"column",justifyContent: 'center', alignItems: 'center' }}   >
+            <Grid key={index}   item xs={3} sx={{ width:"100%",display:"flex",flexDirection:"column",justifyContent: 'center', alignItems: 'center' }}   >
               {/* <Typography variant= {isMobile?"h5":"h4"} sx={{display:isMobile?"flex":"flex", textAlign: "center"  }}  >{item.title} </Typography> */}
 
               {/* <Box sx={{   borderRadius: "5%", border:isMobile?"none": '1px solid grey', display: 'flex', flexDirection: "column", justifyContent: 'center', alignItems: 'center' }}>
@@ -79,11 +87,12 @@ const Portfolio = () => {
                 </Box>
 
               </Box> */}
-<Grid container spacing={0} sx={{borderRadius:"5%",height:isMobile?"none":"35vh",display:isMobile?"flex":'flex',border:"0px solid white",background:"linear-gradient(#512E5F  ,#212F3C  , #512E5F    )"  }}>
+              
+<Grid container spacing={0} sx={{borderRadius:"5%",height:isMobile?"none":"35vh",display:isMobile?"flex":'flex',border:"0px solid white",background:isMobile?"none":"linear-gradient(#512E5F  ,#212F3C  , #512E5F    )"  }}>
   <Grid item xs={12} onMouseEnter={() => setHoveredIndex(index)} onMouseLeave={() => setHoveredIndex(null)}>
- <Box  sx={{transition: 'transform 0.3s', transform: hoveredIndex === index ? 'scale(1.1)' : 'scale(1)'}}  >  
+ <Box  sx={{marginLeft:isMobile?"-50%":"0%",transition: 'transform 0.3s', transform: hoveredIndex === index ? 'scale(1.1)' : 'scale(1)'}}  >  
   <a href={item.url} target="_blank" rel="noopener noreferrer">
-  <img src={item.img} style={{ width: isMobile ? "100%" : "100%", borderRadius: "5%", opacity: hoveredIndex === index ? 0.5 : 1 }} alt={item.title} />
+  <img src={item.img} style={{ width: isMobile ? "150%" : "100%", borderRadius: "5%", opacity: hoveredIndex === index ? 0.5 : 1 }} alt={item.title} />
                 </a>
                 {hoveredIndex === index && (
                   <Typography variant={isMobile?"h7":"body1"} sx={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)', backgroundColor: 'rgba(0, 0, 0, 0.5)', color: 'white', padding: '5px', borderRadius: '5px', textAlign: 'center' }}>
@@ -114,7 +123,7 @@ const Portfolio = () => {
           sx={{
             position: 'absolute', top: '50%', left: '50%',
             transform: 'translate(-50%, -50%)', width: "75%", height: "75%",
-            backgroundImage:   'linear-gradient(#4A235A, #212F3C ,#4A235A )' , border: '2px solid #000',
+            backgroundImage:   'linear-gradient(#4A235A, #212F3C ,#4A235A )' , border: '0px solid #000',
             boxShadow: 24,
             borderColor:"#4A235A"
           }}>
