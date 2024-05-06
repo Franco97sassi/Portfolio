@@ -17,7 +17,7 @@ const General = () => {
 
   const handleDownload = () => {
     // Redireccionar a la URL del PDF en Google Drive
-    window.location.href = "https://drive.google.com/uc?export=download&id=1Bn9sHwteMgA_-wl405nnoKdpP5W8-s5c";
+    window.location.href = "https://drive.google.com/file/d/1dkUQdXoeBMY4fm5HLJtZdf_6ns-740Bd/view?usp=drive_link";
   };
   return (
     <div className={isDark ? "dark" :"light" }>
@@ -33,7 +33,7 @@ const General = () => {
      <div style={{ position: 'fixed', top: '50%', transform: 'translateY(-50%)', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '10px', right: isMobile ? 'unset' : '1%', left: isMobile ? '1%' : 'unset' }}>
   <a href="https://github.com/Franco97sassi?tab=repositories"><img src={github} alt="" style={{ width: '50px' }} /></a>     
   <a href="https://www.linkedin.com/in/franco-sassi-777b0317a/"> <img src={linkedin} alt="" style={{ width: '50px' }} /></a>     
-  <a href="https://drive.google.com/uc?export=download&id=1Bn9sHwteMgA_-wl405nnoKdpP5W8-s5c" download><img src={curriculum} alt="" style={{ width: '50px' }} /></a>
+  <a href="https://drive.google.com/file/d/1dkUQdXoeBMY4fm5HLJtZdf_6ns-740Bd/view?usp=drive_link" download><img src={curriculum} alt="" style={{ width: '50px' }} /></a>
 </div>
 
 
