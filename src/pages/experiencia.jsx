@@ -32,7 +32,7 @@ const Experiencia = () => {
 
   return (
     <div>  
-    <Box sx={{height: "100vh",alignContent:"center"  }}>
+    <Box sx={{height: "100vh",alignContent:"center" ,marginBottom:isMobile?"50%":"0%"  }}>
         <Box sx={{display:"flex",flexDirection:"column",paddingLeft:isMobile?"00%":"10%"}}>  
  
  <Typography  variant="h2" sx={{   textAlign:isMobile?"center":"left" }} >Tecnologías</Typography>

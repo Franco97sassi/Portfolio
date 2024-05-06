@@ -3,6 +3,9 @@ import rifas from "../assets/rifas.png";
 import mdGlobal from "../assets/mdGlobal.png";
 import tiendaTecnologia from "../assets/tiendaTecnologia.png";
 import landing from "../assets/landing.png";
+import comidas from "../assets/comidasjs.png";
+import rosario from "../assets/rosario.png";
+import backend from "../assets/backend.png";
 
 import { useState } from 'react';
 
@@ -16,7 +19,7 @@ const Portfolio = () => {
       title: 'Rifas El venado',
       url: "https://www.rifaselvenado.com/",
       github: "https://github.com/Franco97sassi/Rifas.git",
-      description: "Rifas El Venado es un proyecto dedicado a la venta de productos y la organización de rifas en línea. Diseñado para brindar una experiencia intuitiva y conveniente tanto para los compradores como para los organizadores de rifas,  este proyecto utiliza tecnologías modernas para ofrecer una plataforma segura y fácil de  usar"
+      description: "Rifas El Venado es un proyecto dedicado a la venta de productos y la organización de rifas en línea."
     },
 
     {
@@ -24,7 +27,7 @@ const Portfolio = () => {
       title: 'MdGlobal',
       url: "https://md-global2024.vercel.app/",
       github: "https://github.com/Franco97sassi/Rifas.git",
-      description: " El proyecto de importación y exportación es una plataforma dedicada a simplificar y agilizar los procesos de comercio internacional, especialmente en lo que respecta a la relación con la aduana. Diseñado para empresas y profesionales del sector, este proyecto ofrece herramientas y servicios que optimizan la gestión de importaciones y exportaciones, reduciendo costos y tiempos de trámite."
+      description: " El proyecto de importación y exportación es una plataforma dedicada a simplificar y agilizar los procesos de comercio internacional."
     },
 
     {
@@ -32,8 +35,31 @@ const Portfolio = () => {
       title: 'Venta de Aparatos Teconológicos',
       url: "https://entrega-final-sassi-react-js.vercel.app/",
       github: "https://github.com/Franco97sassi/EntregaFinal-Sassi-ReactJs",
-      description : "Nuestra tienda de aparatos tecnológicos es el destino perfecto para los entusiastas de la tecnología que buscan los últimos dispositivos y gadgets innovadores. Con una amplia gama de productos que van desde teléfonos inteligentes y computadoras portátiles hasta dispositivos domésticos inteligentes y accesorios de alta tecnología, nuestra tienda se enorgullece de ofrecer lo mejor en tecnología de vanguardia"
+      description:"Mi proyecto hecho con React"
     },
+    {
+      img: backend,
+      title: 'E-Commerce Backend',
+      // url: "https://entrega-final-sassi-react-js.vercel.app/",
+      github: "https://github.com/Franco97sassi/Backend-Desafios",
+ 
+     },
+     
+    {
+      img: rosario,
+      title: 'Ciudad de Rosario',
+      url: "https://proyecto1francosassi.vercel.app/",
+      github: "https://github.com/Franco97sassi/PF-FrancoSassi",
+      description:"Mi primer proyecto realizado en Visual Studio donde aplico patrones de diseño basico como Html y Css."
+     },
+     {
+      img: comidas,
+      title: 'Tienda de comidas',
+      url: "https://franco97sassi.github.io/ProyectoFinalJS-Sassi/",
+      github: "https://github.com/Franco97sassi/ProyectoFinalJS-Sassi",
+      description:"Mi primer proyecto con JavaScript"
+     },
+    
     // {
     //   img: landing,
     //   title: 'Landing de Empresa TechX',
@@ -66,12 +92,12 @@ const Portfolio = () => {
  
 
   return (
-    <Box sx={{  padding: isMobile ? "none" : "2%" ,height: "100vh",flexDirection:isMobile?"column":"row", alignContent: "center",marginBottom:isMobile?"200px":"none" }}>
+    <Box sx={{  padding: isMobile ? "none" : "2%" ,height: "100vh",flexDirection:isMobile?"column":"row", alignContent: "center",marginBottom:isMobile?"500px":"100px" }}>
       <Typography textAlign={isMobile?"center":"left"} sx={{ paddingLeft: isMobile?"0%":"10%",paddingBottom:"5%" }} variant="h2" color="white">Portfolio</Typography>
 
 
       <Box >
-        <Grid sx={{ display: "flex",flexDirection:isMobile?"column":"row", justifyContent: "space-evenly", alignItems: "center" }} container rowSpacing={10} padding={isMobile?"5":"5"} columnSpacing={{ xs: 0, sm: 2, md: 3 }}>
+        <Grid  sx={{ display: "flex",flexDirection:isMobile?"column":"row", justifyContent: "space-evenly", alignItems: "center" }} container rowSpacing={10} padding={isMobile?"5":"5"} columnSpacing={{ xs: 0, sm: 2, md: 3 }}>
           {itemData.map((item, index) => (
             <Grid key={index}   item xs={3} sx={{ width:"100%",display:"flex",flexDirection:"column",justifyContent: 'center', alignItems: 'center' }}   >
               {/* <Typography variant= {isMobile?"h5":"h4"} sx={{display:isMobile?"flex":"flex", textAlign: "center"  }}  >{item.title} </Typography> */}
@@ -90,7 +116,7 @@ const Portfolio = () => {
               
 <Grid container spacing={0} sx={{borderRadius:"5%",height:isMobile?"none":"35vh",display:isMobile?"flex":'flex',border:"0px solid white",background:isMobile?"none":"linear-gradient(#512E5F  ,#212F3C  , #512E5F    )"  }}>
   <Grid item xs={12} onMouseEnter={() => setHoveredIndex(index)} onMouseLeave={() => setHoveredIndex(null)}>
- <Box  sx={{marginLeft:isMobile?"-50%":"0%",transition: 'transform 0.3s', transform: hoveredIndex === index ? 'scale(1.1)' : 'scale(1)'}}  >  
+ <Box  sx={{  marginLeft:isMobile?"-50%":"0%",transition: 'transform 0.3s', transform: hoveredIndex === index ? 'scale(1.1)' : 'scale(1)'}}  >  
   <a href={item.url} target="_blank" rel="noopener noreferrer">
   <img src={item.img} style={{ width: isMobile ? "150%" : "100%", borderRadius: "5%", opacity: hoveredIndex === index ? 0.5 : 1 }} alt={item.title} />
                 </a>

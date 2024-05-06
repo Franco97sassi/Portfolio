@@ -21,7 +21,7 @@ const theme=createTheme({
         },
         h2:{
             fontFamily:["Oswald","Roboto","sans-serif"].join(","),
-        fontSize:32,fontWeight:600,color:"white",
+        fontWeight:600,color:"white",
         },
         h3:{
             fontFamily:["Oswald","Roboto","sans-serif"].join(","),
@@ -41,7 +41,7 @@ const theme=createTheme({
         },
         body:{
             fontFamily:["Oswald","Roboto","sans-serif"].join(","),
-        fontSize:14,color:"white",fontWeight:300,
+        fontSize:20,color:"white",fontWeight:300,
         },
     },
     palette:{

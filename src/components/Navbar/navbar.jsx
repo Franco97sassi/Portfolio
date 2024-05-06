@@ -15,20 +15,22 @@ import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import { NavLink } from 'react-router-dom';
-import { useTranslation } from 'react-i18next'; // Importa el hook useTranslation para manejar traducciones
-
+   
   const drawerWidth = 240;
 const navItems = ['Inicio', 'Perfil', 'Portfolio', 'Tecnologías', 'Contacto'];
 
 function DrawerAppBar(props) {
   const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
-  const [language, setLanguage] = React.useState('es'); // Estado para almacenar el idioma actual
-
-  const handleDrawerToggle = () => {
+ 
+    const handleDrawerToggle = () => {
     setMobileOpen((prevState) => !prevState);
   };
  
+ 
+  const toggleLanguage = () => {
+    setLanguage(language === 'es' ? 'en' : 'es');
+  };
 
   const scrollToSection = (id) => {
     const element = document.getElementById(id);
@@ -56,19 +58,7 @@ function DrawerAppBar(props) {
       </List>
     </Box>
   );
-  const toggleLanguage = () => {
-    const newLanguage = language === 'es' ? 'en' : 'es';
-    setLanguage(newLanguage);
-    i18n.changeLanguage(newLanguage); // Agrega esta línea para cambiar el idioma con i18n
-  };
-
-  const { i18n } = useTranslation(); // Obtén el objeto i18n del hook useTranslation
-
-  // Cambia el idioma utilizando i18n.changeLanguage()
-  React.useEffect(() => {
-    i18n.changeLanguage(language);
-  }, [language, i18n]);
-
+ 
 
 
   const container = window !== undefined ? () => window().document.body : undefined;
@@ -94,9 +84,7 @@ function DrawerAppBar(props) {
           >
             Franco Sassi
           </Typography>
-          {/* <Button onClick={toggleLanguage} sx={{ my: 2, color: 'white' }}>
-            {language === 'es' ? 'English' : 'Español'}
-          </Button> */}
+        
           <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
   {navItems.map((page) => {
     
@@ -108,13 +96,14 @@ function DrawerAppBar(props) {
       // Hace scroll a la sección correspondiente
       sx={{ my: 2, color: 'white' }}
     >
-      <Typography variant="body">
+      <Typography  >
         {page} </Typography>
       </Button>
        
     );
   })}
 </Box>
+ 
         </Toolbar>
       </AppBar>
       <nav style={{backgroundImage:'linear-gradient(#4A235A, #4A235A ,#4A235A )',
@@ -150,6 +139,7 @@ function DrawerAppBar(props) {
 
 DrawerAppBar.propTypes = {
   window: PropTypes.func,
+   
 };
 
 export default DrawerAppBar;

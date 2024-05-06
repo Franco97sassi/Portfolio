@@ -6,7 +6,7 @@ const Sobre = () => {
 
   return (
     <div>
-    <Box sx={{ paddingRight:isMobile?"10%":"0%", textAlign:"center",paddingLeft:isMobile?"10%":"10%",width:isMobile?"100%":"75%", height:"100vh",display:"flex",flexDirection:"column",justifyContent:"center"  }}> 
+    <Box sx={{ paddingRight:isMobile?"10%":"0%", textAlign:"center",paddingLeft:isMobile?"10%":"10%",width:isMobile?"100%":"75%", height:"100vh",display:"flex",flexDirection:"column",justifyContent:"center" ,marginBottom:isMobile?"72%":"0%" }}> 
 
        
       <Typography  textAlign={isMobile?"center":"left"}  variant="h2"   fontWeight="bold" sx={{paddingBottom:"2%" }} >Sobre Mí</Typography>
