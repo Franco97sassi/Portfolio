@@ -6,6 +6,7 @@ import landing from "../assets/landing.png";
 import comidas from "../assets/comidasjs.png";
 import rosario from "../assets/rosario.png";
 import backend from "../assets/backend.png";
+import todoFloral from "../assets/todoFloral.png";
 
 import { useState } from 'react';
 
@@ -21,13 +22,26 @@ const Portfolio = () => {
       github: "https://github.com/Franco97sassi/Rifas.git",
       description: "Rifas El Venado es un proyecto dedicado a la venta de productos y la organización de rifas en línea."
     },
-
+    {
+      img: landing,
+      title: 'Landing',
+      url: "https://www.rifaselvenado.com/",
+      github: "https://github.com/Franco97sassi/Landing",
+      description: "Landing de la empresa TechX."
+    },
     {
       img: mdGlobal,
       title: 'MdGlobal',
       url: "https://md-global2024.vercel.app/",
-      github: "https://github.com/Franco97sassi/Rifas.git",
+      // github: "https://github.com/Franco97sassi/Rifas.git",
       description: " El proyecto de importación y exportación es una plataforma dedicada a simplificar y agilizar los procesos de comercio internacional."
+    },
+    {
+      img: rifas,
+      title: 'Todo Floral',
+      url: "https://ecommerce-floral.vercel.app/",
+      github: "https://github.com/Franco97sassi/TF",
+      description: "Ecommerce de tienda de flores."
     },
 
     {
@@ -60,13 +74,7 @@ const Portfolio = () => {
       description:"Mi primer proyecto con JavaScript"
      },
     
-    // {
-    //   img: landing,
-    //   title: 'Landing de Empresa TechX',
-    //   url: "https://landing-tau-ten.vercel.app/",
-    //   github: "https://github.com/Franco97sassi/EntregaFinal-Sassi-ReactJs",
-    //   description: "Somos una empresa líder en tecnología dedicada a ofrecer soluciones innovadoras para satisfacer las necesidades de nuestros  clientes."
-    // }   ,
+     
     
   
   ]
@@ -149,7 +157,7 @@ const Portfolio = () => {
           sx={{
             position: 'absolute', top: '50%', left: '50%',
             transform: 'translate(-50%, -50%)', width: "75%", height: "75%",
-            backgroundImage:   'linear-gradient(#4A235A, #212F3C ,#4A235A )' , border: '0px solid #000',
+            backgroundImage:   'linear-gradient(#4A235A, #212F3C ,#4A235A )' , border: '10px solid #000',
             boxShadow: 24,
             borderColor:"#4A235A"
           }}>
