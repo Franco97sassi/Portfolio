@@ -11,7 +11,7 @@ const Sobre = () => {
        
       <Typography  textAlign={isMobile?"center":"left"}  variant="h2"   fontWeight="bold" sx={{paddingBottom:"2%" }} >Sobre Mí</Typography>
       <Typography   variant="body" textAlign={isMobile?"center":"justify"}  sx={{paddingBottom:"1%"}} >   
-          Soy Rosario,Santa Fe Argentina.   
+          Soy Rosario, Santa Fe Argentina.   
              Completé con éxito la carrera de Desarrollador Front End en CoderHouse en 2023. </Typography>
               
           <Typography  variant="body" textAlign={isMobile?"center":"justify"}>  Me considero un profesional dedicado y predispuesto a realizar las distintas tareas que tenga que llevar a cabo. </Typography> 

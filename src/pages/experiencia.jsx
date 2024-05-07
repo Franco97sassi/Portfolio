@@ -52,6 +52,14 @@ const Experiencia = () => {
           ))}
         </Grid>
       </Box>
+
+
+
+
+
+
+     
+
     </Box> </div>
   );
 }

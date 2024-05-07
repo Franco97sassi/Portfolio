@@ -66,7 +66,7 @@ function DrawerAppBar(props) {
   return (
     <Box sx={{ display: 'flex', }}>
       <CssBaseline />
-      <AppBar sx={{backgroundImage:'linear-gradient(#4A235A, #4A235A ,#4A235A )'}} component="nav">
+      <AppBar sx={{backgroundImage:'linear-gradient(#4A235A, #4A235A ,#4A235A )', boxShadow: 'none'}} component="nav">
         <Toolbar>
           <IconButton
             color="inherit"
