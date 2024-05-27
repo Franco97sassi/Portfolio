@@ -1,9 +1,17 @@
- import { Box, Button, CssBaseline, Stack, TextField, Typography, useMediaQuery } from '@mui/material'
-import React, { useState } from 'react'
-import emailjs from 'emailjs-com'; 
+import {
+  Box,
+  Button,
+  CssBaseline,
+  Stack,
+  TextField,
+  Typography,
+  useMediaQuery,
+} from "@mui/material";
+import React, { useState } from "react";
+import emailjs from "emailjs-com";
 
 const Contacto = () => {
-  const isMobile=useMediaQuery('(max-width:600px)')
+  const isMobile = useMediaQuery("(max-width:600px)");
   const [showSuccessAlert, setShowSuccessAlert] = useState(false);
   const [showErrorAlert, setShowErrorAlert] = useState(false);
 
@@ -12,181 +20,272 @@ const Contacto = () => {
   // };
   const CustomAlert = ({ message, severity }) => {
     return (
-      <div style={{ padding: '10px', backgroundColor: getBackgroundColor(severity), color: 'white', borderRadius: '5px' }}>
-      <Typography variant="body">  {message} </Typography> 
+      <div
+        style={{
+          padding: "10px",
+          backgroundColor: getBackgroundColor(severity),
+          color: "white",
+          borderRadius: "5px",
+        }}
+      >
+        <Typography variant="body"> {message} </Typography>
       </div>
     );
   };
-  
+
   const getBackgroundColor = (severity) => {
     switch (severity) {
-      case 'success':
-        return '#4caf50';
-      case 'error':
-        return '#f44336';
-      case 'warning':
-        return '#ff9800';
+      case "success":
+        return "#4caf50";
+      case "error":
+        return "#f44336";
+      case "warning":
+        return "#ff9800";
       default:
-        return '#2196f3';
+        return "#2196f3";
     }
   };
   const form = React.useRef(); // Ref para el formulario
 
   const [formValues, setFormValues] = React.useState({
-     name: "",
+    name: "",
     email: "",
     message: "",
-    
   });
   const [submitAttempted, setSubmitAttempted] = React.useState(false);
 
   const handleChange = (event) => {
     setFormValues({ ...formValues, [event.target.name]: event.target.value });
- };
- const areAllFieldsCompleted = Object.values(formValues).every(
-  (value) => value.trim() !== ""
-);
-//  const handleSubmit = (event) => {
-//   event.preventDefault();
-//   setSubmitAttempted(true);
+  };
+  const areAllFieldsCompleted = Object.values(formValues).every(
+    (value) => value.trim() !== ""
+  );
+  
 
-//   if (areAllFieldsCompleted) {
-//       // Crear una instancia de FormData con el formulario actual
-//       const formData = new FormData(form.current);
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    setSubmitAttempted(true);
 
-//       // Utilizar FormData para inspeccionar los valores
-//       for (let [key, value] of formData.entries()) {
-//           console.log(key, value);
-//       }
+    if (areAllFieldsCompleted) {
+      // Envío del formulario si todos los campos están completos
+      emailjs
+        .sendForm(
+          "service_vyuj2da",
+          "template_8d29int",
+          form.current,
+          "MFjL6HylWjhExu_0n"
+        )
+        .then((result) => {
+          console.log(result.text);
+          // Mostrar mensaje de éxito
+          setShowSuccessAlert(true);
+          setTimeout(() => {
+            window.location.reload();
+          }, 1000); // Recarga la página después de 5 segundos
+        })
+        .catch((error) => {
+          console.log(error.text);
+          // Mostrar mensaje de error
+          alert(
+            "Ocurrió un error al enviar el mensaje. Por favor, inténtalo de nuevo más tarde."
+          );
+        });
+    } else {
+      // Si no todos los campos están completos, mostrar un mensaje de error
+      setShowErrorAlert(true);
+      setTimeout(() => {
+        setShowErrorAlert(false);
+      }, 3000);
+    }
+  };
 
-//       emailjs.sendForm('service_vyuj2da', 'template_8d29int', form.current, 'MFjL6HylWjhExu_0n')
-//           .then((result) => {
-//               console.log(result.text);
-//               // navigate("/asesoriaSep");
-//           }, (error) => {
-//               console.log(error.text);
-//           });
-//   }
-// };
- 
-const handleSubmit = (event) => {
-  event.preventDefault();
-  setSubmitAttempted(true);
+  return (
+    <div>
+      <Box
+        component="form"
+        sx={{
+          height: "100vh",
+          justifyContent: isMobile ? "center" : "center",
+          alignContent: "center",
+        }}
+      >
+        <CssBaseline />
+        <Box
+          sx={{
+            display: "flex",
+            flexDirection: "column",
+            textAlign: isMobile ? "center" : "center",
+           }}
+        >
+          <Typography
+            variant="h2" fontWeight="bold"
+            sx={{ textAlign: isMobile ? "center" : "center" }}
+          >
+            Contacto
+          </Typography>
 
-  if (areAllFieldsCompleted) {
-    // Envío del formulario si todos los campos están completos
-    emailjs.sendForm('service_vyuj2da', 'template_8d29int', form.current, 'MFjL6HylWjhExu_0n')
-      .then((result) => {
-        console.log(result.text);
-        // Mostrar mensaje de éxito
-        setShowSuccessAlert(true);
-        setTimeout(() => {
-          window.location.reload();
-        }, 1000); // Recarga la página después de 5 segundos
-      })
-      .catch((error) => {
-        console.log(error.text);
-        // Mostrar mensaje de error
-        alert("Ocurrió un error al enviar el mensaje. Por favor, inténtalo de nuevo más tarde.");
-      });
-  } else {
-    // Si no todos los campos están completos, mostrar un mensaje de error
-    setShowErrorAlert(true);
-    setTimeout(() => {
-      setShowErrorAlert(false);
-    }, 3000);
-   
-  }
+          <Typography
+            variant="h5"
+            sx={{ textAlign: isMobile ? "center" : "center"   }}
+          >
+            Para comunicarte conmigo, completa este formulario.
+          </Typography>
+        </Box>
+        <Box
+          sx={{
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+        >
+          <Box
+            component="form"
+            noValidate
+            autoComplete="off"
+            ref={form}
+            onSubmit={handleSubmit}
+          >
+            <Stack
+              spacing={2}
+              sx={{
+                paddingTop: "50%",
+                paddingBottom: "1%",
+                justifyContent: "center",
+                alignItems: "center",
+              }}
+            >
+              {/* <TextField   label="Nombre"  /> */}
+              <TextField
+                //  error={showError("nombre")}
+                 name="name"
+                value={formValues.name}
+                onChange={handleChange}
+                minRows={1}
+                placeholder="Nombre"
+                variant="outlined"
+                multiline
+                InputProps={{
+                  onFocus: (event) => event.target.parentElement.parentElement.querySelector('label').style.display = 'none', // Oculta el label cuando el TextField está enfocado
+                }}
+                sx={{
+                  width: isMobile ? "200%" : "500%",
+                  maxWidth: "400px",
+                  "& .MuiInputBase-input": {
+                    color: "black", // Establece el color del texto en negro
+                  },
+                  '& .MuiInputLabel-root': {
+                    display: 'none', // Oculta completamente el label
+                  },
+                  '& .MuiOutlinedInput-root': {
+                    backgroundColor: 'white', // Establece el fondo del TextField en blanco
+                    borderRadius: '10px', // Establece el borde redondeado de 5px
+                    '&.Mui-focused .MuiOutlinedInput-notchedOutline': {
+                      borderColor: 'initial', // Mantén el color del borde inalterado cuando está enfocado
+                    },
+                  },
+                }}
+                error={submitAttempted && formValues.name.trim() === ""}
+              />
+              <TextField
+  name="email"
+  value={formValues.email}
+  onChange={handleChange}
+  minRows={1}
+  placeholder="Email"
+  variant="outlined"
+  multiline
+  InputProps={{
+    onFocus: (event) => event.target.parentElement.parentElement.querySelector('label').style.display = 'none', // Oculta el label cuando el TextField está enfocado
+  }}
+  sx={{
+    width: isMobile ? "200%" : "500%",
+    maxWidth: "400px",
+    "& .MuiInputBase-input": {
+      color: "black", // Establece el color del texto en negro
+    },
+    '& .MuiInputLabel-root': {
+      display: 'none', // Oculta completamente el label
+    },
+    '& .MuiOutlinedInput-root': {
+      backgroundColor: 'white', // Establece el fondo del TextField en blanco
+      borderRadius: '10px', // Establece el borde redondeado de 5px
+      '&.Mui-focused .MuiOutlinedInput-notchedOutline': {
+        borderColor: 'initial', // Mantén el color del borde inalterado cuando está enfocado
+      },
+    },
+  }}
+  error={submitAttempted && formValues.name.trim() === ""}
+/>
+
+              <TextField
+   name="message"
+  value={formValues.message}
+  onChange={handleChange}
+  fullWidth
+  minRows={7}
+  placeholder="Mensaje"
+  variant="outlined"
+  sx={{
+    width: isMobile ? "200%" : "500%",
+    maxWidth: "400px",
+    "& .MuiInputBase-input": {
+      color: "black", // Establece el color del texto en negro
+    },
+    '& .MuiInputLabel-root': {
+      color: 'black', // Cambiar el color del texto de la etiqueta a negro
+    },
+    '& .MuiOutlinedInput-root': {
+      backgroundColor: 'white', // Establece el fondo del TextField en blanco
+      borderRadius: '10px', // Establece el borde redondeado de 5px
+      '&.Mui-focused .MuiOutlinedInput-notchedOutline': {
+        borderColor: 'initial', // Mantén el color del borde inalterado cuando está enfocado
+      },
+    },
+  }}
+  multiline
+  InputLabelProps={{
+    shrink: true, // El label se encogerá cuando el TextField tenga contenido
+  }}
+  InputProps={{
+    onFocus: (event) => event.target.parentElement.parentElement.querySelector('label').style.display = 'none', // Oculta el label cuando el TextField está enfocado
+  }}
+  error={submitAttempted && formValues.name.trim() === ""}
+/>
+
+
+            </Stack>{" "}
+          </Box>
+          <Button
+            sx={{
+              marginTop: "1%",
+              marginBottom: "1%",
+              background: "linear-gradient(#17202A,#1B4F72  )",
+              color: "white",
+            }}
+            variant="contained"
+            onClick={handleSubmit}
+          >
+            Enviar
+          </Button>
+          {/* Muestra el alerta de éxito si showSuccessAlert es true */}
+          {showSuccessAlert && (
+            <CustomAlert
+              message="Mensaje enviado correctamente"
+              severity="success"
+            />
+          )}
+          {/* Muestra el alerta de error si showErrorAlert es true */}
+          {showErrorAlert && (
+            <CustomAlert
+              message="Ocurrió un error al enviar el mensaje. Por favor, inténtalo de nuevo más tarde."
+              severity="error"
+            />
+          )}
+        </Box>
+      </Box>
+    </div>
+  );
 };
 
-return (
-    <div>  
-    <Box component="form" sx={{ height:"100vh", justifyContent:isMobile?"center":"flex-start",alignContent:"center"}}> 
-          <CssBaseline />
-<Box sx={{display:"flex",flexDirection:"column",paddingLeft:isMobile?"0%":"10%"}}>  
- 
-    <Typography  variant="h2" sx={{   textAlign:isMobile?"center":"left" }} >Contacto</Typography>
-    
-    <Typography variant="h5"  sx={{   textAlign:isMobile?"center":"left" }}>Para comunicarte conmigo, completa este formulario.</Typography>
-    </Box>
-    <Box sx={{display:"flex",flexDirection:"column",justifyContent:"center",alignItems:"center" }}>
-
-    <Box component="form" noValidate autoComplete="off"ref={form} onSubmit={handleSubmit}>  
-   <Stack spacing={2} sx={{paddingTop:"50%",paddingBottom:"1%",justifyContent:"center",alignItems:"center" }}>
-    
-{/* <TextField   label="Nombre"  /> */}
-   <TextField
-                    //  error={showError("nombre")}
-                    label="Nombre"
-                    name="name"
-                      value={formValues.name}
-                      onChange={handleChange}
-                     
-                    minRows={1}
-                    placeholder="Nombre"
-                    variant="outlined"
-                     
-                    multiline
-                    sx={{ width: isMobile?'200%':'500%', maxWidth: '400px' ,
-                    '& .MuiInputBase-input': {
-                      color: 'white', // Establece el color del texto en blanco
-                    },}} // Establece el ancho máximo deseado
-                    error={submitAttempted && formValues.name.trim() === ""}
-
-                  />    
-<TextField    label="Email"
-   name="email"
- value={formValues.email}
- onChange={handleChange}
- 
-minRows={1}
-placeholder="Email"
-variant="outlined"
-// InputProps={{
-//   // disableUnderline: true,
-//   className: classes.customTextField,
-// }}
-multiline                    sx={{ width: isMobile?'200%':'500%', maxWidth: '400px',
-'& .MuiInputBase-input': {
-  color: 'white', // Establece el color del texto en blanco
-}, }} // Establece el ancho máximo deseado
-error={submitAttempted && formValues.name.trim() === ""}
-
-/>
-<TextField   label="Mensaje"
-  name="message"
- value={formValues.message}
- onChange={handleChange}
-fullWidth
-minRows={7}
-placeholder="Mensaje"
-variant="outlined"
-// InputProps={{
-//   // disableUnderline: true,
-//   className: classes.customTextField,
-// }}
-sx={{ width: isMobile?'200%':'500%', maxWidth: '400px' ,
-
-'& .MuiInputBase-input': {
-  color: 'white', // Establece el color del texto en blanco
-},
-}} // Establece el ancho máximo deseado
-
-multiline
-error={submitAttempted && formValues.name.trim() === ""}
-
-/>
-</Stack>  </Box>
-<Button  sx={{marginTop:"1%",marginBottom:"1%" ,background: "linear-gradient(#17202A,#1B4F72  )",color:"white"}}  variant="contained"  onClick={handleSubmit}>Enviar</Button>
-  {/* Muestra el alerta de éxito si showSuccessAlert es true */}
-  {showSuccessAlert && <CustomAlert message="Mensaje enviado correctamente" severity="success" />}
-          {/* Muestra el alerta de error si showErrorAlert es true */}
-          {showErrorAlert && <CustomAlert message="Ocurrió un error al enviar el mensaje. Por favor, inténtalo de nuevo más tarde." severity="error" />}
-
-</Box>
- 
-    </Box></div>
-  )
-}
-
-export default Contacto
+export default Contacto;

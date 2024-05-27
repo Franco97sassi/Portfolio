@@ -1,64 +1,69 @@
-import {   Box, Button, Grid, Typography, useMediaQuery } from '@mui/material';
-import { Link as RouterLink } from 'react-router-dom'; // Importa Link de react-router-dom
-import  fms from "../assets/imagenPortfolioNobg.png"
+import { Box, Button, Typography, useMediaQuery } from "@mui/material";
+import { Link as RouterLink } from "react-router-dom"; // Importa Link de react-router-dom
+import { motion } from "framer-motion";
 
-//  import  fms from "../assets/imagenPortoflio.jpg"
 const Home = () => {
   const handlePortfolioClick = () => {
-    // Simplemente puedes usar el ID de la sección a la que deseas redirigir
-    const portfolioSection = document.getElementById('portfolio');
-    // Hace scroll hasta la sección del portafolio
-    portfolioSection.scrollIntoView({ behavior: 'smooth' });
+    const portfolioSection = document.getElementById("portfolio");
+    portfolioSection.scrollIntoView({ behavior: "smooth" });
   };
+
   const buttonStyles = {
-    background: "linear-gradient(#17202A,#1B4F72  )",
+    background: "linear-gradient(#17202A,#1B4F72)",
     borderRadius: "999px",
-    // padding: "16px 32px",
     display: "flex",
     flexDirection: "row",
-    // gap: "12px",
+    width: "100px",
     alignItems: "center",
     justifyContent: "center",
-     position: "relative",
-    boxShadow: "0px 5px 15px 0px rgba(37, 44, 97, 0.15), 0px 2px 4px 0px rgba(136, 144, 194, 0.2)",
+    position: "relative",
+    boxShadow:
+      "0px 5px 15px 0px rgba(37, 44, 97, 0.15), 0px 2px 4px 0px rgba(136, 144, 194, 0.2)",
     overflow: "hidden",
-     fontSize: "16px",
-    '&:hover': {
-      background: "linear-gradient(#512E5F,#1A5276  )",
-      boxShadow:"0px 5px 15px 0px rgba(37, 44, 97, 0.15), 0px 2px 4px 0px rgba(136, 144, 194, 0.20)"
+    fontSize: "16px",
+    "&:hover": {
+      background: "linear-gradient(#512E5F,#1A5276)",
+      boxShadow:
+        "0px 5px 15px 0px rgba(37, 44, 97, 0.15), 0px 2px 4px 0px rgba(136, 144, 194, 0.20)",
     },
   };
-  
-const isMobile=useMediaQuery('(max-width:600px)')
+
+  const isMobile = useMediaQuery("(max-width:600px)");
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0, transition: { duration: 1 } } // Ajusta la duración de la transición
+  };
 
   return (
-      
-   
-      
-    <Box sx={{  height: isMobile?"100vh":'100vh', display: 'flex',flexDirection:isMobile?"column":"row", alignItems: 'center',justifyContent:isMobile?"center":"flex-start" }}>
-
-       <Grid container  spacing={2}       >
-        <Grid item xs={12} md={6}sx={{ border: '0px solid white', display: 'flex',flexDirection:"column", justifyContent:"center", alignItems:"center" }}>
- <Box sx={{paddingLeft:isMobile?"0%":"10%",width:"75%",paddingBottom:"5%"}}> 
-          <Typography  variant="h1" textAlign={isMobile?"center":"left"} paddingBottom={1} > Desarrollador React Full Stack</Typography> 
-          <Typography sx={{display:isMobile?"none":"flex"}} variant="body"textAlign={isMobile?"center":"left"}>  Estudié la carrera de Programación Front End y Programación Full Stack en Academia CoderHouse,
-           donde adquirí una sólida base en desarrollo web. Desde entonces, me he especializado en la creación de interfaces de usuario dinámicas y atractivas
-            utilizando tecnologías líderes como React y Material UI. He aplicado mis habilidades en una variedad de proyectos, demostrando mi capacidad para traducir
-             diseños creativos en experiencias digitales funcionales y atractivas.</Typography> 
-             </Box> 
-            <Button sx={buttonStyles} variant="contained" component={RouterLink} to="/#portfolio" onClick={handlePortfolioClick}>Portfolio</Button>
-        </Grid> 
-        <Grid item  xs={12} md={6} sx={{border: '0px solid white', display: 'flex',  justifyContent:"center", alignItems: 'center' }}    >
-             <Box sx={{ display: 'flex',  justifyContent:"center", alignItems: 'center' }}>  
-               <img src={fms}   alt="fms"  style={{width:"50%",border: "none",borderRadius:"5%",background:"linear-gradient(#512E5F  ,#4A235A  , #212F3C    )"  }}   /> 
-               </Box>
-        </Grid>
-      
-      </Grid>
+    <Box sx={{ display: "flex", flexDirection:isMobile ?"column": "row" }}>
+      <Box sx={{ paddingLeft: isMobile ? "10%" : "10%", width: isMobile ? "100%" : "75%", height: "100vh", display: "flex", flexDirection: "column", justifyContent: "center", marginBottom: isMobile ? "72%" : "0%" }}>
+        <motion.div initial="hidden" animate="visible" variants={{visible: {transition: {staggerChildren: 0.2}}}}>
+          <motion.div variants={itemVariants}>
+            <Typography variant="h2" paddingBottom={1} fontWeight="bold">
+              Hola, soy Franco Sassi.
+            </Typography>
+          </motion.div>
+          <motion.div variants={itemVariants}>
+            <Typography variant="h3" paddingBottom={2}>
+              Desarrollador React Full Stack.
+            </Typography>
+          </motion.div>
+          <motion.div variants={itemVariants}>
+            <Button
+              sx={buttonStyles}
+              variant="contained"
+              component={RouterLink}
+              to="/#portfolio"
+              onClick={handlePortfolioClick}
+            >
+              Portfolio
+            </Button>
+          </motion.div>
+        </motion.div>
       </Box>
-       
-   )
-}
+    </Box>
+  );
+};
 
-export default Home
- 
+export default Home;

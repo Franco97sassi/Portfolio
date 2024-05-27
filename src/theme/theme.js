@@ -1,65 +1,47 @@
 import { createTheme } from '@mui/material/styles';
-import "../fonts/Oswald-VariableFont_wght.ttf"
-import "../fonts/Jacquard24-Regular.ttf"
-
-const theme=createTheme({
+ 
+ const theme=createTheme({
 
     typography:{
-        fontFamily:["Oswald","Roboto","Jacquard24","sans-serif"].join(","),
+        fontFamily: ["Roboto", "sans-serif"].join(","),
         fontSize:12,color:"white",
-        // name:{
-        //     fontFamily: "Jacquard24", "sans-serif",
-        //     fontSize:24,fontWeight:400
-        // },
-        // h1:{
-        //     fontFamily:["Jacquard24","system-u"].join(","),
-        // fontSize:40,fontWeight:700
-        // },
+       
         h1:{
-            fontFamily:["Oswald","Roboto","sans-serif"].join(","),
-        fontSize:40,fontWeight:700,color:"white"
+          color:"white", 
         },
         h2:{
-            fontFamily:["Oswald","Roboto","sans-serif"].join(","),
-        fontWeight:600,color:"white",
+         color:"white",
         },
         h3:{
-            fontFamily:["Oswald","Roboto","sans-serif"].join(","),
-        fontSize:24,fontWeight:500,color:"white",
+           color:"white", 
         },
         h4:{
-            fontFamily:["Oswald","Roboto","sans-serif"].join(","),
-        fontSize:20,fontWeight:400,color:"white",
+          color:"white",
         },
         h5:{
-            fontFamily:["Oswald","Roboto","sans-serif"].join(","),
-        fontSize:16,color:"white",fontWeight:500,
+          color:"white" 
          },
         h6:{
-            fontFamily:["Oswald","Roboto","sans-serif"].join(","),
-        fontSize:12,color:"white", 
+          color:"white", 
         },
         body:{
-            fontFamily:["Oswald","Roboto","sans-serif"].join(","),
-        fontSize:20,color:"white",fontWeight:300,
+ fontSize:"14px",
+          color:"white" ,
+          '@media (min-width:1600px)': {
+            fontSize: '1.2rem',
+          },
+         
         },
+        body2:{
+ fontSize:"12px",
+            color:"white" ,
+            '@media (min-width:1600px)': {
+              fontSize: '0.8rem',
+            },
+            
+          },
     },
-    palette:{
-        primary:{
-            main:"#00D5FA",
-        },
-        secondary:{
-            main:"#006B7D",
-        },
-        text:{
-            primary:"#666666",
-            secondary:"#FFFFFF"
-        },
-        background:{
-            primary:"",
-            secondary:"linear-gradient(95.88deg, #70C0B2 0%, #0198B6 29.4%, #007289 81.74%)"
-        },
-    }
+    
 
 })
 export default theme

@@ -14,8 +14,9 @@ import MenuIcon from '@mui/icons-material/Menu';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
-import { NavLink } from 'react-router-dom';
-   
+import { Link, NavLink } from 'react-router-dom';
+import logo from "../../assets/logo.png";
+
   const drawerWidth = 240;
 const navItems = ['Inicio', 'Perfil', 'Portfolio', 'Tecnologías', 'Contacto'];
 
@@ -42,10 +43,8 @@ function DrawerAppBar(props) {
   
 
   const drawer = (
-    <Box  sx={{ textAlign: 'center',backgroundImage:'linear-gradient(#4A235A, #4A235A ,#4A235A )'}}>
-      <Typography variant="h6" sx={{ my: 2 }}>
-        FMS
-      </Typography>
+    <Box  sx={{ textAlign: 'center',backgroundColor:'linear-gradient(#263238, #263238 ,#263238 )'}}>
+                     <img src={logo} style={{width:"70px"}} alt="logo" />
       <Divider />
       <List >
         {navItems.map((item) => (
@@ -59,14 +58,16 @@ function DrawerAppBar(props) {
     </Box>
   );
  
-
+  const handleClick = () => {
+    window.location.reload(); // Recargar la página al hacer clic
+  };
 
   const container = window !== undefined ? () => window().document.body : undefined;
  
   return (
-    <Box sx={{ display: 'flex', }}>
+    <Box sx={{ display: 'flex'  }}>
       <CssBaseline />
-      <AppBar sx={{backgroundImage:'linear-gradient(#4A235A, #4A235A ,#4A235A )', boxShadow: 'none'}} component="nav">
+      <AppBar sx={{backgroundImage:'linear-gradient(#263238, #263238 ,#263238 )', boxShadow: 'none'}} component="nav">
         <Toolbar>
           <IconButton
             color="inherit"
@@ -82,7 +83,9 @@ function DrawerAppBar(props) {
             component="div"
             sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}
           >
-            Franco Sassi
+            <Link onClick={handleClick} >  
+                     <img src={logo} style={{width:"70px"}} alt="logo" />
+                     </Link>
           </Typography>
         
           <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
@@ -96,7 +99,7 @@ function DrawerAppBar(props) {
       // Hace scroll a la sección correspondiente
       sx={{ my: 2, color: 'white' }}
     >
-      <Typography  >
+      <Typography variant="h6"  >
         {page} </Typography>
       </Button>
        
