@@ -1,19 +1,4 @@
-import React, { useState, useEffect } from "react";
-import {
-  Box,
-  Typography,
-  Grid,
-  useMediaQuery,
-  Card,
-  CardMedia,
-  Button,
-  CardContent,
-  CardActions,
-  Link,
-} from "@mui/material";
-import Carousel from "react-material-ui-carousel";
-import KeyboardArrowLeftIcon from "@mui/icons-material/KeyboardArrowLeft";
-import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
+import { Box, Button, Typography, useMediaQuery } from "@mui/material";
 
 import rifas from "../assets/rifas.png";
 import mdGlobal from "../assets/mdGlobal.png";
@@ -23,9 +8,11 @@ import comidas from "../assets/comidasjs.png";
 import rosario from "../assets/rosario.png";
 import backend from "../assets/backend.png";
 import todoFloral from "../assets/todoFloral.png";
-const Portfolio = () => {
-  const isNonMobileScreens = useMediaQuery("(min-width: 1000px)");
+import repoBlue from "../assets/repoBlue.png";
+import web from "../assets/web.png";
 
+const Portfolio = () => {
+  const isMobile = useMediaQuery("(max-width:600px)");
   const projectImages = [
     {
       img: rifas,
@@ -55,162 +42,102 @@ const Portfolio = () => {
       title: "Todo Floral",
       url: "https://ecommerce-floral.vercel.app/",
       github: "https://github.com/Franco97sassi/TF",
-      description: "Ecommerce de un tienda de venta de flores y organización de eventos.",
+      description:
+        "Ecommerce de un tienda de venta de flores y organización de eventos.",
     },
 
     {
       img: tiendaTecnologia,
-      title: "Venta de Aparatos Teconológicos",
-      url: "https://entrega-final-sassi-react-js.vercel.app/",
-      github: "https://github.com/Franco97sassi/EntregaFinal-Sassi-ReactJs",
-      description: "Mi primer proyecto hecho con React de una tienda de venta de productos electrónicos."
+      title: "Tienda E-Commerce ",
+      url: "https://react-firebase-project-zeta.vercel.app/",
+      github: "https://github.com/Franco97sassi/reactFirebaseProject",
+      description:
+        "Mi primer proyecto hecho con React de una tienda de venta de productos electrónicos.",
     },
     {
       img: backend,
       title: "E-Commerce Backend",
       // url: "https://entrega-final-sassi-react-js.vercel.app/",
       github: "https://github.com/Franco97sassi/Backend-Desafios",
-      description:"Proyecto E-Commerce Full Stack, donde utilizo como base de datos a MongoDB."
+      description:
+        "Proyecto E-Commerce Full Stack, donde utilizo como base de datos a MongoDB.",
     },
 
-    {
-      img: rosario,
-      title: "Ciudad de Rosario",
-      url: "https://proyecto1francosassi.vercel.app/",
-      github: "https://github.com/Franco97sassi/PF-FrancoSassi",
-      description:
-        "Mi primer proyecto realizado en Visual Studio donde aplico patrones de diseño basico como Html, Css y varias librerías.",
-    },
+    // {
+    //   img: rosario,
+    //   title: "Ciudad de Rosario",
+    //   url: "https://proyecto1francosassi.vercel.app/",
+    //   github: "https://github.com/Franco97sassi/PF-FrancoSassi",
+    //   description:
+    //     "Mi primer proyecto realizado en Visual Studio donde aplico patrones de diseño basico como Html, Css y varias librerías.",
+    // },
     {
       img: comidas,
       title: "Tienda de comidas",
       url: "https://franco97sassi.github.io/ProyectoFinalJS-Sassi/",
       github: "https://github.com/Franco97sassi/ProyectoFinalJS-Sassi",
-      description: "Mi primer proyecto con JavaScript que consiste en un negocio de venta de comidas.",
+      description:
+        "Mi primer proyecto con JavaScript que consiste en un negocio de venta de comidas.",
     },
   ];
-  const chunkSize = isNonMobileScreens ? 3 : 1;
-  const [currentChunk, setCurrentChunk] = useState(0);
-  const [inView, setInView] = useState(false);
-
-  const isMobile = useMediaQuery("(max-width:600px)");
-  const chunkedImages = projectImages.reduce((resultArray, item, index) => {
-    const chunkIndex = Math.floor(index / chunkSize);
-
-    if (!resultArray[chunkIndex]) {
-      resultArray[chunkIndex] = [];
-    }
-
-    resultArray[chunkIndex].push(item);
-
-    return resultArray;
-  }, []);
 
   return (
-    <Box sx={{display:"flex",flexDirection:"column",justifyContent:"center",alignContent:"center"}}>
-      <Box
-        sx={{
-          paddingTop: "20%",
-          paddingRight: isMobile ? "10%" : "0%",
-          textAlign: "center",
-          paddingLeft: isMobile ? "10%" : "0%",
-        }}
-      >
-        <Typography
-          textAlign={isMobile ? "center" : "center"}
-          variant="h2"
-          fontWeight="bold"
-          sx={{ paddingBottom: "2%" }}
+    <Box
+    sx={{
+      display: "flex",
+      flexDirection: "row",
+      justifyContent: "center",alignItems: "center",
+    }}
+  >
+    <Box
+      sx={{
+        paddingTop: "20px",
+         textAlign: "center",
+      }}
+    >
+      <Typography variant="h2" fontWeight="bold" sx={{ paddingBottom: "20px" }}>
+        Mis Proyectos
+      </Typography>
+      {projectImages.map((project, index) => (
+        <Box
+          key={index}
+          sx={{
+            display: "flex",
+            flexDirection: isMobile ? "column" : "row",
+            alignItems: "center",
+            justifyContent:"center", 
+            backgroundImage: "linear-gradient(#212121,#1a237e,#212121 )",
+            padding: "20px",
+            margin: "10px",
+            borderRadius: "10px",
+            transition: "transform 0.3s, box-shadow 0.3s",
+              '&:hover': {
+                transform: "scale(1.05)",
+                boxShadow: "0 10px 20px rgba(0,0,0,0.2)",
+              }  
+           }}
         >
-          Mis Proyectos
-        </Typography>
-      </Box>
-      <Box
-        sx={{ height: "100vh", justifyContent: "center", alignItems: "center" }}
-      >
-        <Carousel
-          autoPlay={true}
-          interval={3000}
-          animation="slide"
-          indicators={false}
-          navButtonsAlwaysVisible={false} // Ocultar flechas en dispositivos móviles
-          
-          NextIcon={<KeyboardArrowRightIcon />}
-          PrevIcon={<KeyboardArrowLeftIcon />}
-          index={currentChunk}
-          onChange={(index, active) => setCurrentChunk(index)}
-        >
-          {chunkedImages.map((chunk, index) => (
-            <Grid
-              container
-              key={index}
-              justifyContent="center"
-              alignItems="center"
-              spacing={isNonMobileScreens ? 10 : 2} // Ajusta el valor de spacing según sea necesario
-              sx={{ padding: "0px" }}
-            >
-              {chunk.map((item, subIndex) => (
-                <Grid item key={subIndex}>
-                  
-                  <Card
-                    sx={{
-                      maxWidth: isNonMobileScreens ? 345 : 250,
-                      borderRadius: "5%",
-                    }}
-                  >
-                    <CardMedia
-                      component="img"
-                      alt="green iguana"
-                      height= {isNonMobileScreens ?"175":"150"}
-                       
-                      width="290"
-                      image={item.img}
-                      style={{  
-                        backgroundColor:"#263238" ,objectFit:isNonMobileScreens ?  'cover':"cover", objectPosition: 'center' }}
+           <Box sx={{width:"25%"}}>  
+          <img
+            src={project.img}
+            alt={project.title}
+            style={{ width: isMobile ? "100%" : "500px", height: "auto", marginRight: isMobile ? "0" : "20px" ,borderRadius:"10px"}}
+          /> </Box>
+          <Box sx={{width:"75%",display:"flex",flexDirection:"column",flexWrap:"wrap",justifyContent:"center",alignItems:"center"}}>
+            <Typography variant="h5" color="white">{project.title}</Typography>
+            <Box sx={{width:"75%"}}>
 
-                    />
-<CardContent sx={{ display:"flex",flexDirection:"column",paddingBottom:"75px",
-            alignItems: "center",textAlign:"center",height:"75px",backgroundImage:
-                          "linear-gradient(#263238  ,#212F3C  , #263238    )",}}>
-        <Typography variant="h5" sx={{paddingBottom:"5px",fontWeight:"bold"}}  >
-           {item.title}
-        </Typography>
-        <Typography variant="body2" sx={{display:isNonMobileScreens? "flex":"none"}}  >
-           {item.description}
-        </Typography>
-      </CardContent>
-                    <CardActions
-                      sx={{
-                        display: "flex",
-                        justifyContent: "center",
-                        background:
-                          "linear-gradient(#263238  ,#212F3C  , #263238    )",
-                      }}
-                    >
-                      <Link
-                        href={item.url}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        <Button size="small" sx={{ color: "white",fontWeight:"bold" }}>
-                          Proyecto
-                        </Button>
-                      </Link>
-
-                      <Link href={item.github}>
-                        <Button   size="small" sx={{ color: "white",fontWeight:"bold" }}>
-                          Código
-                        </Button>
-                      </Link>
-                    </CardActions>
-                  </Card>
-                </Grid>
-              ))}
-            </Grid>
-          ))}
-        </Carousel>
-      </Box>
+             
+            <Typography color="white">{project.description}</Typography></Box>
+            <Box sx={{ display: "flex", gap: "10px", marginTop: "10px" }}>
+                <Button onClick={() => window.open(project.github, "_blank")}><img src={repoBlue} width="50px" alt="GitHub Repo" /></Button>
+                <Button onClick={() => window.open(project.url, "_blank")}><img src={web} width="50px" alt="Website" /></Button>
+              </Box>
+          </Box>
+        </Box>
+      ))}
     </Box>
+  </Box>
   );
 };
 

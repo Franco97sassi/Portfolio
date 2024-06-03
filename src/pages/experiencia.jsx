@@ -9,6 +9,8 @@ import sass from "../assets/sass.png";
 import mongo from "../assets/mongoDB.png";
 import firebase from "../assets/firebase.png";
 import tailwind from "../assets/tailwindIcon.png";
+import django from "../assets/django.png";
+import MYSQL from "../assets/MYSQL.png";
 
 import { useState } from "react";
 import bootstrap from "../assets/bootstrap.png";
@@ -26,8 +28,10 @@ const Experiencia = () => {
     { img: sass, title: "SASS" },
     { img: firebase, title: "Firebase" },
     { img: tailwind, title: "Tailwind" },
+    { img: django, title: "Django" },
 
     { img: mongo, title: "MongoDB" },
+    { img: MYSQL, title: "MYSQL" },
   ];
   const [hoveredIndex, setHoveredIndex] = useState(null);
 
@@ -35,7 +39,7 @@ const Experiencia = () => {
     <div>
       <Box
         sx={{
-          height: isMobile?"150vh":"100vh",
+          height: isMobile ? "150vh" : "100vh",
           alignContent: "center",
           marginBottom: isMobile ? "50%" : "0%",
         }}
@@ -48,21 +52,26 @@ const Experiencia = () => {
           }}
         >
           <Typography
-            variant="h2" fontWeight="bold"
+            variant="h2"
+            fontWeight="bold"
             sx={{ textAlign: isMobile ? "center" : "center" }}
           >
             Tecnologías
           </Typography>
 
-          <Typography
-            variant="h5"
-            sx={{ textAlign: isMobile ? "center" : "center",paddingLeft:"5%",paddingRight:"5%"}}
-          >
-            Estas son las tecnologías con las cuales he estado trabajando.
-          </Typography>
+           
         </Box>
-        <Box sx={{ width: "100%" }}>
-          <Grid
+        <Box
+          sx={{
+            width: "100%",
+            display: "flex",
+             justifyContent: "center",
+            alignItems: "center",
+            flexWrap:"wrap",
+            gap:"100px"
+          }}
+        >
+          {/* <Grid
             sx={{
               display: "flex",
               flexDirection: isMobile ? "column" : "row",
@@ -72,37 +81,41 @@ const Experiencia = () => {
             container
             rowSpacing={3}
             padding={5}
-            columnSpacing={{ xs: 1, sm: 2, md: 3 }}
-          >
-            {itemData.map((item, index) => (
-              <Grid
-                key={index}
-                item
-                xs={3}
-                onMouseEnter={() => setHoveredIndex(index)}
-                onMouseLeave={() => setHoveredIndex(null)}
+            columnSpacing={{ xs: 1, sm: 2, md: 1 }}
+          > */}
+          {itemData.map((item, index) => (
+            // <Grid
+            //   key={index}
+            //   item
+            //   xs={4}
+            //   onMouseEnter={() => setHoveredIndex(index)}
+            //   onMouseLeave={() => setHoveredIndex(null)}
+            // >
+            <>
+              <Box
+                sx={{
+                  p: 1,
+                  // display: "flex",
+                  // flexDirection: "row",
+                  // justifyContent: "center",
+                  // alignItems: "center",
+                  transition: "transform 0.3s",
+                  transform: hoveredIndex === index ? "scale(1.1)" : "scale(1)",
+                }}
               >
-                <Box
-                  sx={{
-                    p: 1,
-                    display: "flex",
-                    flexDirection: "column",
-                    justifyContent: "center",
-                    alignItems: "center",
-                    transition: "transform 0.3s",
-                    transform:
-                      hoveredIndex === index ? "scale(1.1)" : "scale(1)",
+                <img
+                  src={item.img}
+                  style={{
+                    width: isMobile ? "50px" : "100px",
+                    maxWidth: "150px",
                   }}
-                >
-                  <img
-                    src={item.img}
-                    style={{ width: isMobile?"50px":"100px", maxWidth: "150px" }}
-                    alt={item.title}
-                  />
-                </Box>
-              </Grid>
-            ))}
-          </Grid>
+                  alt={item.title}
+                />
+              </Box> 
+            </>
+            // </Grid>
+          ))}
+          {/* </Grid> */}
         </Box>
       </Box>{" "}
     </div>
