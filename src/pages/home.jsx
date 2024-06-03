@@ -39,21 +39,21 @@ const Home = () => {
   };
 
   return (
-    <Box sx={{ display: "flex", flexDirection:isMobile ?"column": "row" }}>
-      <Box sx={{ paddingLeft: isMobile ? "10%" : "10%", width: isMobile ? "100%" : "75%", height: "100vh", display: "flex", flexDirection: "column", justifyContent: "center", marginBottom: isMobile ? "72%" : "0%" }}>
+    <Box sx={{ display: "flex", flexDirection:isMobile ?"column": "row",justifyContent:"center",alignItems:"center" }}>
+      <Box sx={{ paddingLeft: isMobile ? "10%" : "0%", width: isMobile ? "100%" : "75%", height: "100vh", display: "flex", flexDirection: "column", justifyContent: "center", marginBottom: isMobile ? "72%" : "0%" }}>
         <motion.div initial="hidden" animate="visible" variants={{visible: {transition: {staggerChildren: 0.2}}}}>
           <motion.div variants={itemVariants}>
-            <Typography variant="h2" paddingBottom={1} fontWeight="bold">
+            <Typography variant="h2" paddingBottom={1} fontWeight="bold" textAlign="center">
               Hola, soy Franco Sassi.
             </Typography>
           </motion.div>
           <motion.div variants={itemVariants}>
-            <Typography variant="h3" paddingBottom={2}>
+            <Typography variant="h3" paddingBottom={2} textAlign="center">
               Desarrollador React Full Stack.
             </Typography>
           </motion.div>
-          <motion.div variants={itemVariants}>
-            <Box sx={{display:"flex",gap:"10px"}}> 
+          <motion.div variants={itemVariants} >
+            <Box sx={{display:"flex",gap:"10px",flexDirection:isMobile?"column":"row",justifyContent:"center",alignItems:"center"}} > 
            
             {/* <Button
               sx={buttonStyles}
@@ -77,14 +77,15 @@ const Home = () => {
                 href="https://www.linkedin.com/in/franco-sassi-777b0317a/"            >
               <img src={linkedinIcon} alt=""  width="50px" />
             </Button>
+            <Box s >  
             <Button
       component="a"
       href="mailto:franco.sassi97@gmail.com"
                 variant="contained"  
             >
-              <img src={emailIcon}  width="50px" alt="" />
+              <img src={emailIcon}  width="50px" alt="" /> 
               <Typography sx={{padding:"10px"}} >franco.sassi97@gmail.com</Typography>
-            </Button>
+            </Button></Box>
              </Box>
           </motion.div>
         </motion.div>

@@ -126,7 +126,7 @@ const Contacto = () => {
 
           <Typography
             variant="h5"
-            sx={{ textAlign: isMobile ? "center" : "center"   }}
+            sx={{ textAlign: isMobile ? "center" : "center",paddingLeft:10,paddingRight:10   }}
           >
             Para comunicarte conmigo, completa este formulario.
           </Typography>

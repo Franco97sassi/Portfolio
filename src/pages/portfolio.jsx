@@ -83,61 +83,88 @@ const Portfolio = () => {
 
   return (
     <Box
-    sx={{
-      display: "flex",
-      flexDirection: "row",
-      justifyContent: "center",alignItems: "center",
-    }}
-  >
-    <Box
       sx={{
-        paddingTop: "20px",
-         textAlign: "center",
+        display: "flex",
+        flexDirection: "row",
+        justifyContent: "center",
+        alignItems: "center",
+        margin:"100px"
       }}
     >
-      <Typography variant="h2" fontWeight="bold" sx={{ paddingBottom: "20px" }}>
-        Mis Proyectos
-      </Typography>
-      {projectImages.map((project, index) => (
-        <Box
-          key={index}
-          sx={{
-            display: "flex",
-            flexDirection: isMobile ? "column" : "row",
-            alignItems: "center",
-            justifyContent:"center", 
-            backgroundImage: "linear-gradient(#212121,#1a237e,#212121 )",
-            padding: "20px",
-            margin: "10px",
-            borderRadius: "10px",
-            transition: "transform 0.3s, box-shadow 0.3s",
-              '&:hover': {
+      <Box
+        sx={{
+          paddingTop: "20px",
+          textAlign: "center",
+        }}
+      >
+        <Typography
+          variant="h2"
+          fontWeight="bold"
+          sx={{ paddingBottom: "20px" }}
+        >
+          Mis Proyectos
+        </Typography>
+        {projectImages.map((project, index) => (
+          <Box
+            key={index}
+            sx={{
+              display: "flex",
+              flexDirection: isMobile ? "column" : "row",
+              alignItems: isMobile ?"flex-start":"center",
+              justifyContent: isMobile ?"flex-start":"center",
+              backgroundImage: "linear-gradient(#212121,#1a237e,#212121 )",
+              padding: "20px",
+              margin: "10px",
+              borderRadius: "10px",
+              transition: "transform 0.3s, box-shadow 0.3s",
+              "&:hover": {
                 transform: "scale(1.05)",
                 boxShadow: "0 10px 20px rgba(0,0,0,0.2)",
-              }  
-           }}
-        >
-           <Box sx={{width:"25%"}}>  
-          <img
-            src={project.img}
-            alt={project.title}
-            style={{ width: isMobile ? "100%" : "500px", height: "auto", marginRight: isMobile ? "0" : "20px" ,borderRadius:"10px"}}
-          /> </Box>
-          <Box sx={{width:"75%",display:"flex",flexDirection:"column",flexWrap:"wrap",justifyContent:"center",alignItems:"center"}}>
-            <Typography variant="h5" color="white">{project.title}</Typography>
-            <Box sx={{width:"75%"}}>
-
-             
-            <Typography color="white">{project.description}</Typography></Box>
-            <Box sx={{ display: "flex", gap: "10px", marginTop: "10px" }}>
-                <Button onClick={() => window.open(project.github, "_blank")}><img src={repoBlue} width="50px" alt="GitHub Repo" /></Button>
-                <Button onClick={() => window.open(project.url, "_blank")}><img src={web} width="50px" alt="Website" /></Button>
+              },
+            }}
+          >
+            <Box sx={{ width: "15%" }}>
+              <img
+                src={project.img}
+                alt={project.title}
+                style={{
+                  width: isMobile ? "200px" : "400px",
+                  height: "auto",
+                  marginRight: isMobile ? "0" : "20px",
+                  borderRadius: "10px",
+                }}
+              />{" "}
+            </Box>
+            <Box
+              sx={{
+                width: isMobile?"100%":"75%",
+                display: "flex",
+                flexDirection: "column",
+                flexWrap: "wrap",
+                justifyContent: "center",
+                alignItems: "center",
+              }}
+            >
+              <Typography variant="h5" color="white"  >
+                {project.title}
+              </Typography>
+              {!isMobile &&(<Box sx={{ width: "55%",padding:10 }}>
+                <Typography color="white"> {project.description}</Typography>
+                
+              </Box>)}
+              <Box sx={{ display: "flex", gap: "10px", marginTop: "10px" }}>
+                <Button onClick={() => window.open(project.github, "_blank")}>
+                  <img src={repoBlue}  width={isMobile ? "20px" : "50px"} alt="GitHub Repo" />
+                </Button>
+                <Button onClick={() => window.open(project.url, "_blank")}>
+                  <img src={web}  width={isMobile ? "20px" : "50px"} alt="Website" />
+                </Button>
               </Box>
+            </Box>
           </Box>
-        </Box>
-      ))}
+        ))}
+      </Box>
     </Box>
-  </Box>
   );
 };
 
