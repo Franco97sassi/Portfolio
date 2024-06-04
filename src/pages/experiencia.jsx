@@ -41,7 +41,7 @@ const Experiencia = () => {
         sx={{
           height: isMobile ? "150vh" : "100vh",
           alignContent: "center",
-          marginBottom: isMobile ? "50%" : "0%",
+          marginBottom: isMobile ? "50%" : "20px",
         }}
       >
         <Box
@@ -54,7 +54,7 @@ const Experiencia = () => {
           <Typography
             variant="h2"
             fontWeight="bold"
-            sx={{ textAlign: isMobile ? "center" : "center" }}
+            sx={{ textAlign: isMobile ? "center" : "center" ,paddingBottom:"20px"}}
           >
             Tecnologías
           </Typography>
@@ -68,7 +68,7 @@ const Experiencia = () => {
              justifyContent: "center",
             alignItems: "center",
             flexWrap:"wrap",
-            gap:"100px"
+            gap:"100px", 
           }}
         >
           {/* <Grid
