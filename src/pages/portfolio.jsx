@@ -10,6 +10,7 @@ import todoFloral from "../assets/todoFloral.png";
 import repoBlue from "../assets/repoBlue.png";
 import web from "../assets/web.png";
 import starWars from "../assets/starWars.png";
+import windowShop from "../assets/windowShop.png";
 
 const Portfolio = () => {
   const isMobile = useMediaQuery("(max-width:600px)");
@@ -47,7 +48,7 @@ const Portfolio = () => {
         url: "https://www.techxmx.com/",
         github: "https://github.com/Franco97sassi/Landing",
         description: "Landing de la empresa TechX.",
-        technologies:["React","EmailJs,Material Ui"]
+        technologies:["React","EmailJs","Material Ui"]
   
       },
     {
@@ -69,8 +70,8 @@ const Portfolio = () => {
       // url: "https://entrega-final-sassi-react-js.vercel.app/",
       github: "https://github.com/Franco97sassi/Backend-Desafios",
       description:
-        "Proyecto E-Commerce Full Stack, donde utilizo como base de datos a MongoDB.",
-        technologies: ["Mongo DB","Bootstrap"]
+        "Proyecto E-Commerce Full Stack, donde utilizo como base de datos a MongoDB implementando la arquitectura correspondiente para las carpetas. CRUD. Como plataforma de pagos, se utliza Stripe.",
+        technologies: ["Mongo DB","Bootstrap","Docker","Jwt","Nest"]
     },
 
     {
@@ -83,8 +84,17 @@ const Portfolio = () => {
         technologies: ["Firebase","React","Material Ui"]
     },
     {
+      img: windowShop,
+      title: "Tienda de Ventanas y Puertas",
+      url: "https://franco97sassi.github.io/vanillaJsProject/",
+      github: "https://github.com/Franco97sassi/vanillaJsProject",
+      description:
+        "Projecto E-Commerce con Vanilla  Js",
+        technologies: ["Js","Bootstrap"]
+    },
+    {
       img: comidas,
-      title: "Tienda de comidas",
+      title: "Tienda de Comidas",
       url: "https://franco97sassi.github.io/ProyectoFinalJS-Sassi/",
       github: "https://github.com/Franco97sassi/ProyectoFinalJS-Sassi",
       description:
