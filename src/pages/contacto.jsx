@@ -66,7 +66,7 @@ const Contacto = () => {
     event.preventDefault();
     setSubmitAttempted(true);
 
-    if (areAllFieldsCompleted) {
+    if (areAllFieldsCompleted&& isEmailValid()) {
       // Envío del formulario si todos los campos están completos
       emailjs
         .sendForm(
@@ -87,7 +87,7 @@ const Contacto = () => {
           console.log(error.text);
           // Mostrar mensaje de error
           alert(
-            "Ocurrió un error al enviar el mensaje. Por favor, inténtalo de nuevo más tarde."
+            "An error occurred while sending the message. Please try again later."
           );
         });
     } else {
@@ -98,7 +98,10 @@ const Contacto = () => {
       }, 3000);
     }
   };
-
+  const isEmailValid = () => {
+    const emailRegex = /\S+@\S+\.\S+/;
+    return emailRegex.test(formValues.email);
+  };
   return (
     <div>
       <Box
@@ -115,20 +118,21 @@ const Contacto = () => {
             display: "flex",
             flexDirection: "column",
             textAlign: isMobile ? "center" : "center",
+            marginBottom:"-50px"
            }}
         >
           <Typography
             variant="h2" fontWeight="bold"
             sx={{ textAlign: isMobile ? "center" : "center" }}
           >
-            Contacto
+            Contact
           </Typography>
 
           <Typography
             variant="h5"
             sx={{ textAlign: isMobile ? "center" : "center",paddingLeft:10,paddingRight:10   }}
           >
-            Para comunicarte conmigo, completa este formulario.
+            To get in touch with me, please complete this form.
           </Typography>
         </Box>
         <Box
@@ -162,7 +166,7 @@ const Contacto = () => {
                 value={formValues.name}
                 onChange={handleChange}
                 minRows={1}
-                placeholder="Nombre"
+                placeholder="Name"
                 variant="outlined"
                 multiline
                 InputProps={{
@@ -224,7 +228,7 @@ const Contacto = () => {
   onChange={handleChange}
   fullWidth
   minRows={7}
-  placeholder="Mensaje"
+  placeholder="Message"
   variant="outlined"
   sx={{
     width: isMobile ? "200%" : "500%",
@@ -266,19 +270,19 @@ const Contacto = () => {
             variant="contained"
             onClick={handleSubmit}
           >
-            Enviar
+            Send
           </Button>
           {/* Muestra el alerta de éxito si showSuccessAlert es true */}
           {showSuccessAlert && (
             <CustomAlert
-              message="Mensaje enviado correctamente"
+              message="Message sent successfully"
               severity="success"
             />
           )}
           {/* Muestra el alerta de error si showErrorAlert es true */}
           {showErrorAlert && (
             <CustomAlert
-              message="Ocurrió un error al enviar el mensaje. Por favor, inténtalo de nuevo más tarde."
+              message="An error occurred while sending the message. Please try again later."
               severity="error"
             />
           )}

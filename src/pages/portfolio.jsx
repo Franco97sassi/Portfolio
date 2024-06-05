@@ -17,11 +17,11 @@ const Portfolio = () => {
   const projectImages = [
     {
       img: starWars,
-      title: "Api de Star Wars",
+      title: "Star Wars Api",
       url: "https://challenge-frontend-developer-gold.vercel.app/",
       github: "https://github.com/Franco97sassi/challengeFrontendDeveloper",
       description:
-        "Trabajando con Api de StarWars mostrando sus personajes y respectivas peliculas de la saga.",
+        "Working with the StarWars API to display its characters and respective movies from the saga.",
         technologies:["NextJs","React","Tailwind Css" ]
       },
       {
@@ -30,25 +30,28 @@ const Portfolio = () => {
         url: "https://md-global2024.vercel.app/",
         github: "https://github.com/Franco97sassi/Md-global2024",
         description:
-          " El proyecto de importación y exportación de MDGlobal es una plataforma dedicada a simplificar y agilizar los procesos de comercio internacional.",
-          technologies: ["React"]
-        },
+        "The MDGlobal import and export project is a platform dedicated to simplifying and streamlining international trade processes." ,
+                 technologies: ["React"]
+  
+      },
+        
       {
         img: todoFloral,
         title: "Todo Floral",
         url: "https://ecommerce-floral.vercel.app/",
         github: "https://github.com/Franco97sassi/TF",
         description:
-          "Ecommerce de un tienda de venta de flores y organización de eventos.",
-          technologies: ["React","Material Ui","PostgreSQL"]
+        "E-commerce for a flower shop and event organization.",
+ 
+        technologies: ["React","Material Ui","PostgreSQL"]
       },
       {
         img: landing,
-        title: "Landing",
+        title: "Landing TechX",
         url: "https://www.techxmx.com/",
         github: "https://github.com/Franco97sassi/Landing",
-        description: "Landing de la empresa TechX.",
-        technologies:["React","EmailJs","Material Ui"]
+       description: "Landing page for the company TechX." ,
+              technologies:["React","EmailJs","Material Ui"]
   
       },
     {
@@ -57,8 +60,8 @@ const Portfolio = () => {
       url: "https://www.rifaselvenado.com/",
       github: "https://github.com/Franco97sassi/Rifas.git",
       description:
-        "Rifas El Venado es un proyecto full-stack dedicado a la venta de indumentaria y la organización de rifas en línea.",
-        technologies:["React","Js","Redux","Material Ui","PostgreSQL"]
+      "Rifas El Venado is a full-stack project dedicated to the sale of clothing and the organization of online raffles."  ,
+            technologies:["React","Js","Redux","Material Ui","PostgreSQL"]
       },
      
     
@@ -70,36 +73,50 @@ const Portfolio = () => {
       // url: "https://entrega-final-sassi-react-js.vercel.app/",
       github: "https://github.com/Franco97sassi/Backend-Desafios",
       description:
-        "Proyecto E-Commerce Full Stack, donde utilizo como base de datos a MongoDB implementando la arquitectura correspondiente para las carpetas. CRUD. Como plataforma de pagos, se utliza Stripe.",
-        technologies: ["Mongo DB","Bootstrap","Docker","Jwt","Nest"]
+      "Full Stack E-Commerce Project, where I use MongoDB as the database implementing the corresponding folder architecture. CRUD operations are implemented. Stripe is used as the payment platform.",        technologies: ["Mongo DB","Bootstrap","Docker","Jwt","Nest"]
     },
 
     {
       img: tiendaTecnologia,
-      title: "Tienda E-Commerce ",
+      title: "E-commerce store ",
       url: "https://react-firebase-project-zeta.vercel.app/",
       github: "https://github.com/Franco97sassi/reactFirebaseProject",
       description:
-        "Mi primer proyecto hecho con React de una tienda de venta de productos de una Fake Store Api.",
-        technologies: ["Firebase","React","Material Ui"]
+      "My first React project, a product-selling store using a Fake Store API.",
+
+
+
+
+
+      technologies: ["Firebase","React","Material Ui"]
     },
     {
       img: windowShop,
-      title: "Tienda de Ventanas y Puertas",
+      title: "Windows and Doors Store",
       url: "https://franco97sassi.github.io/vanillaJsProject/",
       github: "https://github.com/Franco97sassi/vanillaJsProject",
       description:
-        "Projecto E-Commerce con Vanilla  Js",
-        technologies: ["Js","Bootstrap"]
+      "E-Commerce project with Vanilla JS.",
+
+
+
+
+
+      technologies: ["Js","Bootstrap"]
     },
     {
       img: comidas,
-      title: "Tienda de Comidas",
+      title: "Food Store",
       url: "https://franco97sassi.github.io/ProyectoFinalJS-Sassi/",
       github: "https://github.com/Franco97sassi/ProyectoFinalJS-Sassi",
       description:
-        "Mi primer proyecto con JavaScript que consiste en un negocio de venta de comidas.",
-        technologies: ["Js","Bootstrap"]
+      "My first JavaScript project, which consists of a food-selling business.",
+
+
+
+
+
+      technologies: ["Js","Bootstrap"]
     },
      // {
     //   img: rosario,
@@ -133,7 +150,7 @@ const Portfolio = () => {
           fontWeight="bold"
           sx={{ paddingBottom: "20px" }}
         >
-          Mis Proyectos
+          My Projects
         </Typography>
         {projectImages.map((project, index) => (
           <Box
@@ -178,7 +195,7 @@ const Portfolio = () => {
 
               }}
             >
-              <Typography variant="h5" color="white"  >
+              <Typography variant="h4" color="white" fontWeight="bold" >
                 {project.title}
               </Typography>
               {!isMobile &&(<Box sx={{ width: "55%",padding:10 }}>
@@ -187,7 +204,7 @@ const Portfolio = () => {
               </Box>)}
               <Box sx={{ display: "flex", gap: "10px", marginTop: "10px" }}>
                 {!isMobile && project.technologies && project.technologies.map((tech, techIndex) => (
-                  <Button key={techIndex} variant="contained">
+                  <Button key={techIndex} sx={{backgroundColor:"#575089"}} variant="contained">
                     {tech}
                   </Button>
                 ))}

@@ -56,7 +56,7 @@ const Experiencia = () => {
             fontWeight="bold"
             sx={{ textAlign: isMobile ? "center" : "center" ,paddingBottom:"20px"}}
           >
-            Tecnologías
+            Technologies
           </Typography>
 
            

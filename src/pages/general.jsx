@@ -14,24 +14,24 @@ const General = () => {
       <Box
         sx={{ backgroundImage: "linear-gradient(#212121,#1a237e,#212121 )" }}
       >
-        <section id="inicio">
+          <section id="home">
           {" "}
           <Home />
         </section>
-        <section id="perfil">
+        <section id="profile">
           {" "}
           <Sobre />
         </section>
         <section id="portfolio">
           <Portfolio />
         </section>
-        <section id="tecnologías">
+        <section id="technologies">
           <Experiencia />
         </section>
-        <section id="contacto">
+        <section id="contact">
           {" "}
           <Contacto />
-        </section>
+        </section>  
         
       </Box>
     </div>
