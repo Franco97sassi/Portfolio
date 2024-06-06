@@ -176,16 +176,16 @@ const Contacto = () => {
                   width: isMobile ? "200%" : "500%",
                   maxWidth: "400px",
                   "& .MuiInputBase-input": {
-                    color: "black", // Establece el color del texto en negro
+                    color: "white", // Establece el color del texto en negro
                   },
                   '& .MuiInputLabel-root': {
                     display: 'none', // Oculta completamente el label
                   },
                   '& .MuiOutlinedInput-root': {
-                    backgroundColor: 'white', // Establece el fondo del TextField en blanco
+                    backgroundColor: 'transparent', // Establece el fondo del TextField en blanco
                     borderRadius: '10px', // Establece el borde redondeado de 5px
                     '&.Mui-focused .MuiOutlinedInput-notchedOutline': {
-                      borderColor: 'initial', // Mantén el color del borde inalterado cuando está enfocado
+                      borderColor: 'white', // Mantén el color del borde inalterado cuando está enfocado
                     },
                   },
                 }}
@@ -206,16 +206,17 @@ const Contacto = () => {
     width: isMobile ? "200%" : "500%",
     maxWidth: "400px",
     "& .MuiInputBase-input": {
-      color: "black", // Establece el color del texto en negro
+      color: "white", // Establece el color del texto en negro
     },
     '& .MuiInputLabel-root': {
       display: 'none', // Oculta completamente el label
     },
     '& .MuiOutlinedInput-root': {
-      backgroundColor: 'white', // Establece el fondo del TextField en blanco
+      backgroundColor: 'transparent', // Establece el fondo del TextField como transparente
       borderRadius: '10px', // Establece el borde redondeado de 5px
+      
       '&.Mui-focused .MuiOutlinedInput-notchedOutline': {
-        borderColor: 'initial', // Mantén el color del borde inalterado cuando está enfocado
+        borderColor: 'white', // Mantén el color del borde inalterado cuando está enfocado
       },
     },
   }}
@@ -234,16 +235,16 @@ const Contacto = () => {
     width: isMobile ? "200%" : "500%",
     maxWidth: "400px",
     "& .MuiInputBase-input": {
-      color: "black", // Establece el color del texto en negro
+      color: "white", // Establece el color del texto en negro
     },
     '& .MuiInputLabel-root': {
       color: 'black', // Cambiar el color del texto de la etiqueta a negro
     },
     '& .MuiOutlinedInput-root': {
-      backgroundColor: 'white', // Establece el fondo del TextField en blanco
+      backgroundColor: 'transparent', // Establece el fondo del TextField en blanco
       borderRadius: '10px', // Establece el borde redondeado de 5px
       '&.Mui-focused .MuiOutlinedInput-notchedOutline': {
-        borderColor: 'initial', // Mantén el color del borde inalterado cuando está enfocado
+        borderColor: 'white', // Mantén el color del borde inalterado cuando está enfocado
       },
     },
   }}
@@ -270,7 +271,7 @@ const Contacto = () => {
             variant="contained"
             onClick={handleSubmit}
           >
-            Send
+            Submit
           </Button>
           {/* Muestra el alerta de éxito si showSuccessAlert es true */}
           {showSuccessAlert && (

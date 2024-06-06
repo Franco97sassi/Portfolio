@@ -44,14 +44,14 @@ const Experiencia = () => {
           paddingTop:"100px",paddingBottom:"150px",
           height: isMobile ? "150vh" : "max-content",
           alignContent: "center",
-          marginBottom: isMobile ? "50%" : "20px",
+          marginBottom: isMobile ? "0" : "20px",
         }}
       >
         <Box
           sx={{
             display: "flex",
             flexDirection: "column",
-            paddingLeft: isMobile ? "00%" : "0%",
+            paddingLeft: isMobile ? "0%" : "0%",
           }}
         >
           <Typography
@@ -71,7 +71,7 @@ const Experiencia = () => {
              justifyContent: "center",
             alignItems: "center",
             flexWrap:"wrap",
-            gap:"100px", 
+            gap:  isMobile ?"150px":"100px"
           }}
         >
           {/* <Grid

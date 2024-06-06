@@ -245,7 +245,7 @@ const Portfolio = () => {
       url: "https://challenge-frontend-developer-gold.vercel.app/",
       github: "https://github.com/Franco97sassi/challengeFrontendDeveloper",
       description:
-        "Working with the StarWars API to display its characters and respective movies from the saga.",
+        "Working with the StarWars API to display its characters and respective movies from the saga. I demonstrated my skills in Next.js and Tailwind CSS.",
       technologies: ["NextJs", "React", "Tailwind Css"],
     },
     {
@@ -263,7 +263,7 @@ const Portfolio = () => {
       title: "Todo Floral",
       url: "https://ecommerce-floral.vercel.app/",
       github: "https://github.com/Franco97sassi/TF",
-      description: "E-commerce for a flower shop and event organization.",
+      description: "An all-encompassing e-commerce platform catering to a flower shop, event organization services, and snack sales.",
 
       technologies: ["React", "Material Ui", "PostgreSQL"],
     },
@@ -272,7 +272,7 @@ const Portfolio = () => {
       title: "Landing TechX",
       url: "https://www.techxmx.com/",
       github: "https://github.com/Franco97sassi/Landing",
-      description: "Landing page for the company TechX.",
+      description: "Dynamic Landing Page for TechX: Seamlessly blending animation, scroll effects, and diverse relevant information.",
       technologies: ["React", "EmailJs", "Material Ui"],
     },
 
@@ -282,7 +282,7 @@ const Portfolio = () => {
       url: "https://www.rifaselvenado.com/",
       github: "https://github.com/Franco97sassi/Rifas.git",
       description:
-        "Rifas El Venado is a full-stack project dedicated to the sale of clothing and the organization of online raffles.",
+        "Rifas El Venado is a full-stack project dedicated to the sale of clothing and the organization of online raffles,seamlessly integrated with Mercado Pago.",
       technologies: ["React", "Js", "Redux", "Material Ui", "PostgreSQL"],
     },
 
@@ -292,16 +292,15 @@ const Portfolio = () => {
       url: "https://react-firebase-project-zeta.vercel.app/",
       github: "https://github.com/Franco97sassi/reactFirebaseProject",
       description:
-        "My first React project, a product-selling store using a Fake Store API.",
-
+"My first React project, an e-commerce platform powered by Firebase integration and the Fake Store API.",
       technologies: ["Firebase", "React", "Material Ui"],
     },
     {
       img: windowShop,
-      title: "Windows and Doors Store",
+      title: "Windows and Doors ",
       url: "https://franco97sassi.github.io/vanillaJsProject/",
       github: "https://github.com/Franco97sassi/vanillaJsProject",
-      description: "E-Commerce project with Vanilla JS.",
+      description: "E-Commerce project leveraging Vanilla JS for dynamic DOM manipulation and Bootstrap for streamlined product addition to the shopping cart.",
 
       technologies: ["Js", "Bootstrap"],
     },
@@ -311,7 +310,7 @@ const Portfolio = () => {
       url: "https://franco97sassi.github.io/ProyectoFinalJS-Sassi/",
       github: "https://github.com/Franco97sassi/ProyectoFinalJS-Sassi",
       description:
-        "My first JavaScript project, which consists of a food-selling business.",
+        "My inaugural JavaScript endeavor, featuring a food-selling business enhanced with Bootstrap for sleek design and an integrated shopping cart functionality.",
 
       technologies: ["Js", "Bootstrap"],
     },
@@ -376,6 +375,9 @@ const Portfolio = () => {
                   alt="green iguana"
                   height="150"
                   image={project.img}
+                  sx={{
+                    borderBottomLeftRadius: '5%',
+                    borderBottomRightRadius: '5%',                  }}
                  />
                 <CardContent
                   sx={{
@@ -432,14 +434,15 @@ const Portfolio = () => {
                     >
                       <img
                         src={repoBlue}
-                        width={isMobile ? "20px" : "50px"}
+                        width={isMobile ? "35px" : "50px"}
                         alt="GitHub Repo"
+                        
                       />
                     </Button>
                     <Button onClick={() => window.open(project.url, "_blank")}>
                       <img
                         src={web}
-                        width={isMobile ? "20px" : "50px"}
+                        width={isMobile ? "35px" : "50px"}
                         alt="Website"
                       />
                     </Button>

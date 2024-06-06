@@ -64,6 +64,9 @@ const Home = () => {
         flexDirection: isMobile ? "column" : "row",
         justifyContent: "center",
         alignItems: "center",
+        paddingLeft: isMobile ? "10%" : "0%",
+        paddingRight: isMobile ? "10%" : "0%",
+
       }}
     >
       <Box
