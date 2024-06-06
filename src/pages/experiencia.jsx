@@ -42,7 +42,7 @@ const Experiencia = () => {
       <Box
         sx={{
           paddingTop:"100px",paddingBottom:"150px",
-          height: isMobile ? "150vh" : "max-content",
+          height: isMobile ? "max-content" : "max-content",
           alignContent: "center",
           marginBottom: isMobile ? "0" : "20px",
         }}
@@ -74,26 +74,9 @@ const Experiencia = () => {
             gap:  isMobile ?"150px":"100px"
           }}
         >
-          {/* <Grid
-            sx={{
-              display: "flex",
-              flexDirection: isMobile ? "column" : "row",
-              justifyContent: "space-evenly",
-              alignItems: "center",
-            }}
-            container
-            rowSpacing={3}
-            padding={5}
-            columnSpacing={{ xs: 1, sm: 2, md: 1 }}
-          > */}
+          
           {itemData.map((item, index) => (
-            // <Grid
-            //   key={index}
-            //   item
-            //   xs={4}
-            //   onMouseEnter={() => setHoveredIndex(index)}
-            //   onMouseLeave={() => setHoveredIndex(null)}
-            // >
+             
             <>
               <Box
   sx={{

@@ -43,7 +43,7 @@ const Sobre = () => {
           >
             <Typography variant="body" sx={{paddingBottom:"10px"}}  >
               I'm from  <strong>Rosario, Santa Fe Argentina</strong>. I successfully completed the
-              Front End Developer career at CoderHouse in 2023. I have experience working in multidisciplinary teams and
+              Full Stack Developer career at CoderHouse in 2023. I have experience working in multidisciplinary teams and
               collaborating on various projects. My focus is on providing
               innovative and high-quality solutions to meet customer needs.
             </Typography>
@@ -51,7 +51,7 @@ const Sobre = () => {
               
             </Typography>
             
-             <Typography variant="h6"   >
+             <Typography variant="h4" fontWeight="bold"   >
               My achievements so far :
             </Typography>
             <Typography

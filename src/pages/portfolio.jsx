@@ -320,7 +320,7 @@ const Portfolio = () => {
       // url: "https://entrega-final-sassi-react-js.vercel.app/",
       github: "https://github.com/Franco97sassi/Backend-Desafios",
       description:
-        "Full Stack E-Commerce Project, where I use MongoDB as the database implementing the corresponding folder architecture. CRUD operations are implemented. Stripe is used as the payment platform.",
+        "Full Stack E-Commerce Project, where I use MongoDB as the database implementing the corresponding folder architecture. Stripe is used as the payment platform.",
       technologies: ["Mongo DB", "Bootstrap", "Docker", "Jwt", "Nest"],
     },
     // {

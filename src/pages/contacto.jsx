@@ -109,7 +109,8 @@ const Contacto = () => {
         sx={{
            justifyContent: isMobile ? "center" : "center",
           alignContent: "center",
-          paddingTop:isMobile ?"25px":"5px"
+          paddingTop:isMobile ?"25px":"5px",
+           
         }}
       >
         <CssBaseline />
@@ -118,7 +119,8 @@ const Contacto = () => {
             display: "flex",
             flexDirection: "column",
             textAlign: isMobile ? "center" : "center",
-            marginBottom:"-50px"
+            marginBottom:"-50px",
+            
            }}
         >
           <Typography
@@ -149,6 +151,7 @@ const Contacto = () => {
             autoComplete="off"
             ref={form}
             onSubmit={handleSubmit}
+            
           >
             <Stack
               spacing={2}
@@ -157,6 +160,8 @@ const Contacto = () => {
                 paddingBottom: "1%",
                 justifyContent: "center",
                 alignItems: "center",
+                maxWidth: isMobile ? "80%" : "100%", // Ajusta el ancho máximo del contenedor principal
+                margin: "0 auto", // Centra el contenedor principal horizontalment
               }}
             >
               {/* <TextField   label="Nombre"  /> */}
@@ -177,13 +182,19 @@ const Contacto = () => {
                   maxWidth: "400px",
                   "& .MuiInputBase-input": {
                     color: "white", // Establece el color del texto en negro
+                    borderColor:"white"
                   },
                   '& .MuiInputLabel-root': {
                     display: 'none', // Oculta completamente el label
                   },
                   '& .MuiOutlinedInput-root': {
-                    backgroundColor: 'transparent', // Establece el fondo del TextField en blanco
+                    backgroundColor: 'transparent', // Establece el fondo del TextField como transparente
                     borderRadius: '10px', // Establece el borde redondeado de 5px
+                    borderColor: 'white', // Establece el color del borde
+              
+                    '&:hover .MuiOutlinedInput-notchedOutline': {
+                      borderColor: 'white', // Cambia el color del borde cuando el TextField está en hover
+                    },
                     '&.Mui-focused .MuiOutlinedInput-notchedOutline': {
                       borderColor: 'white', // Mantén el color del borde inalterado cuando está enfocado
                     },
@@ -207,6 +218,7 @@ const Contacto = () => {
     maxWidth: "400px",
     "& .MuiInputBase-input": {
       color: "white", // Establece el color del texto en negro
+      borderColor:"white"
     },
     '& .MuiInputLabel-root': {
       display: 'none', // Oculta completamente el label
@@ -214,7 +226,11 @@ const Contacto = () => {
     '& .MuiOutlinedInput-root': {
       backgroundColor: 'transparent', // Establece el fondo del TextField como transparente
       borderRadius: '10px', // Establece el borde redondeado de 5px
-      
+      borderColor: 'white', // Establece el color del borde
+
+      '&:hover .MuiOutlinedInput-notchedOutline': {
+        borderColor: 'white', // Cambia el color del borde cuando el TextField está en hover
+      },
       '&.Mui-focused .MuiOutlinedInput-notchedOutline': {
         borderColor: 'white', // Mantén el color del borde inalterado cuando está enfocado
       },
@@ -236,13 +252,19 @@ const Contacto = () => {
     maxWidth: "400px",
     "& .MuiInputBase-input": {
       color: "white", // Establece el color del texto en negro
+      borderColor:"white"
     },
     '& .MuiInputLabel-root': {
-      color: 'black', // Cambiar el color del texto de la etiqueta a negro
+      display: 'none', // Oculta completamente el label
     },
     '& .MuiOutlinedInput-root': {
-      backgroundColor: 'transparent', // Establece el fondo del TextField en blanco
+      backgroundColor: 'transparent', // Establece el fondo del TextField como transparente
       borderRadius: '10px', // Establece el borde redondeado de 5px
+      borderColor: 'white', // Establece el color del borde
+
+      '&:hover .MuiOutlinedInput-notchedOutline': {
+        borderColor: 'white', // Cambia el color del borde cuando el TextField está en hover
+      },
       '&.Mui-focused .MuiOutlinedInput-notchedOutline': {
         borderColor: 'white', // Mantén el color del borde inalterado cuando está enfocado
       },

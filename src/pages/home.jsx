@@ -34,7 +34,9 @@ const Home = () => {
     visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
   };
 
-  const sentence = "Hello, I'm Franco Sassi.";
+  const sentence = "Hello, I'm";
+  const name = "Franco Sassi.";
+
   const jobTitle = "Full Stack React Developer.";
 
   const AnimatedText = ({ text }) => (
@@ -46,9 +48,17 @@ const Home = () => {
       ))}
     </Typography>
   );
-
+  const AnimatedName = ({ text }) => (
+    <Typography variant="h3" paddingBottom={2} textAlign="center" fontWeight="bold" sx={{color:"#0091ea"}} >
+      {text.split("").map((char, index) => (
+        <motion.span key={index} variants={letterVariants}>
+          {char}
+        </motion.span>
+      ))}
+    </Typography>
+  );
   const AnimatedJobTitle = ({ text }) => (
-    <Typography variant="h3" paddingBottom={2} textAlign="center">
+    <Typography variant="h4" paddingBottom={2} textAlign="center"   >
       {text.split("").map((char, index) => (
         <motion.span key={index} variants={letterVariants}>
           {char}
@@ -86,8 +96,11 @@ const Home = () => {
           variants={{ visible: { transition: { staggerChildren: 0.1 } } }}
         >
           <AnimatedText text={sentence} />
+          <AnimatedName text={name} />
+
           <AnimatedJobTitle text={jobTitle} />
           <motion.div variants={letterVariants}>
+            <Box>  
             <Box
               sx={{
                 display: "flex",
@@ -135,6 +148,8 @@ const Home = () => {
                   </Typography>
                 </Button>
               </Box>
+            </Box>
+            
             </Box>
           </motion.div>
         </motion.div>
