@@ -97,7 +97,7 @@ function DrawerAppBar(props) {
             sx={{ flexGrow: 1, display: { xs: "none", sm: "block" } }}
           >
             <Link onClick={handleClick}>
-              <img src={logo} style={{ width: "70px" }} alt="logo" />
+              <img src={logo} style={{ width: "50px" }} alt="logo" />
             </Link>
           </Typography>
 

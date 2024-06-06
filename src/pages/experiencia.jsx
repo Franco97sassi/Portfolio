@@ -11,6 +11,7 @@ import firebase from "../assets/firebase.png";
 import tailwind from "../assets/tailwindIcon.png";
 import django from "../assets/django.png";
 import MYSQL from "../assets/MYSQL.png";
+import docker from "../assets/docker.png";
 
 import { useState } from "react";
 import bootstrap from "../assets/bootstrap.png";
@@ -29,9 +30,10 @@ const Experiencia = () => {
     { img: firebase, title: "Firebase" },
     { img: tailwind, title: "Tailwind" },
     { img: django, title: "Django" },
-
     { img: mongo, title: "MongoDB" },
-    { img: MYSQL, title: "MYSQL" },
+    { img: MYSQL, title: "MYSQL" },    
+    { img: docker, title: "docker" },
+
   ];
   const [hoveredIndex, setHoveredIndex] = useState(null);
 
@@ -39,7 +41,8 @@ const Experiencia = () => {
     <div>
       <Box
         sx={{
-          height: isMobile ? "150vh" : "100vh",
+          paddingTop:"100px",paddingBottom:"150px",
+          height: isMobile ? "150vh" : "max-content",
           alignContent: "center",
           marginBottom: isMobile ? "50%" : "20px",
         }}
@@ -106,7 +109,7 @@ const Experiencia = () => {
                 <img
                   src={item.img}
                   style={{
-                    width: isMobile ? "50px" : "100px",
+                    width: isMobile ? "50px" : "75px",
                     maxWidth: "150px",
                   }}
                   alt={item.title}

@@ -10,6 +10,7 @@ import General from './pages/general'
  
 import { ThemeProvider } from '@mui/material'
 import theme from './theme/theme'
+import Footer from './pages/Footer';
    
     function App() {
        

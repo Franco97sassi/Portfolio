@@ -107,8 +107,7 @@ const Contacto = () => {
       <Box
         component="form"
         sx={{
-          height: "100vh",
-          justifyContent: isMobile ? "center" : "center",
+           justifyContent: isMobile ? "center" : "center",
           alignContent: "center",
         }}
       >

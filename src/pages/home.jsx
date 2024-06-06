@@ -7,11 +7,6 @@ import emailIcon from "../assets/emailIcon.png";
 import fotoTechX from "../assets/fotoTechX.jpg";
 
 const Home = () => {
-  // const handlePortfolioClick = () => {
-  //   const portfolioSection = document.getElementById("portfolio");
-  //   portfolioSection.scrollIntoView({ behavior: "smooth" });
-  // };
-
   const buttonStyles = {
     background: "linear-gradient(#17202A,#1B4F72)",
     borderRadius: "999px",
@@ -26,7 +21,7 @@ const Home = () => {
     overflow: "hidden",
     fontSize: "16px",
     "&:hover": {
-      background: "#212121      ",
+      background: "#212121",
       boxShadow:
         "0px 5px 15px 0px rgba(37, 44, 97, 0.15), 0px 2px 4px 0px rgba(136, 144, 194, 0.20)",
     },
@@ -34,10 +29,33 @@ const Home = () => {
 
   const isMobile = useMediaQuery("(max-width:600px)");
 
-  const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0, transition: { duration: 1 } }, // Ajusta la duración de la transición
+  const letterVariants = {
+    hidden: { opacity: 0, y: 50 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
   };
+
+  const sentence = "Hello, I'm Franco Sassi.";
+  const jobTitle = "Full Stack React Developer.";
+
+  const AnimatedText = ({ text }) => (
+    <Typography variant="h2" paddingBottom={1} fontWeight="bold" textAlign="center">
+      {text.split("").map((char, index) => (
+        <motion.span key={index} variants={letterVariants}>
+          {char}
+        </motion.span>
+      ))}
+    </Typography>
+  );
+
+  const AnimatedJobTitle = ({ text }) => (
+    <Typography variant="h3" paddingBottom={2} textAlign="center">
+      {text.split("").map((char, index) => (
+        <motion.span key={index} variants={letterVariants}>
+          {char}
+        </motion.span>
+      ))}
+    </Typography>
+  );
 
   return (
     <Box
@@ -62,28 +80,11 @@ const Home = () => {
         <motion.div
           initial="hidden"
           animate="visible"
-          variants={{ visible: { transition: { staggerChildren: 0.2 } } }}
+          variants={{ visible: { transition: { staggerChildren: 0.1 } } }}
         >
-          <motion.div variants={itemVariants}>
-            {/* <Box sx={{ display: "flex", justifyContent: "center"  }}>
-              {" "}
-              <img src={fotoTechX} style={{borderRadius="10px"} }width="25%"     />
-            </Box> */}
-            <Typography
-              variant="h2"
-              paddingBottom={1}
-              fontWeight="bold"
-              textAlign="center"
-            >
-              Hello, I'm Franco Sassi.{" "}
-            </Typography>
-          </motion.div>
-          <motion.div variants={itemVariants}>
-            <Typography variant="h3" paddingBottom={2} textAlign="center">
-              Full Stack React Developer.
-            </Typography>
-          </motion.div>
-          <motion.div variants={itemVariants}>
+          <AnimatedText text={sentence} />
+          <AnimatedJobTitle text={jobTitle} />
+          <motion.div variants={letterVariants}>
             <Box
               sx={{
                 display: "flex",
@@ -93,34 +94,37 @@ const Home = () => {
                 alignItems: "center",
               }}
             >
-              {/* <Button
-              sx={buttonStyles}
-              variant="contained"
-              component={RouterLink}
-              to="/#portfolio"
-              onClick={handlePortfolioClick}
-            >
-              Portfolio
-            </Button> */}
               <Button
                 width="50px"
                 component="a"
                 href="https://github.com/Franco97sassi"
+                sx={{
+                  "&:hover": {
+                    backgroundColor: "lightblue",
+                  },
+                }}
               >
                 <img src={githubIcon} width="50px" alt="" />
               </Button>
               <Button
-                component="a"
+                component="a" 
                 href="https://www.linkedin.com/in/franco-sassi-777b0317a/"
+                sx={{
+                  "&:hover": {
+                    backgroundColor: "lightblue",
+                  },
+                }}
               >
                 <img src={linkedinIcon} alt="" width="50px" />
               </Button>
-              <Box s>
+              <Box>
                 <Button
                   component="a"
                   href="mailto:franco.sassi97@gmail.com"
                   variant="contained"
-                  sx={{borderRadius:"50px",backgroundColor:"#212121"}}
+                  sx={{borderRadius:"50px",backgroundColor:"#212121", "&:hover": {
+                    backgroundColor: "lightblue",color:"black"
+                  },}}
                 >
                   <img src={emailIcon} width="50px" alt="" />
                   <Typography sx={{ padding: "10px" }}>

@@ -4,6 +4,7 @@ import Portfolio from "./portfolio";
 import Experiencia from "./experiencia";
 import Contacto from "./contacto";
 import { Box, useMediaQuery } from "@mui/material";
+import Footer from "./Footer";
  
 const General = () => {
   const isMobile = useMediaQuery("(max-width:600px)");
@@ -32,7 +33,7 @@ const General = () => {
           {" "}
           <Contacto />
         </section>  
-        
+        <Footer/>
       </Box>
     </div>
   );
