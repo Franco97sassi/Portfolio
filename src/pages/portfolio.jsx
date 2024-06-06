@@ -368,131 +368,15 @@ const Portfolio = () => {
         <Box sx={{display:"flex",flexWrap:"wrap",justifyContent:"center",rowGap:10,columnGap:50,paddingLeft:"50px",paddingRight:"50px"}}>
           {projectImages.map((project, index) => (
             <div key={index}>
-              {/* <Box
-                key={index}
-                sx={{
-                  // display: "flex",
-                  // flexDirection: isMobile ? "column" : "row",
-                  // alignItems: isMobile ?"flex-start":"center",
-                  // justifyContent: isMobile ?"flex-start":"center",
-                  backgroundImage: "linear-gradient(#1a237e,#212121,#212121 )",
-                   // padding: "20px",
-                  // margin: "10px",
-                  // borderRadius: "10px",
-                  // transition: "transform 0.3s, box-shadow 0.3s",
-                  width: "600px",
-                  borderRadius:"10%",
-                   // "&:hover": {
-                  //   transform: "scale(1.05)",
-                  //   boxShadow: "0 10px 20px rgba(0,0,0,0.2)",
-                  // },
-                }}
-              >
-                <Box
-                  sx={{
-                    // width: {
-                    //   xs: "100%",  // Tamaño de la Box cuando la pantalla es extra pequeña (xs)
-                    //   sm: "50%",   // Tamaño de la Box cuando la pantalla es pequeña (sm)
-                    //   md: "35%",   // Tamaño de la Box cuando la pantalla es mediana (md)
-                    //   lg: "5%",   // Tamaño de la Box cuando la pantalla es grande (lg)
-                    //   xl: "20%"    // Tamaño de la Box cuando la pantalla es extra grande (xl)
-                    // }
-                  }}
-                >
-                  <img
-                    src={project.img}
-                    alt={project.title}
-                    style={{
-                      borderTopLeftRadius :"10%",
-                      borderTopRightRadius :"10%",
-                      // width: isMobile ? "200px" : "400px",
-                      // height: "auto",
-                      // marginRight: isMobile ? "0" : "20px",
-                      // borderRadius: "10px",
-                      width: {
-                        // xs: "100%",  // Tamaño de la Box cuando la pantalla es extra pequeña (xs)
-                        // sm: "50%",   // Tamaño de la Box cuando la pantalla es pequeña (sm)
-                        // md: "35%",   // Tamaño de la Box cuando la pantalla es mediana (md)
-                        // lg: "5%",   // Tamaño de la Box cuando la pantalla es grande (lg)
-                        // xl: "100px"    // Tamaño de la Box cuando la pantalla es extra grande (xl)
-                      }
-                    }}
-                  />{" "}
-                </Box>
-                <Box
-                  sx={{
-                    // width: isMobile?"3px":"75%",
-                    display: "flex",
-                    flexDirection: "column",
-                    // flexWrap: "wrap",
-                      justifyContent: "space-around",
-                    alignItems: "center",
-                    // paddingLeft:"15%"
-                    height: "300px",
-                    
-                  }}
-                >
-                  <Typography variant="h4" color="white" fontWeight="bold">
-                    {project.title}
-                  </Typography>
-                  {!isMobile && (
-                    <Box
-                    // sx={{ width: "55%",padding:10 }}
-                    >
-                      <Box sx={{ height: "100px" }}>
-                        {" "}
-                        <Typography color="white">
-                          {" "}
-                          {project.description}
-                        </Typography>
-                      </Box>
-                    </Box>
-                  )}
-                  <Box
-                  sx={{ display: "flex",justifyContent:"center", gap: "10px", marginTop: "10px",flexWrap:"wrap" }}
-                  >
-                    {!isMobile &&
-                      project.technologies &&
-                      project.technologies.map((tech, techIndex) => (
-                        <Button
-                          key={techIndex}
-                          sx={{ backgroundColor: "#575089" }}
-                          variant="contained"
-                        >
-                          {tech}
-                        </Button>
-                      ))}
-                  </Box>
-                  <Box
-                  //  sx={{ display: "flex", gap: "10px", marginTop: "10px" }}
-                  >
-                    <Button
-                      onClick={() => window.open(project.github, "_blank")}
-                    >
-                      <img
-                        src={repoBlue}
-                        width={isMobile ? "20px" : "50px"}
-                        alt="GitHub Repo"
-                      />
-                    </Button>
-                    <Button onClick={() => window.open(project.url, "_blank")}>
-                      <img
-                        src={web}
-                        width={isMobile ? "20px" : "50px"}
-                        alt="Website"
-                      />
-                    </Button>
-                  </Box>
-                </Box>
-              </Box> */}
-                       <Card key={index} sx={{ maxWidth: 345, backgroundImage: "linear-gradient(#1a237e,#212121,#212121 )", borderRadius: "5%", transition: "transform 0.3s, box-shadow 0.3s", "&:hover": { transform: "scale(1.05)", boxShadow: "0 10px 20px rgba(0,0,0,0.2)" } }}>
+              
+                       <Card key={index} sx={{  maxWidth: 345, backgroundImage: "linear-gradient(#1a237e,#212121,#212121 )", borderRadius: "5%", transition: "transform 0.3s, box-shadow 0.3s", "&:hover": { transform: "scale(1.05)", boxShadow: "0 10px 20px rgba(0,0,0,0.2)" } }}>
 
                 <CardMedia
                   component="img"
                   alt="green iguana"
-                  height="140"
+                  height="150"
                   image={project.img}
-                />
+                 />
                 <CardContent
                   sx={{
                     textAlign: "center",                  height:isMobile?"15px":"125px"

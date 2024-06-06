@@ -109,6 +109,7 @@ const Contacto = () => {
         sx={{
            justifyContent: isMobile ? "center" : "center",
           alignContent: "center",
+          paddingTop:isMobile ?"25px":"5px"
         }}
       >
         <CssBaseline />

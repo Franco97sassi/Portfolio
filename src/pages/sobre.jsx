@@ -45,7 +45,7 @@ const Sobre = () => {
               I'm from  <strong>Rosario, Santa Fe Argentina</strong>. I successfully completed the
               Front End Developer career at CoderHouse in 2023.
             </Typography>
-             <Typography variant="body" fontWeight="bold"  sx={{paddingBottom:"10px"}} >
+             <Typography variant="body"    sx={{paddingBottom:"10px"}} >
               I have experience working in multidisciplinary teams and
               collaborating on various projects. My focus is on providing
               innovative and high-quality solutions to meet customer needs.
@@ -54,7 +54,7 @@ const Sobre = () => {
              <Typography variant="body"   >
               My achievements so far :
             </Typography>
-            <Typography variant="body" component="li"color="#03a9f4"fontWeight="bold">
+            <Typography variant="body" component="li"color="orange"fontWeight="bold">
               Proficient in visual interface development and responsive design
               implementation.
             </Typography>
@@ -64,7 +64,7 @@ const Sobre = () => {
               PostgreSQL across 3 to 5 projects.
             </Typography>
 
-            <Typography variant="body" component="li" color="#03a9f4"fontWeight="bold">
+            <Typography variant="body" component="li" color="orange"fontWeight="bold">
               Working together closely with UX/UI designers for designs created
               in Figma.
             </Typography>

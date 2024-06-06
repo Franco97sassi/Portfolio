@@ -6,10 +6,10 @@ import js from "../assets/js.png";
 import node from "../assets/node.png";
 import rct from "../assets/rct.png";
 import sass from "../assets/sass.png";
-import mongo from "../assets/mongoDB.png";
+import mongo from "../assets/mongo.png";
 import firebase from "../assets/firebase.png";
 import tailwind from "../assets/tailwindIcon.png";
-import django from "../assets/django.png";
+import python from "../assets/pythonIcon.png";
 import MYSQL from "../assets/MYSQL.png";
 import docker from "../assets/docker.png";
 
@@ -29,7 +29,7 @@ const Experiencia = () => {
     { img: sass, title: "SASS" },
     { img: firebase, title: "Firebase" },
     { img: tailwind, title: "Tailwind" },
-    { img: django, title: "Django" },
+    { img: python, title: "Python" },
     { img: mongo, title: "MongoDB" },
     { img: MYSQL, title: "MYSQL" },    
     { img: docker, title: "docker" },
@@ -96,25 +96,32 @@ const Experiencia = () => {
             // >
             <>
               <Box
-                sx={{
-                  p: 1,
-                  // display: "flex",
-                  // flexDirection: "row",
-                  // justifyContent: "center",
-                  // alignItems: "center",
-                  transition: "transform 0.3s",
-                  transform: hoveredIndex === index ? "scale(1.1)" : "scale(1)",
-                }}
-              >
-                <img
-                  src={item.img}
-                  style={{
-                    width: isMobile ? "50px" : "75px",
-                    maxWidth: "150px",
-                  }}
-                  alt={item.title}
-                />
-              </Box> 
+  sx={{
+    p: 1,
+    display: "flex",
+    alignItems: "center",
+    transition: "transform 0.3s, box-shadow 0.3s", // Añade transición para la transformación y la sombra
+    transform: hoveredIndex === index ? "scale(1.1)" : "scale(1)",
+    boxShadow: hoveredIndex === index ? '0 4px 8px rgba(148, 0, 211, 0.5)' : '0 4px 8px rgba(0, 191, 255, 0.5)', // Añade sombra celeste al hacer hover
+    '&:hover': {
+      transform: "scale(1.1)", // Escala el tamaño del Box
+      boxShadow: '0 4px 8px rgba(148, 0, 211, 0.5)', // Cambia la sombra a violeta al pasar el ratón
+    },
+    borderRadius: "5%",
+    height: "100px"
+  }}
+>
+  <img
+    src={item.img}
+    style={{
+      width: isMobile ? "50px" : "75px",
+      maxWidth: "150px",
+      transition: "transform 0.3s", // Añade transición para la imagen
+      transform: hoveredIndex === index ? "scale(1.1)" : "scale(1)", // Escala la imagen al pasar el ratón
+    }}
+    alt={item.title}
+  />
+</Box>
             </>
             // </Grid>
           ))}
