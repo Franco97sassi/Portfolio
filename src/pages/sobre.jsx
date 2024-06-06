@@ -52,16 +52,16 @@ const Sobre = () => {
             </Typography>
             
              <Typography variant="h4" fontWeight="bold"   >
-              My achievements so far :
+              My achievements :
             </Typography>
             <Typography
     variant="body"
     component="li"
     sx={{
-      color: "white",
+      color: "#03a9f4",
       fontWeight: "bold",
       "&:hover": {
-        color: "#03a9f4",
+        color: "white",
       },
     }}
   >              Proficient in visual interface development and responsive design
@@ -71,10 +71,10 @@ const Sobre = () => {
     variant="body"
     component="li"
     sx={{
-      color: "white",
+      color: "#03a9f4",
       fontWeight: "bold",
       "&:hover": {
-        color: "#03a9f4",
+        color: "white",
       },
     }}
   >              Successfully I collaborated with back-end developers to seamlessly
@@ -86,10 +86,10 @@ const Sobre = () => {
     variant="body"
     component="li"
     sx={{
-      color: "white",
+      color: "#03a9f4",
       fontWeight: "bold",
       "&:hover": {
-        color: "#03a9f4",
+        color: "white",
       },
     }}
   >              Working together closely with UX/UI designers for designs created
@@ -99,10 +99,10 @@ const Sobre = () => {
     variant="body"
     component="li"
     sx={{
-      color: "white",
+      color: "#03a9f4",
       fontWeight: "bold",
       "&:hover": {
-        color: "#03a9f4",
+        color: "white",
       },
     }}
   >              Demonstrated proficiency in managing E-commerce and payment
