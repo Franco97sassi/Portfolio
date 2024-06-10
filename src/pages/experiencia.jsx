@@ -12,6 +12,7 @@ import tailwind from "../assets/tailwindIcon.png";
 import python from "../assets/pythonIcon.png";
 import MYSQL from "../assets/MYSQL.png";
 import docker from "../assets/docker.png";
+import express from "../assets/express.png";
 
 import { useState } from "react";
 import bootstrap from "../assets/bootstrap.png";
@@ -26,6 +27,8 @@ const Experiencia = () => {
     { img: rct, title: "React" },
     { img: bootstrap, title: "Bootstrap" },
     { img: node, title: "Node Js" },
+    { img: express, title: "Express" },
+
     { img: sass, title: "SASS" },
     { img: firebase, title: "Firebase" },
     { img: tailwind, title: "Tailwind" },

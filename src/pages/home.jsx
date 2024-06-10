@@ -28,7 +28,11 @@ const Home = () => {
     },
   };
 
-  const isMobile = useMediaQuery("(max-width:600px)");
+  const isMobile = useMediaQuery("(max-width:600px)"); 
+const lg= useMediaQuery("( min-width:1600px)");
+const textSize1=lg?"h1":"h2";
+const textSize2=lg?"h2":"h3";
+const textSize3=lg?"h3":"h4";
 
   const letterVariants = {
     hidden: { opacity: 0, y: 50 },
@@ -41,7 +45,8 @@ const Home = () => {
   const jobTitle = "Full Stack React Developer.";
 
   const AnimatedText = ({ text }) => (
-    <Typography variant="h2" paddingBottom={1} fontWeight="bold" textAlign="center">
+    <Typography   variant={textSize1} 
+    paddingBottom={1} fontWeight="bold" textAlign="center">
       {text.split("").map((char, index) => (
         <motion.span key={index} variants={letterVariants}>
           {char}
@@ -50,7 +55,7 @@ const Home = () => {
     </Typography>
   );
   const AnimatedName = ({ text }) => (
-    <Typography variant="h3" paddingBottom={2} textAlign="center" fontWeight="bold" sx={{color:"#0091ea"}} >
+    <Typography variant={textSize2} paddingBottom={2} textAlign="center" fontWeight="bold" sx={{color:"#0091ea"}} >
       {text.split("").map((char, index) => (
         <motion.span key={index} variants={letterVariants}>
           {char}
@@ -59,7 +64,7 @@ const Home = () => {
     </Typography>
   );
   const AnimatedJobTitle = ({ text }) => (
-    <Typography variant="h4" paddingBottom={2} textAlign="center"   >
+    <Typography variant={textSize3} paddingBottom={2} textAlign="center"   >
       {text.split("").map((char, index) => (
         <motion.span key={index} variants={letterVariants}>
           {char}
@@ -106,11 +111,12 @@ const Home = () => {
               sx={{
                 display: "flex",
                 gap: "10px",
-                flexDirection: isMobile ? "column" : "row",
+                flexDirection: isMobile ? "column" : "column",
                 justifyContent: "center",
                 alignItems: "center",
               }}
             >
+              <Box sx={{display:"flex"}}> 
               <Button
                 width="50px"
                 component="a"
@@ -121,7 +127,7 @@ const Home = () => {
                   },
                 }}
               >
-                <img src={githubIcon} width="50px" alt="" />
+                <img src={githubIcon} width="40px" alt="" />
               </Button>
               <Button
                 component="a" 
@@ -132,7 +138,7 @@ const Home = () => {
                   },
                 }}
               >
-                <img src={linkedinIcon} alt="" width="50px" />
+                <img src={linkedinIcon} alt="" width="40px" />
               </Button>
               <Button
                 component="a" 
@@ -143,9 +149,9 @@ const Home = () => {
                   },
                 }}
               >
-                <img src={cvIcon} alt="" width="50px" />
-              </Button>
-              <Box>
+                <img src={cvIcon} alt="" width="40px" />
+              </Button> </Box>
+              <Box  >
                 <Button
                   component="a"
                   href="mailto:franco.sassi97@gmail.com"
@@ -155,7 +161,7 @@ const Home = () => {
                     backgroundColor: "lightblue",color:"black"
                   },}}
                 >
-                  <img src={emailIcon} width="50px" alt="" />
+                  <img src={emailIcon} width="30px" alt="" />
                   <Typography sx={{ padding: "10px" }}>
                     franco.sassi97@gmail.com
                   </Typography>

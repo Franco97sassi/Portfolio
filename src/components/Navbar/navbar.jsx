@@ -14,7 +14,7 @@ import MenuIcon from "@mui/icons-material/Menu";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
-import { Link  } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const drawerWidth = 240;
 const navItems = ["Home", "Profile", "Portfolio", "Technologies", "Contact"];
@@ -26,8 +26,6 @@ function DrawerAppBar(props) {
   const handleDrawerToggle = () => {
     setMobileOpen((prevState) => !prevState);
   };
-
- 
 
   const scrollToSection = (id) => {
     const element = document.getElementById(id);
@@ -45,17 +43,23 @@ function DrawerAppBar(props) {
       sx={{
         maxWidth: "100%",
         textAlign: "center",
-        backgroundColor: mobileOpen ? '#18171c' : '#18171c', // Cambia el color del panel lateral a azul oscuro cuando mobileOpen es true, de lo contrario, usa el color original
-     
+        backgroundColor: mobileOpen ? "#18171c" : "#18171c", // Cambia el color del panel lateral a azul oscuro cuando mobileOpen es true, de lo contrario, usa el color original
       }}
-      
     >
-       <Link onClick={handleClick}     style={{fontSize:"30px" ,  fontWeight:"bold", color: '#0091ea', textDecoration: 'none', fontStyle: 'italic' }}
-            >
-             FS
-            </Link>
-     
-             <Divider />
+      <Link
+        onClick={handleClick}
+        style={{
+          fontSize: "30px",
+          fontWeight: "bold",
+          color: "#0091ea",
+          textDecoration: "none",
+          fontStyle: "italic",
+        }}
+      >
+        FS
+      </Link>
+
+      <Divider />
       <List>
         {navItems.map((item) => (
           <ListItem key={item} disablePadding>
@@ -71,7 +75,6 @@ function DrawerAppBar(props) {
     </Box>
   );
 
-  
   const container =
     window !== undefined ? () => window().document.body : undefined;
 
@@ -92,15 +95,22 @@ function DrawerAppBar(props) {
           >
             <MenuIcon />
           </IconButton>
-          
+
           <Typography
             variant="h3"
             component="div"
             sx={{ flexGrow: 1, display: { xs: "none", sm: "block" } }}
           >
-            <Link onClick={handleClick}   style={{fontWeight:"bold", color: '#0091ea', textDecoration: 'none', fontStyle: 'italic' }}
+            <Link
+              onClick={handleClick}
+              style={{
+                fontWeight: "bold",
+                color: "#0091ea",
+                textDecoration: "none",
+                fontStyle: "italic",
+              }}
             >
-             FS
+              FS
             </Link>
           </Typography>
 
@@ -139,7 +149,7 @@ function DrawerAppBar(props) {
               boxSizing: "border-box",
               width: drawerWidth,
               height: "100vh",
-              backgroundColor: mobileOpen ? '#18171c	' : '#18171c	', // Cambia el color del panel lateral a azul oscuro cuando mobileOpen es true, de lo contrario, usa el color original
+              backgroundColor: mobileOpen ? "#18171c	" : "#18171c	", // Cambia el color del panel lateral a azul oscuro cuando mobileOpen es true, de lo contrario, usa el color original
             },
             "& .MuiDrawer-root": {
               backgroundImage: "linear-gradient(#4A235A, #4A235A, #4A235A)", // Aplicar gradiente al contenedor principal del Drawer
