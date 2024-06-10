@@ -32,35 +32,37 @@ function DrawerAppBar(props) {
     if (element) {
       element.scrollIntoView({ behavior: "smooth" });
     }
-    console.log(id);
   };
   const handleClick = () => {
     window.location.reload(); // Recargar la página al hacer clic
   };
-
+  const logoStyle = {
+    fontWeight: "bold",
+    color: "#0091ea",
+    textDecoration: "none",
+    fontStyle: "italic",
+  };
   const drawer = (
     <Box
       sx={{
-        maxWidth: "100%",
+        maxWidth: "100%",        maxHeight: "100%",
+
         textAlign: "center",
-        backgroundColor: mobileOpen ? "#18171c" : "#18171c", // Cambia el color del panel lateral a azul oscuro cuando mobileOpen es true, de lo contrario, usa el color original
-      }}
+        backgroundColor: "#18171c",
+        display:"flex",flexDirection:"column",
+        }}
     >
       <Link
         onClick={handleClick}
         style={{
+          ...logoStyle,
           fontSize: "30px",
-          fontWeight: "bold",
-          color: "#0091ea",
-          textDecoration: "none",
-          fontStyle: "italic",
         }}
       >
         FS
       </Link>
-
       <Divider />
-      <List>
+      <List  >
         {navItems.map((item) => (
           <ListItem key={item} disablePadding>
             <ListItemButton
@@ -101,15 +103,7 @@ function DrawerAppBar(props) {
             component="div"
             sx={{ flexGrow: 1, display: { xs: "none", sm: "block" } }}
           >
-            <Link
-              onClick={handleClick}
-              style={{
-                fontWeight: "bold",
-                color: "#0091ea",
-                textDecoration: "none",
-                fontStyle: "italic",
-              }}
-            >
+            <Link onClick={handleClick} style={logoStyle}>
               FS
             </Link>
           </Typography>
@@ -130,30 +124,30 @@ function DrawerAppBar(props) {
           </Box>
         </Toolbar>
       </AppBar>
-      <nav
-        style={{
-          backgroundColor: "linear-gradient(#4A235A, #4A235A ,#4A235A )",
-        }}
-      >
+      <nav>
         <Drawer
           container={container}
           variant="temporary"
           open={mobileOpen}
           onClose={handleDrawerToggle}
           ModalProps={{
-            keepMounted: true, // Better open performance on mobile.
+            keepMounted: true,
           }}
           sx={{
             display: { xs: "block", sm: "none" },
             "& .MuiDrawer-paper": {
               boxSizing: "border-box",
               width: drawerWidth,
-              height: "100vh",
-              backgroundColor: mobileOpen ? "#18171c	" : "#18171c	", // Cambia el color del panel lateral a azul oscuro cuando mobileOpen es true, de lo contrario, usa el color original
-            },
-            "& .MuiDrawer-root": {
-              backgroundImage: "linear-gradient(#4A235A, #4A235A, #4A235A)", // Aplicar gradiente al contenedor principal del Drawer
-            },
+               height: "100vh",
+               maxWidth: "100%",
+              maxHeight: "100%",
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "center",  
+              alignItems: "center",  
+              textAlign: "center",
+              backgroundColor: "#18171c",
+             },
           }}
         >
           {drawer}

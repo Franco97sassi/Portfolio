@@ -8,25 +8,7 @@ import fotoTechX from "../assets/fotoTechX.jpg";
 import cvIcon from "../assets/cvIcon.png";
 
 const Home = () => {
-  const buttonStyles = {
-    background: "linear-gradient(#17202A,#1B4F72)",
-    borderRadius: "999px",
-    display: "flex",
-    flexDirection: "row",
-    width: "100px",
-    alignItems: "center",
-    justifyContent: "center",
-    position: "relative",
-    boxShadow:
-      "0px 5px 15px 0px rgba(37, 44, 97, 0.15), 0px 2px 4px 0px rgba(136, 144, 194, 0.2)",
-    overflow: "hidden",
-    fontSize: "16px",
-    "&:hover": {
-      background: "#212121",
-      boxShadow:
-        "0px 5px 15px 0px rgba(37, 44, 97, 0.15), 0px 2px 4px 0px rgba(136, 144, 194, 0.20)",
-    },
-  };
+  
 
   const isMobile = useMediaQuery("(max-width:600px)"); 
 const lg= useMediaQuery("( min-width:1600px)");
