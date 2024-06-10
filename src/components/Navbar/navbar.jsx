@@ -15,7 +15,6 @@ import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import { Link  } from "react-router-dom";
-import logo from "../../assets/iconoLogo.png";
 
 const drawerWidth = 240;
 const navItems = ["Home", "Profile", "Portfolio", "Technologies", "Contact"];
@@ -51,7 +50,7 @@ function DrawerAppBar(props) {
       }}
       
     >
-       <Link onClick={handleClick}   style={{fontWeight:"bold", color: '#0091ea', textDecoration: 'none', fontStyle: 'italic' }}
+       <Link onClick={handleClick}     style={{fontSize:"30px" ,  fontWeight:"bold", color: '#0091ea', textDecoration: 'none', fontStyle: 'italic' }}
             >
              FS
             </Link>
@@ -80,7 +79,7 @@ function DrawerAppBar(props) {
     <Box sx={{ display: "flex" }}>
       <CssBaseline />
       <AppBar
-        style={{ backgroundColor: "transparent", boxShadow: "none" }}
+        style={{ backgroundColor: "#212121", boxShadow: "none" }}
         component="nav"
       >
         <Toolbar>

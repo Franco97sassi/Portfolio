@@ -5,6 +5,7 @@ import githubIcon from "../assets/githubIcon.png";
 import linkedinIcon from "../assets/linkedinIcon.png";
 import emailIcon from "../assets/emailIcon.png";
 import fotoTechX from "../assets/fotoTechX.jpg";
+import cvIcon from "../assets/cvIcon.png";
 
 const Home = () => {
   const buttonStyles = {
@@ -133,13 +134,24 @@ const Home = () => {
               >
                 <img src={linkedinIcon} alt="" width="50px" />
               </Button>
+              <Button
+                component="a" 
+                href="https://drive.google.com/file/d/1Wsaj4VRHo6h5jnvOu04J5yDIgJm0lQu8/view?usp=sharing"
+                sx={{
+                  "&:hover": {
+                    backgroundColor: "lightblue",
+                  },
+                }}
+              >
+                <img src={cvIcon} alt="" width="50px" />
+              </Button>
               <Box>
                 <Button
                   component="a"
                   href="mailto:franco.sassi97@gmail.com"
                   variant="contained"               
 
-                  sx={{borderRadius:"50px",backgroundColor:"#575089", "&:hover": {
+                  sx={{borderRadius:"50px",backgroundColor:"#0091e", "&:hover": {
                     backgroundColor: "lightblue",color:"black"
                   },}}
                 >

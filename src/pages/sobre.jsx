@@ -20,7 +20,7 @@ const Sobre = () => {
     >
       <Typography
         variant="h2"
-        fontWeight="bold"
+        fontWeight="bold" fontStyle="italic"
         sx={{ textAlign: isMobile ? "center" : "center", paddingBottom: "2%" }}
       >
         About Me

@@ -139,7 +139,7 @@ const Portfolio = () => {
       >
         <Typography
           variant="h2"
-          fontWeight="bold"
+          fontWeight="bold" fontStyle="italic"
           sx={{ paddingBottom: "20px", textAlign: "center" }}
         >
           My Projects
@@ -169,7 +169,7 @@ const Portfolio = () => {
                  />
                 <CardContent
                   sx={{
-                    textAlign: "center",                  height:isMobile?"15px":"125px"
+                    textAlign: "center",                  height:isMobile?"null":"125px"
 
                   }}
                 >
@@ -197,8 +197,8 @@ const Portfolio = () => {
 
   }}
 >
-  <Box sx={{ display: "flex", gap: "10px", justifyContent: "center", flexWrap: "wrap" }}>
-    {!isMobile &&
+  <Box sx={{ display: "flex",  justifyContent: "center", flexWrap: "wrap",gap:"10px" }}>
+    { 
       project.technologies &&
       project.technologies.map((tech, techIndex) => (
         <Button
@@ -206,7 +206,7 @@ const Portfolio = () => {
           sx={{
             backgroundColor: "#575089",
             height: "40px", // Ajusta el alto de los botones aquí
-            marginRight: "10px", // Ajusta el espaciado horizontal entre los botones
+            marginRight: "0px", // Ajusta el espaciado horizontal entre los botones
           }}
           variant="contained"
         >
