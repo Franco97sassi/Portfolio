@@ -44,9 +44,9 @@ const Contacto = () => {
 
     // Actualizar los mensajes de error según el estado de los campos
     const newErrorMessages = {
-      name: formValues.name.trim() === "" ? "Completar campo" : "",
-      email: formValues.email.trim() === "" ? "Completar campo" : "",
-      message: formValues.message.trim() === "" ? "Completar campo" : "",
+      name: formValues.name.trim() === "" ? "Please complete this field" : "",
+      email: formValues.email.trim() === "" ? "Please complete this field" : "",
+      message: formValues.message.trim() === "" ? "Please complete this field" : "",
     };
     setErrorMessages(newErrorMessages);
 
