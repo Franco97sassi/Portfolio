@@ -137,8 +137,9 @@ const Home = () => {
                 <Button
                   component="a"
                   href="mailto:franco.sassi97@gmail.com"
-                  variant="contained"
-                  sx={{borderRadius:"50px",backgroundColor:"#212121", "&:hover": {
+                  variant="contained"               
+
+                  sx={{borderRadius:"50px",backgroundColor:"#575089", "&:hover": {
                     backgroundColor: "lightblue",color:"black"
                   },}}
                 >

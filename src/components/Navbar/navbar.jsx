@@ -51,9 +51,11 @@ function DrawerAppBar(props) {
       }}
       
     >
-<Link onClick={handleClick}>
-              <img src={logo} style={{ width: "70px" }} alt="logo" />
-            </Link>     
+       <Link onClick={handleClick}   style={{fontWeight:"bold", color: '#0091ea', textDecoration: 'none', fontStyle: 'italic' }}
+            >
+             FS
+            </Link>
+     
              <Divider />
       <List>
         {navItems.map((item) => (
@@ -91,13 +93,15 @@ function DrawerAppBar(props) {
           >
             <MenuIcon />
           </IconButton>
+          
           <Typography
             variant="h3"
             component="div"
             sx={{ flexGrow: 1, display: { xs: "none", sm: "block" } }}
           >
-            <Link onClick={handleClick}>
-              <img src={logo} style={{ width: "50px" }} alt="logo" />
+            <Link onClick={handleClick}   style={{fontWeight:"bold", color: '#0091ea', textDecoration: 'none', fontStyle: 'italic' }}
+            >
+             FS
             </Link>
           </Typography>
 

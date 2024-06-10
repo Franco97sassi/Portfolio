@@ -287,7 +287,7 @@ const Contacto = () => {
             sx={{
               marginTop: "1%",
               marginBottom: "1%",
-              background: "linear-gradient(#17202A,#1B4F72  )",
+              background: "#575089",
               color: "white",
             }}
             variant="contained"
