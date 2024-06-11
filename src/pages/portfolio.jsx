@@ -49,7 +49,7 @@ const Portfolio = () => {
     {
       img: todoFloral,
       title: "Todo Floral",
-      url: "https://ecommerce-floral.vercel.app/",
+      url: "https://www.todofloral.com/",
       github: "https://github.com/Franco97sassi/TF",
       description: "An all-encompassing e-commerce platform catering to a flower shop, event organization services, and snack sales.",
 
