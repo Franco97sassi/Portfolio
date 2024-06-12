@@ -1,0 +1,94 @@
+{
+  "navbar": {
+    "home": "Inicio",
+    "profile": "Perfil",
+    "portfolio": "Portafolio",
+    "technologies": "Tecnologías",
+    "contact": "Contacto",
+    "toggleTheme": "Cambiar Tema",
+    "darkMode": "Modo Oscuro",
+    "lightMode": "Modo Claro"
+  },
+  "home": {
+    "greeting": "Hola, soy",
+    "name": "Franco Sassi.",
+    "jobTitle": "Desarrollador Full Stack React.",
+    "github": "GitHub",
+    "linkedin": "LinkedIn",
+    "cv": "Currículum",
+    "email": "Correo Electrónico"
+  },
+  "sobre": {
+    "title": "Sobre Mí",
+    "introduction": "Soy de <strong>Rosario, Santa Fe, Argentina</strong>. Completé con éxito la carrera de Desarrollador Full Stack en CoderHouse en 2023. Tengo experiencia trabajando en equipos multidisciplinarios y colaborando en varios proyectos. Mi enfoque está en proporcionar soluciones innovadoras y de alta calidad para satisfacer las necesidades del cliente.",
+    "experience": "He estado trabajando como desarrollador front-end durante más de un año en una start-up, donde mis tareas han incluido la modificación y mejora de interfaces de usuario, la corrección de errores y la colaboración con los equipos de backend y pruebas.",
+    "achievementsTitle": "Logros",
+    "achievement1": "Competente en el desarrollo de interfaces visuales e implementación de diseños responsivos.",
+    "achievement2": "Colaboré con éxito con desarrolladores de backend para integrar APIs, servicios web e interactuar con bases de datos como PostgreSQL en 3 a 5 proyectos.",
+    "achievement3": "Trabajo en estrecha colaboración con diseñadores UX/UI para diseños creados en Figma.",
+    "achievement4": "Demostré competencia en la gestión de plataformas de E-commerce y pagos."
+  },
+  "portfolio": {
+    "title": "Mis Proyectos",
+    "projects": [
+      {
+        "title": "Star Wars API",
+        "description": "Trabajando con la API de Star Wars para mostrar sus personajes y las respectivas películas de la saga. Demostré mis habilidades en Next.js y Tailwind CSS."
+         
+      },
+      {
+        "title": "MdGlobal",
+        "description": "El proyecto de importación y exportación de MDGlobal es una plataforma dedicada a simplificar y agilizar los procesos de comercio internacional."
+       },
+      {
+        "title": "Todo Floral",
+        "description": "Una plataforma de comercio electrónico completa que atiende a una floristería, servicios de organización de eventos y ventas de bocadillos."
+       },
+      {
+        "title": "Landing TechX",
+        "description": "Página de inicio dinámica para TechX: combinando perfectamente animaciones, efectos de desplazamiento y una variedad diversa de información relevante."
+       },
+      {
+        "title": "Rifas El Venado",
+        "description": "Rifas El Venado es un proyecto full-stack dedicado a la venta de ropa y la organización de rifas en línea, integrado perfectamente con Mercado Pago."
+       },
+      {
+        "title": "Tienda de E-commerce",
+        "description": "Mi primer proyecto en React, una plataforma de comercio electrónico alimentada por la integración de Firebase y la API Fake Store."
+       },
+      {
+        "title": "Ventanas y Puertas",
+        "description": "Proyecto de comercio electrónico aprovechando Vanilla JS para la manipulación dinámica del DOM y Bootstrap para la adición simplificada de productos al carrito de compras."
+       },
+      {
+        "title": "Tienda de Comidas",
+        "description": "Mi primer proyecto en JavaScript, presentando un negocio de venta de comida mejorado con Bootstrap para un diseño elegante y una funcionalidad de carrito de compras integrada."
+       },
+      {
+        "title": "Backend de E-Commerce",
+        "description": "Proyecto de comercio electrónico full-stack, donde uso MongoDB como base de datos implementando la arquitectura de carpetas correspondiente. Stripe se utiliza como plataforma de pago."
+       }
+    ]
+  },
+  "experiencia":{
+    "title": "Tecnologías" 
+
+  },
+  "contacto":{
+    "title": "Contacto" ,
+"description":"Para ponerte en contacto conmigo, por favor complete este formulario.",
+"email":"Email",
+"name":"Nombre",
+"message":"Mensaje",
+"submit":"enviar", 
+"successMessage":"Mensaje enviado exitosamente.",
+"errorMessage":"Un error ocurrio mientras se envio el mensaje, intenta de nuevo.",
+"errorField":"Complete este campo",
+"errorField2":"Complete este campo",
+"errorField3":"Complete este campo" 
+
+  },
+  "footer": {
+    "text": "Texto del pie de página en español"
+  }
+}

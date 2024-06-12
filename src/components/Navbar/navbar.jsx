@@ -15,13 +15,19 @@ import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import { Link } from "react-router-dom";
+import { useTranslation } from 'react-i18next';
+import Brightness4Icon from '@mui/icons-material/Brightness4';
+import Brightness7Icon from '@mui/icons-material/Brightness7';
+import eng from "../../assets/eng.png";
+import es from "../../assets/esp.png";
 
 const drawerWidth = 240;
-const navItems = ["Home", "Profile", "Portfolio", "Technologies", "Contact"];
-
+const navItems = ["home", "profile", "portfolio", "technologies", "contact"];
+ 
 function DrawerAppBar(props) {
-  const { window } = props;
+  const { window, toggleTheme, isDarkMode } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
+  const { t, i18n } = useTranslation();
 
   const handleDrawerToggle = () => {
     setMobileOpen((prevState) => !prevState);
@@ -33,24 +39,42 @@ function DrawerAppBar(props) {
       element.scrollIntoView({ behavior: "smooth" });
     }
   };
+
   const handleClick = () => {
     window.location.reload(); // Recargar la página al hacer clic
   };
+
+  const changeLanguage = () => {
+    const nextLanguage = i18n.language === 'en' ? 'es' : 'en';
+    i18n.changeLanguage(nextLanguage);
+  };
+
   const logoStyle = {
     fontWeight: "bold",
     color: "#0091ea",
     textDecoration: "none",
     fontStyle: "italic",
   };
+  const languageIcons = {
+    en: eng,
+    es: es,
+  };
+  
+  const currentLanguage = i18n.language;
+
+  const getNextLanguage = () => {
+    return currentLanguage   ;
+  };
   const drawer = (
     <Box
       sx={{
-        maxWidth: "100%",        maxHeight: "100%",
-
+        maxWidth: "100%",
+        maxHeight: "100%",
         textAlign: "center",
-        backgroundColor: "#18171c",
-        display:"flex",flexDirection:"column",
-        }}
+        backgroundColor: isDarkMode ? "transparent" : "#bdbdbd", // Fondo más claro cuando no está en modo oscuro
+        display: "flex",
+        flexDirection: "column",
+      }}
     >
       <Link
         onClick={handleClick}
@@ -62,29 +86,42 @@ function DrawerAppBar(props) {
         FS
       </Link>
       <Divider />
-      <List  >
+      <List>
         {navItems.map((item) => (
           <ListItem key={item} disablePadding>
             <ListItemButton
               sx={{ textAlign: "center" }}
-              onClick={() => scrollToSection(item.toLowerCase())}
+              onClick={() => scrollToSection(item)}
             >
-              <ListItemText primary={item} sx={{ color: "white" }} />
+              <ListItemText primary={t(`navbar.${item}`)} sx={{ color: isDarkMode ? "white" : "black" }} />
             </ListItemButton>
           </ListItem>
         ))}
       </List>
+      <Divider />
+      <Box sx={{ display: "flex",flexDirection:"column", justifyContent: "center", marginTop: 2 }}>
+        <IconButton onClick={toggleTheme} color="inherit">
+          {isDarkMode ? <Brightness7Icon /> : <Brightness4Icon sx={{ color: isDarkMode ? "white" : "black" }} />}
+        </IconButton>
+        <Button onClick={changeLanguage} color="inherit">
+              <img
+                src={languageIcons[getNextLanguage()]}
+                alt={currentLanguage === 'en' ? 'Español' : 'English'}
+                style={{ width: "24px", height: "auto"  }}
+              />
+            </Button>
+      </Box>
     </Box>
   );
 
   const container =
     window !== undefined ? () => window().document.body : undefined;
-
+ 
   return (
     <Box sx={{ display: "flex" }}>
       <CssBaseline />
       <AppBar
-        style={{ backgroundColor: "#212121", boxShadow: "none" }}
+        style={{ backgroundColor: isDarkMode ? "#121212" : "#bdbdbd", boxShadow: "none" }} // Sin sombra para la barra de navegación
         component="nav"
       >
         <Toolbar>
@@ -101,7 +138,7 @@ function DrawerAppBar(props) {
           <Typography
             variant="h3"
             component="div"
-            sx={{ flexGrow: 1, display: { xs: "none", sm: "block" } }}
+            sx={{ flexGrow: 1, display: { xs: "none", sm: "block" }, color: isDarkMode ? "white" : "black" }}
           >
             <Link onClick={handleClick} style={logoStyle}>
               FS
@@ -109,18 +146,27 @@ function DrawerAppBar(props) {
           </Typography>
 
           <Box sx={{ display: { xs: "none", sm: "block" } }}>
-            {navItems.map((page) => {
-              return (
-                <Button
-                  key={page}
-                  onClick={() => scrollToSection(page.toLowerCase())}
-                  // Hace scroll a la sección correspondiente
-                  sx={{ my: 2, color: "white" }}
-                >
-                  <Typography variant="h6">{page} </Typography>
-                </Button>
-              );
-            })}
+            {navItems.map((page) => (
+              <Button
+                key={page}
+                onClick={() => scrollToSection(page)}
+                sx={{ my: 2, color: isDarkMode ? "white" : "black" }}
+              >
+                <Typography variant="h6">{t(`navbar.${page}`)} </Typography>
+              </Button>
+            ))}
+              <IconButton onClick={toggleTheme} color="inherit">
+      {isDarkMode ? <Brightness7Icon /> : <Brightness4Icon sx={{ color: isDarkMode ? "white" : "black" }} />}
+    </IconButton>
+            {/* <Button onClick={() => changeLanguage('en')} sx={{ color: isDarkMode ? "white" : "black" }}>EN</Button>
+            <Button onClick={() => changeLanguage('es')} sx={{ color: isDarkMode ? "white" : "black" }}>ES</Button> */}
+         <Button onClick={() => changeLanguage(getNextLanguage())} color="inherit">
+              <img
+                src={languageIcons[getNextLanguage()]}
+                alt={currentLanguage === 'en' ? 'Español' : 'English'}
+                style={{ width: "24px", height: "auto"  }}
+              />
+            </Button>
           </Box>
         </Toolbar>
       </AppBar>
@@ -138,16 +184,16 @@ function DrawerAppBar(props) {
             "& .MuiDrawer-paper": {
               boxSizing: "border-box",
               width: drawerWidth,
-               height: "100vh",
-               maxWidth: "100%",
+              height: "100vh",
+              maxWidth: "100%",
               maxHeight: "100%",
               display: "flex",
               flexDirection: "column",
-              justifyContent: "center",  
-              alignItems: "center",  
+              justifyContent: "center",
+              alignItems: "center",
               textAlign: "center",
-              backgroundColor: "#18171c",
-             },
+              backgroundColor: isDarkMode ? "#212121" : "#bdbdbd", // Fondo más claro cuando no está en modo oscuro
+            },
           }}
         >
           {drawer}
@@ -159,6 +205,8 @@ function DrawerAppBar(props) {
 
 DrawerAppBar.propTypes = {
   window: PropTypes.func,
+  toggleTheme: PropTypes.func.isRequired,
+  isDarkMode: PropTypes.bool.isRequired,
 };
 
 export default DrawerAppBar;

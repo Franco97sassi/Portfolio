@@ -1,16 +1,10 @@
 import React, { useState } from "react";
-import {
-  Box,
-  Button,
-  CssBaseline,
-  Stack,
-  TextField,
-  Typography,
-  useMediaQuery,
-} from "@mui/material";
+import { Box, Button, Stack, TextField, Typography, useMediaQuery } from "@mui/material";
 import emailjs from "emailjs-com";
-
-const Contacto = () => {
+import { useTranslation } from "react-i18next"; // Importa el hook de traducción
+ 
+const Contacto = ( {isDarkMode }) => {
+  const { t } = useTranslation(); // Hook de traducción
   const isMobile = useMediaQuery("(max-width:600px)");
   const [showSuccessAlert, setShowSuccessAlert] = useState(false);
   const [showErrorAlert, setShowErrorAlert] = useState(false);
@@ -23,7 +17,6 @@ const Contacto = () => {
   });
   const [submitAttempted, setSubmitAttempted] = React.useState(false);
 
-  // Estado para los mensajes de error
   const [errorMessages, setErrorMessages] = React.useState({
     name: "",
     email: "",
@@ -42,17 +35,15 @@ const Contacto = () => {
     event.preventDefault();
     setSubmitAttempted(true);
 
-    // Actualizar los mensajes de error según el estado de los campos
     const newErrorMessages = {
-      name: formValues.name.trim() === "" ? "Please complete this field" : "",
-      email: formValues.email.trim() === "" ? "Please complete this field" : "",
-      message: formValues.message.trim() === "" ? "Please complete this field" : "",
+      name: formValues.name.trim() === "" ? t("contacto.errorField") : "",
+      email: formValues.email.trim() === "" ? t("contacto.errorField2") : "",
+      message: formValues.message.trim() === "" ? t("contacto.errorField3") : "",
     };
     setErrorMessages(newErrorMessages);
 
     if (areAllFieldsCompleted && isEmailValid()) {
-      // Envío del formulario si todos los campos están completos
-      emailjs
+       emailjs
         .sendForm(
           "service_vyuj2da",
           "template_8d29int",
@@ -61,22 +52,19 @@ const Contacto = () => {
         )
         .then((result) => {
           console.log(result.text);
-          // Mostrar mensaje de éxito
-          setShowSuccessAlert(true);
+           setShowSuccessAlert(true);
           setTimeout(() => {
             window.location.reload();
-          }, 1000); // Recarga la página después de 1 segundo
+          }, 1000);  
         })
         .catch((error) => {
           console.log(error.text);
-          // Mostrar mensaje de error
-          alert(
-            "An error occurred while sending the message."
+           alert(
+            t("contacto.errorSending")
           );
         });
     } else {
-      // Si no todos los campos están completos, mostrar un mensaje de error
-      setShowErrorAlert(true);
+       setShowErrorAlert(true);
       setTimeout(() => {
         setShowErrorAlert(false);
       }, 3000);
@@ -121,38 +109,37 @@ const Contacto = () => {
       <Box
         component="form"
         sx={{
-          justifyContent: isMobile ? "center" : "center",
+          justifyContent:  "center",
           alignContent: "center",
           paddingTop: isMobile ? "25px" : "5px",
         }}
       >
-        <CssBaseline />
         <Box
           sx={{
             display: "flex",
             flexDirection: "column",
-            textAlign: isMobile ? "center" : "center",
-            marginBottom: "-50px",
+            textAlign: "center",
+            marginTop: "5px",
           }}
         >
           <Typography
             variant="h2"
             fontWeight="bold"
             fontStyle="italic"
-            sx={{ textAlign: isMobile ? "center" : "center" }}
+            sx={{ textAlign:"center" }}
           >
-            Contact
+            {t("contacto.title")}
           </Typography>
 
           <Typography
             variant="h5"
             sx={{
-              textAlign: isMobile ? "center" : "center",
+              textAlign:  "center",
               paddingLeft: 10,
               paddingRight: 10,
             }}
           >
-            To get in touch with me, please complete this form.
+            {t("contacto.description")}
           </Typography>
         </Box>
         <Box
@@ -177,173 +164,170 @@ const Contacto = () => {
                 paddingBottom: "1%",
                 justifyContent: "center",
                 alignItems: "center",
-                maxWidth: isMobile ? "80%" : "100%", // Ajusta el ancho máximo del contenedor principal
-                margin: "0 auto", // Centra el contenedor principal horizontalmente
+                maxWidth: isMobile ? "80%" : "100%",  
+                margin: "0 auto",  
+
               }}
+              >
+                <TextField
+                  name="name"
+                  value={formValues.name}
+                  onChange={handleChange}
+                  minRows={1}
+                  placeholder={t("contacto.name")}
+                  variant="outlined"
+                  multiline
+                  InputProps={{
+                    onFocus: (event) =>
+                      event.target.parentElement.parentElement.querySelector(
+                        "label"
+                      ).style.display = "none", // Oculta el label cuando el TextField está enfocado
+                  }}
+                  sx={{
+                    width: isMobile ? "200%" : "500%",
+                    maxWidth: "400px",
+                    "& .MuiInputBase-input": {
+                      color: isDarkMode ? "white" : "black",  // Color del texto del input
+                      borderColor: isDarkMode ? "white" : "black",
+                    },
+                    "& .MuiInputLabel-root": {
+                      color: isDarkMode ? "white" : "black",  // Color del placeholder
+                      opacity: 0.6,  // Opacidad del placeholder
+                    },
+                    "& .MuiOutlinedInput-root": {
+                      backgroundColor: "transparent",
+                      borderRadius: "10px",
+                      borderColor: isDarkMode ? "white" : "black",
+                      "& .MuiOutlinedInput-notchedOutline": {
+                        borderColor: isDarkMode ? "white" : "black",
+                      },
+                      "&:hover .MuiOutlinedInput-notchedOutline": {
+                        borderColor: "white",
+                      },
+                      "&.Mui-focused .MuiOutlinedInput-notchedOutline": {
+                        borderColor: isDarkMode ? "white" : "black",
+                      },
+                    },
+                  }}
+                  error={submitAttempted && formValues.name.trim() === ""}
+                  helperText={submitAttempted && formValues.name.trim() === "" ? errorMessages.name : ""}
+                />
+                <TextField
+                  name="email"
+                  value={formValues.email}
+                  onChange={handleChange}
+                  minRows={1}
+                  placeholder={t("contacto.email")}
+                  variant="outlined"
+                  multiline
+                  InputProps={{
+                    onFocus: (event) =>
+                      event.target.parentElement.parentElement.querySelector(
+                        "label"
+                      ).style.display = "none",   
+                  }}
+                  sx={{
+                    width: isMobile ? "200%" : "500%",
+                    maxWidth: "400px",
+                    "& .MuiInputBase-input": {
+                      color: isDarkMode ? "white" : "black",  // Color del texto del input
+                      borderColor: isDarkMode ? "white" : "black",
+                    },
+                    "& .MuiInputLabel-root": {
+                      color: isDarkMode ? "white" : "black",  // Color del placeholder
+                      opacity: 0.6,  // Opacidad del placeholder
+                    },
+                    "& .MuiOutlinedInput-root": {
+                      backgroundColor: "transparent",
+                      borderRadius: "10px",
+                      borderColor: isDarkMode ? "white" : "black",
+                      "& .MuiOutlinedInput-notchedOutline": {
+                        borderColor: isDarkMode ? "white" : "black",
+                      },
+                      "&:hover .MuiOutlinedInput-notchedOutline": {
+                        borderColor: "white",
+                      },
+                      "&.Mui-focused .MuiOutlinedInput-notchedOutline": {
+                        borderColor: isDarkMode ? "white" : "black",
+                      },
+                    },
+                  }}
+                  error={submitAttempted && formValues.email.trim() === ""}
+                  helperText={submitAttempted && formValues.email.trim() === "" ? errorMessages.email : ""}
+                />
+               <TextField
+                name="message"
+                value={formValues.message}
+                onChange={handleChange}
+                fullWidth
+                multiline
+                minRows={7}  
+                placeholder={t("contacto.message")}
+                variant="outlined"
+                sx={{
+                  width: isMobile ? "200%" : "500%",
+                  maxWidth: "400px",
+                  "& .MuiInputBase-input": {
+                    color: isDarkMode ? "white" : "black",  // Color del texto del input
+                    borderColor: isDarkMode ? "white" : "black",
+                  },
+                  "& .MuiInputLabel-root": {
+                    color: isDarkMode ? "white" : "black",  // Color del placeholder
+                    opacity: 0.6,  // Opacidad del placeholder
+                  },
+                  "& .MuiOutlinedInput-root": {
+                    backgroundColor: "transparent",
+                    borderRadius: "10px",
+                    borderColor: isDarkMode ? "white" : "black",
+                    "& .MuiOutlinedInput-notchedOutline": {
+                      borderColor: isDarkMode ? "white" : "black",
+                    },
+                    "&:hover .MuiOutlinedInput-notchedOutline": {
+                      borderColor: "white",
+                    },
+                    "&.Mui-focused .MuiOutlinedInput-notchedOutline": {
+                      borderColor: isDarkMode ? "white" : "black",
+                    },
+                  },
+                }}
+                error={submitAttempted && formValues.message.trim() === ""}
+                helperText={submitAttempted && formValues.message.trim() === "" ? errorMessages.message : ""}
+              />
+  
+              </Stack>
+            </Box>
+            <Button
+              sx={{
+                marginTop: "1%",
+                marginBottom: "1%",
+                background: "#0091e9",
+                color: "white",
+                
+              }}
+              variant="contained"
+              onClick={handleSubmit}
             >
-              <TextField
-                name="name"
-                value={formValues.name}
-                onChange={handleChange}
-                minRows={1}
-                placeholder="Name"
-                variant="outlined"
-                multiline
-                InputProps={{
-                  onFocus: (event) =>
-                    event.target.parentElement.parentElement.querySelector(
-                      "label"
-                    ).style.display = "none", // Oculta el label cuando el TextField está enfocado
-                }}
-                sx={{
-                  width: isMobile ? "200%" : "500%",
-                  maxWidth: "400px",
-                  "& .MuiInputBase-input": {
-                    color: "white", // Establece el color del texto
-                    borderColor: "white",
-                  },
-                  "& .MuiInputLabel-root": {
-                    display: "none", // Oculta completamente el label
-                  },
-                  "& .MuiOutlinedInput-root": {
-                    backgroundColor: "transparent", // Establece el fondo del TextField como transparente
-                    borderRadius: "10px", // Establece el borde redondeado de 10px
-                    borderColor: "white", // Establece el color del borde inicialmente
-
-                    "& .MuiOutlinedInput-notchedOutline": {
-                      borderColor: "white", // Color del borde en el estado inicial
-                    },
-                    "&:hover .MuiOutlinedInput-notchedOutline": {
-                      borderColor: "white", // Cambia el color del borde cuando el TextField está en hover
-                    },
-                    "&.Mui-focused .MuiOutlinedInput-notchedOutline": {
-                      borderColor: "white", // Mantén el color del borde blanco cuando está enfocado
-                    },
-                  },
-                }}
-                error={submitAttempted && formValues.name.trim() === ""}
-                helperText={submitAttempted && formValues.name.trim() === "" ? errorMessages.name : ""}
+              {t("contacto.submit")}
+            </Button>
+            {/* Muestra el alerta de éxito si showSuccessAlert es true */}
+            {showSuccessAlert && (
+              <CustomAlert
+                message={t("contacto.successMessage")}
+                severity="success"
               />
-              <TextField
-                name="email"
-                value={formValues.email}
-                onChange={handleChange}
-                minRows={1}
-                placeholder="Email"
-                variant="outlined"
-                multiline
-                InputProps={{
-                  onFocus: (event) =>
-                    event.target.parentElement.parentElement.querySelector(
-                      "label"
-                    ).style.display = "none", // Oculta el label cuando el TextField está enfocado
-                }}
-                sx={{
-                  width: isMobile ? "200%" : "500%",
-                  maxWidth: "400px",
-                  "& .MuiInputBase-input": {
-                    color: "white", // Establece el color del texto
-                    borderColor: "white",
-                  },
-                  "& .MuiInputLabel-root": {
-                    display: "none", // Oculta completamente el label
-                  },
-                  "& .MuiOutlinedInput-root": {
-                    backgroundColor: "transparent", // Establece el fondo del TextField como transparente
-                    borderRadius: "10px", // Establece el borde redondeado de 10px
-                    borderColor: "white", // Establece el color del borde inicialmente
-
-                    "& .MuiOutlinedInput-notchedOutline": {
-                      borderColor: "white", // Color del borde en el estado inicial
-                    },
-                    "&:hover .MuiOutlinedInput-notchedOutline": {
-                      borderColor: "white", // Cambia el color del borde cuando el TextField está en hover
-                    },
-                    "&.Mui-focused .MuiOutlinedInput-notchedOutline": {
-                     
-                      borderColor: "white", // Mantén el color del borde blanco cuando está enfocado
-                    },
-                  },
-                }}
-                error={submitAttempted && formValues.email.trim() === ""}
-                helperText={submitAttempted && formValues.email.trim() === "" ? errorMessages.email : ""}
+            )}
+            {/* Muestra el alerta de error si showErrorAlert es true */}
+            {showErrorAlert && (
+              <CustomAlert
+                message={t("contacto.errorMessage")}
+                severity="error"
               />
-             <TextField
-  name="message"
-  value={formValues.message}
-  onChange={handleChange}
-  fullWidth
-  multiline
-  minRows={7} // Número mínimo de filas
-  placeholder="Message"
-  variant="outlined"
-  sx={{
-    width: isMobile ? "200%" : "500%",
-    maxWidth: "400px",
-    "& .MuiInputBase-input": {
-      color: "white", // Establece el color del texto
-      borderColor: "white",
-    },
-    "& .MuiInputLabel-root": {
-      display: "none", // Oculta completamente el label
-    },
-    "& .MuiOutlinedInput-root": {
-      backgroundColor: "transparent", // Establece el fondo del TextField como transparente
-      borderRadius: "10px", // Establece el borde redondeado de 10px
-      borderColor: "white", // Establece el color del borde inicialmente
-
-      "& .MuiOutlinedInput-notchedOutline": {
-        borderColor: "white", // Color del borde en el estado inicial
-      },
-      "&:hover .MuiOutlinedInput-notchedOutline": {
-        borderColor: "white", // Cambia el color del borde cuando el TextField está en hover
-      },
-      "&.Mui-focused .MuiOutlinedInput-notchedOutline": {
-        borderColor: "white", // Mantén el color del borde blanco cuando está enfocado
-      },
-    },
-    "& .MuiOutlinedInput-multiline": {
-      // Estilo específico para el campo de mensajes multilinea
-      height: "10px", // Establece la altura deseada
-    },
-  }}
-  error={submitAttempted && formValues.message.trim() === ""}
-  helperText={submitAttempted && formValues.message.trim() === "" ? errorMessages.message : ""}
-/>
-
-
-            </Stack>
+            )}
           </Box>
-          <Button
-            sx={{
-              marginTop: "1%",
-              marginBottom: "1%",
-              background: "#0091e9",
-              color: "white",
-            }}
-            variant="contained"
-            onClick={handleSubmit}
-          >
-            Submit
-          </Button>
-          {/* Muestra el alerta de éxito si showSuccessAlert es true */}
-          {showSuccessAlert && (
-            <CustomAlert
-              message="Message sent successfully"
-              severity="success"
-            />
-          )}
-          {/* Muestra el alerta de error si showErrorAlert es true */}
-          {showErrorAlert && (
-            <CustomAlert
-              message="An error occurred while sending the message."
-              severity="error"
-            />
-          )}
         </Box>
-      </Box>
-    </div>
-  );
-};
-
-export default Contacto;
+      </div>
+    );
+  };
+  
+  export default Contacto;
+  

@@ -1,0 +1,95 @@
+{
+  "navbar": {
+    "home": "Home",
+    "profile": "Profile",
+    "portfolio": "Portfolio",
+    "technologies": "Technologies",
+    "contact": "Contact",
+    "toggleTheme": "Toggle Theme",
+    "darkMode": "Dark Mode",
+    "lightMode": "Light Mode"
+  },
+  "home": {
+    "greeting": "Hello, I'm",
+    "name": "Franco Sassi.",
+    "jobTitle": "Full Stack React Developer.",
+    "github": "GitHub",
+    "linkedin": "LinkedIn",
+    "cv": "Resume",
+    "email": "Email"
+  },
+  "sobre": {
+    "title": "About Me",
+    "introduction": "I am from <strong>Rosario, Santa Fe Argentina</strong>. I successfully completed the Full Stack Developer career at CoderHouse in 2023. I have experience working in multidisciplinary teams and collaborating on various projects. My focus is on providing innovative and high-quality solutions to meet customer needs.",
+    "experience": "I have been working as a front-end developer for over a year at a start-up, where my tasks have included modifying and enhancing user interfaces, fixing bugs, and collaborating with the backend and testing teams.",
+    "achievementsTitle": "Achievements",
+    "achievement1": "Proficient in visual interface development and responsive design implementation.",
+    "achievement2": "Successfully collaborated with back-end developers to seamlessly integrate APIs, web services, and interact with databases such as PostgreSQL across 3 to 5 projects.",
+    "achievement3": "Working closely with UX/UI designers for designs created in Figma.",
+    "achievement4": "Demonstrated proficiency in managing E-commerce and payment platforms."
+  },
+  "portfolio": {
+    "title": "My Projects",
+    "projects": [
+      {
+        "title": "Star Wars API",
+        "description": "Working with the StarWars API to display its characters and respective movies from the saga. I demonstrated my skills in Next.js and Tailwind CSS."
+     },
+      {
+        "title": "MdGlobal",
+        "description": "The MDGlobal import and export project is a platform dedicated to simplifying and streamlining international trade processes."
+      },
+      {
+        "title": "Todo Floral",
+        "description": "An all-encompassing e-commerce platform catering to a flower shop, event organization services, and snack sales."
+       },
+      {
+        "title": "Landing TechX",
+        "description": "Dynamic Landing Page for TechX: Seamlessly blending animation, scroll effects, and diverse relevant information."
+       },
+      {
+        "title": "Rifas El Venado",
+        "description": "Rifas El Venado is a full-stack project dedicated to the sale of clothing and the organization of online raffles, seamlessly integrated with Mercado Pago."
+       },
+      {
+        "title": "E-commerce store",
+        "description": "My first React project, an e-commerce platform powered by Firebase integration and the Fake Store API."
+       },
+      {
+        "title": "Windows and Doors",
+        "description": "E-Commerce project leveraging Vanilla JS for dynamic DOM manipulation and Bootstrap for streamlined product addition to the shopping cart."
+       },
+      {
+        "title": "Food Store",
+        "description": "My inaugural JavaScript endeavor, featuring a food-selling business enhanced with Bootstrap for sleek design and an integrated shopping cart functionality."
+       },
+      {
+        "title": "E-Commerce Backend",
+        "description": "Full Stack E-Commerce Project, where I use MongoDB as the database implementing the corresponding folder architecture. Stripe is used as the payment platform."
+       }
+    ]
+  },
+  "experiencia":{
+    "title": "Technologies" 
+
+  },
+  "contacto":{
+    "title": "Contact" ,
+"description":"To get in touch with me, please complete this form.",
+
+"email":"Email",
+"name":"Name",
+"message":"Message",
+"submit":"submit", 
+"successMessage":"Message sent successfully.",
+"errorMessage":"An error occurred while sending the messag.",
+"errorField":"Complete this field",
+"errorField2":"Complete this field",
+"errorField3":"Complete this field" 
+
+
+  },
+  "footer": {
+    "text": "Footer Text in English"
+  }
+}
