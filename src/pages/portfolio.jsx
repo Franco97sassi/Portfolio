@@ -109,7 +109,7 @@ const Portfolio = () => {
       github: "https://github.com/Franco97sassi/Backend-Desafios",
       description:
         "Full Stack E-Commerce Project, where I use MongoDB as the database implementing the corresponding folder architecture. Stripe is used as the payment platform.",
-      technologies: ["Mongo DB", "Bootstrap", "Docker", "Jwt", "Nest","Handlebars"],
+      technologies: ["Mongo", "Bootstrap", "Jwt", "Handlebars"],
     },
     // {
     //   img: rosario,
