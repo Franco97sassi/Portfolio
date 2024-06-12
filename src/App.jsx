@@ -9,7 +9,7 @@ import Footer from './pages/Footer';
 import createCustomTheme from './theme/theme';
 
 function App() {
-  const [isDarkMode, setIsDarkMode] = useState(true);
+  const [isDarkMode, setIsDarkMode] = useState(false);
 
   useEffect(() => {
     const savedTheme = localStorage.getItem('theme');
