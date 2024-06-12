@@ -86,7 +86,7 @@
 "message":"Mensaje",
 "submit":"enviar", 
 "successMessage":"Mensaje enviado exitosamente.",
-"errorMessage":"Un error ocurrio mientras se envio el mensaje, intenta de nuevo.",
+"errorMessage":"Un error ocurrió mientras se envio el mensaje, intenta de nuevo.",
 "errorField":"Complete este campo",
 "errorField2":"Complete este campo",
 "errorField3":"Complete este campo" 
