@@ -46,8 +46,13 @@ const Portfolio = ({isDarkMode }) => {
     },
     {
       img: todoFloral,
+<<<<<<< HEAD
       title: t("portfolio.projects.2.title"),
       url: "https://ecommerce-floral.vercel.app/",
+=======
+      title: "Todo Floral",
+      url: "https://www.todofloral.com/",
+>>>>>>> 7df99d9a323f0399026f67cdaa934bd686587c38
       github: "https://github.com/Franco97sassi/TF",
       description: t("portfolio.projects.2.description"),
       technologies: ["React", "Material UI", "PostgreSQL"],
@@ -94,11 +99,20 @@ const Portfolio = ({isDarkMode }) => {
     },
     {
       img: backend,
+<<<<<<< HEAD
       title: t("portfolio.projects.8.title"),
       url: "https://backend-desafios.onrender.com/",
       github: "https://github.com/Franco97sassi/Backend-Desafios",
       description: t("portfolio.projects.8.description"),
       technologies:  ["MongoDB", "Bootstrap", "Docker", "Jwt", "Nest"],
+=======
+      title: "E-Commerce Backend",
+       url: "https://backend-desafios.onrender.com/",
+      github: "https://github.com/Franco97sassi/Backend-Desafios",
+      description:
+        "Full Stack E-Commerce Project, where I use MongoDB as the database implementing the corresponding folder architecture. Stripe is used as the payment platform.",
+      technologies: ["Mongo", "Bootstrap", "Jwt", "Handlebars"],
+>>>>>>> 7df99d9a323f0399026f67cdaa934bd686587c38
     },
   ];
 
