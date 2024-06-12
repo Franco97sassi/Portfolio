@@ -66,6 +66,10 @@
       {
         "title": "E-Commerce Backend",
         "description": "Full Stack E-Commerce Project, where I use MongoDB as the database implementing the corresponding folder architecture. Stripe is used as the payment platform."
+       },
+       {
+        "title": "Farm Project",
+        "description": "Website programmed in Django with Python. This website will feature admin functionality, user profiles, registration, pages, and forms."
        }
     ]
   },

@@ -67,6 +67,10 @@
       {
         "title": "Backend de E-Commerce",
         "description": "Proyecto de comercio electrónico full-stack, donde uso MongoDB como base de datos implementando la arquitectura de carpetas correspondiente. Stripe se utiliza como plataforma de pago."
+       },
+       {
+        "title": "Farm Project",
+        "description": "Página web programada en Django con Python. Esta web tendrá administración, perfiles de usuario, registro, páginas y formularios."
        }
     ]
   },

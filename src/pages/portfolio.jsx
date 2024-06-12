@@ -19,6 +19,8 @@ import windowShop from "../assets/windowShop.png";
 import comidas from "../assets/tiendaComidas.png";
 import backend from "../assets/backend.png";
 import repoBlue from "../assets/repoBlue.png";
+import pythonProject from "../assets/pythonProject.png";
+
 import web from "../assets/web.png";
 import { useTranslation } from "react-i18next"; // Asegúrate de importar esto
 
@@ -98,6 +100,14 @@ const Portfolio = ({isDarkMode }) => {
       github: "https://github.com/Franco97sassi/Backend-Desafios",
       description: t("portfolio.projects.8.description"),
       technologies: ["Mongo", "Bootstrap", "Jwt", "Handlebars"],
+    },
+    {
+      img: pythonProject,
+      title: "Farm Project",
+      //  url: "https://backend-desafios.onrender.com/",
+      github: "https://github.com/Franco97sassi/pythonProjectFarm",
+      description: t("portfolio.projects.9.description"),
+      technologies: ["Python", "Django"],
     },
   ];
 

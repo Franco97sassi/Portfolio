@@ -32,6 +32,7 @@ import js from "../assets/js.png";
  import tailwind from "../assets/tailwindIcon.png";
  import sass from "../assets/sass.png";
  import python from "../assets/pythonIcon.png";
+ import handlebars from "../assets/handlebars.png";
 
 const Experiencia = () => {
   const isMobile = useMediaQuery("(max-width:600px)");
@@ -66,6 +67,8 @@ const Experiencia = () => {
      { img: tailwind, title: "Tailwind" },
     // // { img: <PythonIconSvg/>, title: "Python" },
       { img: MYSQL, title: "MYSQL" },
+      { img: handlebars, title: "handlebars" },
+
     //  { img: <DockerIconSvg/>, title: "docker" },
   ];
   // const itemData = [
