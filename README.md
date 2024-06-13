@@ -15,13 +15,13 @@ This is my portfolio where you can find my personal information, education, expe
 ## Key Features
 - **Profile:**
   A brief overview of the developer, including background, skills, and experience.
-- Portfolio:
+- **Portfolio:**
   A collection of the developer's projects, each with links to its GitHub repository and the live version on the web.
-- Technologies:
+- **Technologies:**
   A list of technologies and tools that the developer is knowledgeable in and comfortable using.
-- Contact:
+- **Contact:**
   A form that allows visitors to get in touch with the developer directly.
-- Extra:
+- **Extra:**
   Dark mode and language switch are available:
 
 
