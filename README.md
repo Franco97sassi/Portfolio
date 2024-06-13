@@ -7,7 +7,7 @@ This is my portfolio where you can find my personal information, education, expe
    - git clone
 2. Navigate to the project directory:
    - cd project
-3.Install dependencies:
+3. Install dependencies:
    - npm install
 
 ## Libraries
