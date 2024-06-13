@@ -41,10 +41,6 @@ This is my portfolio where you can find my personal information, education, expe
   franco.sassi97@gmail.com
 
 - **Linkedin:**
-  
-<a href="https://www.linkedin.com/in/sassifranco/">
-   
-   Franco Sassi
- 
-  </a>
+
+  <a href="https://www.linkedin.com/in/sassifranco/">Franco Sassi </a>
  
