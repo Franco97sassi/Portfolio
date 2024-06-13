@@ -48,6 +48,7 @@ const Portfolio = ({isDarkMode }) => {
     },
     {
       img: todoFloral,
+      title: "Todo Floral",
        url: "https://www.todofloral.com/",
       github: "https://github.com/Franco97sassi/TF",
       description: t("portfolio.projects.2.description"),
