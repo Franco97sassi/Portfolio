@@ -9,6 +9,32 @@ This is my portfolio where you can find my personal information, education, expe
    - cd project
 3. Install dependencies:
    - npm install
+4. Start the application in development mode:
+   - npm run dev
+  
+## Key Features
+- Profile:
+  A brief overview of the developer, including background, skills, and experience.
+- Portfolio:
+  A collection of the developer's projects, each with links to its GitHub repository and the live version on the web.
+- Technologies:
+  A list of technologies and tools that the developer is knowledgeable in and comfortable using.
+- Contact:
+  A form that allows visitors to get in touch with the developer directly.
+- Extra:
+  Dark mode and language switch are available:
+
+
+## Stack
+- React
+- Material UI
+- Js
+
 
 ## Libraries
-Framer Motion
+- Framer Motion
+- React Scroll
+- react-i18next
+  
+
+ 
