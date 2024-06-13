@@ -40,7 +40,7 @@ This is my portfolio where you can find my personal information, education, expe
 
   franco.sassi97@gmail.com
 
--**Linkedin:**
+- **Linkedin:**
 
   [sassifranco]: https://www.linkedin.com/in/sassifranco/
  
