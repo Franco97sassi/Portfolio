@@ -43,6 +43,8 @@ This is my portfolio where you can find my personal information, education, expe
 - **Linkedin:**
   
 <a href="https://www.linkedin.com/in/sassifranco/">
-    Franco Sassi
+   
+   Franco Sassi
+ 
   </a>
  
