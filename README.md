@@ -22,7 +22,7 @@ This is my portfolio where you can find my personal information, education, expe
 - **Contact:**
   A form that allows visitors to get in touch with the developer directly.
 - **Extra:**
-  Dark mode and language switch are available:
+  Dark mode and language switch are available.
 
 
 ## Stack
@@ -35,5 +35,12 @@ This is my portfolio where you can find my personal information, education, expe
 - React Scroll
 - react-i18next
   
+## Contact
+- **Email:**
 
+  franco.sassi97@gmail.com
+
+-**Linkedin:**
+
+  sassifranco
  
