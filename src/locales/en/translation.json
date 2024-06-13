@@ -86,7 +86,7 @@
 "message":"Message",
 "submit":"submit", 
 "successMessage":"Message sent successfully.",
-"errorMessage":"An error occurred while sending the messag.",
+"errorMessage":"An error occurred while sending the message.",
 "errorField":"Complete this field",
 "errorField2":"Complete this field",
 "errorField3":"Complete this field" 
