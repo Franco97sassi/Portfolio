@@ -13,7 +13,7 @@ This is my portfolio where you can find my personal information, education, expe
    - npm run dev
   
 ## Key Features
-- Profile:
+- **Profile:**
   A brief overview of the developer, including background, skills, and experience.
 - Portfolio:
   A collection of the developer's projects, each with links to its GitHub repository and the live version on the web.
@@ -29,7 +29,6 @@ This is my portfolio where you can find my personal information, education, expe
 - React
 - Material UI
 - Js
-
 
 ## Libraries
 - Framer Motion
