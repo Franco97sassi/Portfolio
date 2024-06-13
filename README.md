@@ -42,5 +42,5 @@ This is my portfolio where you can find my personal information, education, expe
 
 -**Linkedin:**
 
-  [sassifranco] (https://www.linkedin.com/in/sassifranco/)
+  [sassifranco]: https://www.linkedin.com/in/sassifranco/
  
