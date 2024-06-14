@@ -1,6 +1,6 @@
 // Sobre.jsx
 import React from 'react';
-import { Box, Typography, useMediaQuery } from "@mui/material";
+import { Box, Divider, Typography, useMediaQuery } from "@mui/material";
 import { useTranslation } from "react-i18next";
 import fotoTechX from "../assets/fotoTechX.jpg";
 import Timeline from '@mui/lab/Timeline';
@@ -10,7 +10,7 @@ import TimelineConnector from '@mui/lab/TimelineConnector';
 import TimelineContent from '@mui/lab/TimelineContent';
 import TimelineDot from '@mui/lab/TimelineDot';
 
-const Sobre = () => {
+const Sobre = ({isDarkMode}) => {
   const isMobile = useMediaQuery("(max-width:600px)");
   const { t } = useTranslation(); // Hook de traducción
   const isExtraLarge = useMediaQuery("(min-width:1440px)"); // Nueva media query para xl
@@ -34,10 +34,19 @@ const Sobre = () => {
         variant="h2"
         fontWeight="bold"
         fontStyle="italic"
-        sx={{ textAlign: "center", paddingBottom: "2%" }}
+        sx={{ textAlign: "center",  paddingBottom: "1%" }}
       >
         {t('sobre.title')} {/* Título traducido */}
       </Typography>
+      <Divider 
+        sx={{
+          width: "230px",           // Ancho del 50% del contenedor
+          margin: "0 auto",       // Centrar horizontalmente
+          borderColor: isDarkMode ? "#ffffff" : "#000000", // Cambia el color dependiendo del modo
+          borderWidth: "1px",     // Grosor del Divider
+          marginBottom: isMobile?"4%":"2%",     // Espacio debajo del Divider
+        }} 
+      />
       <Box
         sx={{
           display: "flex",
@@ -76,10 +85,10 @@ const Sobre = () => {
             textAlign: isMobile ? "center" : "justify",
           }}
         >
-          <Typography variant="body1" sx={{ paddingBottom: "10px" }}>
+          <Typography variant="body1" sx={{ paddingBottom: "10px"}}>
             <span dangerouslySetInnerHTML={{ __html: t('sobre.introduction') }} /> {/* Texto de introducción traducido */}
           </Typography>
-          <Typography variant="body1" sx={{ paddingBottom: "10px" }}>
+          <Typography variant="body1" sx={{  paddingBottom: "10px" }}>
             {t('sobre.experience')} {/* Experiencia traducida */}
           </Typography>
           <Typography variant="body1" sx={{ paddingBottom: "10px" }}></Typography>

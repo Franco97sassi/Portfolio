@@ -56,7 +56,7 @@ const Home = () => {
   const AnimatedJobTitle = ({ text }) => (
     <Typography variant={textSize3} paddingBottom={2} textAlign="center">
       {text.split("").map((char, index) => (
-        <motion.span key={index} variants={letterVariants}>
+        <motion.span    key={index} variants={letterVariants}>
           {char}
         </motion.span>
       ))}

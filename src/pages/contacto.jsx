@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Box, Button, Stack, TextField, Typography, useMediaQuery } from "@mui/material";
+import { Box, Button, Divider, Stack, TextField, Typography, useMediaQuery } from "@mui/material";
 import emailjs from "emailjs-com";
 import { useTranslation } from "react-i18next"; // Importa el hook de traducción
  
@@ -126,11 +126,19 @@ const Contacto = ( {isDarkMode }) => {
             variant="h2"
             fontWeight="bold"
             fontStyle="italic"
-            sx={{ textAlign:"center" }}
+            sx={{ textAlign:"center", paddingBottom: "1%", }}
           >
             {t("contacto.title")}
           </Typography>
-
+          <Divider
+        sx={{
+          width: "180px",           // Ancho del 50% del contenedor
+          margin: "0 auto",       // Centrar horizontalmente
+          borderColor: isDarkMode ? "#ffffff" : "#000000", // Cambia el color dependiendo del modo
+          borderWidth: "1px",     // Grosor del Divider
+          marginBottom: isMobile?"4%":"2%",     // Espacio debajo del Divider
+        }} 
+      />
           <Typography
             variant="h5"
             sx={{
@@ -141,6 +149,7 @@ const Contacto = ( {isDarkMode }) => {
           >
             {t("contacto.description")}
           </Typography>
+          
         </Box>
         <Box
           sx={{
@@ -160,7 +169,7 @@ const Contacto = ( {isDarkMode }) => {
             <Stack
               spacing={2}
               sx={{
-                paddingTop: "50%",
+                paddingTop: "10%",
                 paddingBottom: "1%",
                 justifyContent: "center",
                 alignItems: "center",
@@ -298,7 +307,7 @@ const Contacto = ( {isDarkMode }) => {
             </Box>
             <Button
               sx={{
-                marginTop: "1%",
+                marginTop: "10px",
                 marginBottom: "1%",
                 background: "#0091e9",
                 color: "white",

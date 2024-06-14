@@ -26,19 +26,19 @@ const General = ({ isDarkMode }) => {
             transition: "background-image 0.3s",
         }}
       >
-        <section id="home" style={sectionStyle}>
+        <section id="home" style={sectionStyle}  >
           <Home />
         </section>
-        <section id="profile" style={sectionStyle}>
-          <Sobre />
+        <section id="profile" style={sectionStyle} data-aos="fade-right" data-aos-delay="200">
+          <Sobre  isDarkMode={isDarkMode} />
         </section>
-        <section id="portfolio" style={sectionStyle}>
+        <section id="portfolio" style={sectionStyle} data-aos="fade-right" data-aos-delay="200">
           <Portfolio isDarkMode={isDarkMode} />
         </section>
-        <section id="technologies" style={sectionStyle}>
-          <Experiencia />
+        <section id="technologies" style={sectionStyle} data-aos="fade-right"data-aos-delay="200">
+          <Experiencia  isDarkMode={isDarkMode}/>
         </section>
-        <section id="contact" style={sectionStyle}>
+        <section id="contact" style={sectionStyle} data-aos="fade-right" data-aos-duration="800">
           <Contacto isDarkMode={isDarkMode}  />
         </section>
         <Footer />

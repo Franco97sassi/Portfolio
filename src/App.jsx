@@ -7,6 +7,9 @@ import General from './pages/general';
 import { ThemeProvider } from '@mui/material';
 import Footer from './pages/Footer';
 import createCustomTheme from './theme/theme';
+import AOS from 'aos'; // Import AOS
+
+import 'aos/dist/aos.css'; // Import AOS styles
 
 function App() {
   const [isDarkMode, setIsDarkMode] = useState(true);
@@ -16,6 +19,8 @@ function App() {
     if (savedTheme === 'dark') {
       setIsDarkMode(true);
     }
+    AOS.init({ duration: 1000, offset: 100 }); // Initialize AOS with options
+
   }, []);
 
   const toggleTheme = () => {

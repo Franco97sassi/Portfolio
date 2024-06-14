@@ -5,6 +5,7 @@ import {
   CardActions,
   CardContent,
   CardMedia,
+  Divider,
   Typography,
   useMediaQuery,
 } from "@mui/material";
@@ -115,23 +116,31 @@ const Portfolio = ({isDarkMode }) => {
   return (
     <Box>
       <Box>
-        <Typography variant="h2" fontWeight="bold" fontStyle="italic" sx={{ paddingBottom: "20px", textAlign: "center" }}>
+        <Typography variant="h2" fontWeight="bold" fontStyle="italic" sx={{ paddingBottom: "1%", textAlign: "center" }}>
           {t("portfolio.title")}
         </Typography>
-
+        <Divider 
+        sx={{
+          width: "275px",           // Ancho del 50% del contenedor
+          margin: "0 auto",       // Centrar horizontalmente
+          borderColor: isDarkMode ? "#ffffff" : "#000000", // Cambia el color dependiendo del modo
+          borderWidth: "1px",     // Grosor del Divider
+          marginBottom: isMobile?"4%":"2%",     // Espacio debajo del Divider
+        }} 
+      />
         <Box sx={{ display: "flex", flexWrap: "wrap", justifyContent: "center", rowGap: 10, columnGap: 50, paddingLeft: "50px", paddingRight: "50px" }}>
           {projectImages.map((project, index) => (
             <div key={index}>
               <Card
                 key={index}
-                sx={{ maxWidth: 345, backgroundImage:isDarkMode ?  "linear-gradient(#1a237e,#212121,#212121 )":"linear-gradient(gray,white,gray )", borderRadius: "5%", transition: "transform 0.3s, box-shadow 0.3s", "&:hover": { transform: "scale(1.15)", boxShadow: "0 10px 20px rgba(0,0,0,0.2)" } }}
+                sx={{ maxWidth: 345, backgroundImage:isDarkMode ?  "linear-gradient(#1a237e,#212121,#212121 )":"linear-gradient(gray,white,gray )", borderRadius: "2%", transition: "transform 0.3s, box-shadow 0.3s", "&:hover": { transform: "scale(1.15)", boxShadow: "0 10px 20px rgba(0,0,0,0.2)" } }}
               >
                 <CardMedia
                   component="img"
                   alt="proyect"
                   height="150"
                   image={project.img}
-                  sx={{ borderBottomLeftRadius: "5%", borderBottomRightRadius: "5%" }}
+                  sx={{ borderBottomLeftRadius: "2%", borderBottomRightRadius: "2%" }}
                 />
                 <CardContent sx={{ textAlign: "center", height: isMobile ? "null" : "125px" }}>
                   <Typography fontWeight="bold"  gutterBottom variant="h4" color={isDarkMode ? "white" : "black"}>

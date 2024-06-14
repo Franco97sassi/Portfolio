@@ -1,4 +1,4 @@
-import { Box, Typography, useMediaQuery } from "@mui/material";
+import { Box, Divider, Typography, useMediaQuery } from "@mui/material";
  
 // import ReactIconSvg from "../assets/React";
 // import ExpressIconSvg from "../assets/ExpressIconSvg";
@@ -34,7 +34,7 @@ import js from "../assets/js.png";
  import python from "../assets/pythonIcon.png";
  import handlebars from "../assets/handlebars.png";
 
-const Experiencia = () => {
+const Experiencia = ({isDarkMode}) => {
   const isMobile = useMediaQuery("(max-width:600px)");
   const { t } = useTranslation(); // Esto te da acceso a las traducciones
   const itemData = [
@@ -116,12 +116,21 @@ const Experiencia = () => {
             fontStyle="italic"
             sx={{
               textAlign: isMobile ? "center" : "center",
-              paddingBottom: "20px",
+              paddingBottom: "1%",
             }}
           >
                         {t('experiencia.title')}
 
           </Typography>
+          <Divider 
+        sx={{
+          width: "300px",           // Ancho del 50% del contenedor
+          margin: "0 auto",       // Centrar horizontalmente
+          borderColor: isDarkMode ? "#ffffff" : "#000000", // Cambia el color dependiendo del modo
+          borderWidth: "1px",     // Grosor del Divider
+          marginBottom: isMobile?"4%":"2%",     // Espacio debajo del Divider
+        }} 
+      />
         </Box>
         <Box
           sx={{
@@ -136,29 +145,7 @@ const Experiencia = () => {
         >
           {itemData.map((item, index) => (
             <>
-              {/* <Box
-                key={item}
-                sx={{
-                  p: 1,
-                  display: "flex",
-                  alignItems: "center",
-                  transition: "transform 0.3s, box-shadow 0.3s",
-                  transform: hoveredIndex === index ? "scale(1.1)" : "scale(1)",
-                  boxShadow:
-                    hoveredIndex === index
-                      ? "0 4px 8px rgba(148, 0, 211, 0.5)"
-                      : "0 4px 8px rgba(0, 191, 255, 0.5)",
-                  "&:hover": {
-                    transform: "scale(1.1)",
-                    boxShadow: "0 4px 8px rgba(148, 0, 211, 0.5)",
-                  },
-                  borderRadius: "5%",
-                  height: "100px",
-                }}
-              >
- 
-                {item.img}
-              </Box> */}
+               
               <Box
   sx={{
     p: 1,
