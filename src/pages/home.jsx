@@ -11,7 +11,7 @@ import EmailIcon from "../assets/EmailIcon";
 const Home = () => {
   const isMobile = useMediaQuery("(max-width:763px)");
   const lg = useMediaQuery("(min-width:1600px)");
-  const { t } = useTranslation(); // Hook de traducción
+  const { t, i18n } = useTranslation(); // Hook de traducción
 
   const textSize1 = lg ? "h1" : "h2";
   const textSize2 = lg ? "h2" : "h3";
@@ -62,6 +62,9 @@ const Home = () => {
       ))}
     </Typography>
   );
+  const cvUrl = i18n.language === "es"
+  ? "https://drive.google.com/file/d/1CGJJcn1E2n6ZBRKzwQQbGD9RQbShqE22/view?usp=sharing"
+  : "https://drive.google.com/file/d/1FMBMZK3wc15jqk-k69NNYN70qsILxBrU/view?usp=sharing";
 
   return (
     <Box
@@ -130,8 +133,7 @@ const Home = () => {
                   </Button>
                   <Button
                     component="a"
-                    href="https://drive.google.com/file/d/1FMBMZK3wc15jqk-k69NNYN70qsILxBrU/view?usp=sharing"
-                    sx={{
+                    href={cvUrl}                    sx={{
                       "&:hover": {
                         backgroundColor: "lightblue",
                       },
