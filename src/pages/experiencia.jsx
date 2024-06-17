@@ -99,7 +99,7 @@ const Experiencia = ({isDarkMode}) => {
           paddingTop: "100px",
           paddingBottom: "150px",
           height: isMobile ? "max-content" : "max-content",
-          alignContent: "center",
+           alignItems:"center",justifyContent:"center" ,
           marginBottom: isMobile ? "0" : "20px",
         }}
       >
@@ -114,7 +114,7 @@ const Experiencia = ({isDarkMode}) => {
             fontWeight="bold"
              sx={{
               textAlign: isMobile ? "center" : "center",
-              paddingBottom: "1%",
+              paddingBottom: "20px",
             }}
           >
                         {t('experiencia.title')}

@@ -108,7 +108,7 @@ const Portfolio = ({isDarkMode }) => {
 
   return (
     <Box>
-      <Box sx={{alignContent:"center"}}>
+      <Box sx={{alignItems:"center",justifyContent:"center" ,}}>
         <Typography variant="h2" fontWeight="bold"   sx={{ paddingBottom: "1%", textAlign: "center" }}>
           {t("portfolio.title")}
         </Typography>

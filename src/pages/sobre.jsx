@@ -27,6 +27,7 @@ const Sobre = ({isDarkMode}) => {
         paddingBottom: "150px",
         flexDirection: "column",
         justifyContent: "center",
+        alignItems:"center" ,
         marginBottom: "0%",
       }}
     >

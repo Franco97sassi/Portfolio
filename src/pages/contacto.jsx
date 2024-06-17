@@ -110,7 +110,7 @@ const Contacto = ( {isDarkMode }) => {
         component="form"
         sx={{
           justifyContent:  "center",
-          alignContent: "center",
+          alignItems: "center",
           paddingTop: isMobile ? "25px" : "5px",
         }}
       >
