@@ -55,22 +55,7 @@ const Portfolio = ({isDarkMode }) => {
       description: t("portfolio.projects.6.description"),
       technologies: ["Html","JS", "Bootstrap"],
     },
-    {
-      img: backend,
-      title: "Backend Project",
-       url: "https://backend-desafios.onrender.com/",
-      github: "https://github.com/Franco97sassi/Backend-Desafios",
-      description: t("portfolio.projects.8.description"),
-      technologies: ["Mongo DB", "Express",  "Handlebars"],
-    },
-    {
-      img: pythonProject,
-      title: "Farm Project",
-      //  url: "https://backend-desafios.onrender.com/",
-      github: "https://github.com/Franco97sassi/pythonProjectFarm",
-      description: t("portfolio.projects.9.description"),
-      technologies: ["Python", "Django"],
-    },
+    
       {   img: landing,
       title: t("portfolio.projects.3.title"),
       url: "https://www.techxmx.com/",
@@ -102,7 +87,22 @@ const Portfolio = ({isDarkMode }) => {
              technologies: ["Next",   "Tailwind CSS"],
 
      },
-    
+     {
+      img: backend,
+      title: "Backend Project",
+       url: "https://backend-desafios.onrender.com/",
+      github: "https://github.com/Franco97sassi/Backend-Desafios",
+      description: t("portfolio.projects.8.description"),
+      technologies: ["Mongo DB", "Express",  "Handlebars"],
+    },
+    {
+      img: pythonProject,
+      title: "Farm Project",
+      //  url: "https://backend-desafios.onrender.com/",
+      github: "https://github.com/Franco97sassi/pythonProjectFarm",
+      description: t("portfolio.projects.9.description"),
+      technologies: ["Python", "Django"],
+    },
      
   ];
 
