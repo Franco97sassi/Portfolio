@@ -150,12 +150,15 @@ const Home = () => {
                       height: "max-content",
                       borderRadius: "50px",
                       "&:hover": {
-                        backgroundColor: "blue",
+                        backgroundColor: "lightblue",
+                        
                       },
                     }}
                   >
                     <EmailIcon />
-                    <Typography sx={{ padding: "10px",color:"white" }}>
+                    <Typography sx={{ padding: "10px",color:"white" , "&:hover": {
+      color: "black"
+    } }}>
                       franco.sassi97@gmail.com
                     </Typography>
                   </Button>

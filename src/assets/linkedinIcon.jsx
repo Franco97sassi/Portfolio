@@ -7,7 +7,7 @@ const LinkedinIcon = () => {
  preserveAspectRatio="xMidYMid meet">
 
 <g transform="translate(0.000000,512.000000) scale(0.100000,-0.100000)"
-fill="#304ffe"  stroke="none">
+fill="#0091ea"  stroke="none">
 <path d="M595 5109 c-151 -22 -270 -84 -386 -199 -69 -68 -94 -102 -127 -170
 -84 -171 -77 29 -77 -2180 0 -2209 -7 -2009 77 -2180 59 -120 178 -239 298
 -298 171 -84 -29 -77 2180 -77 2209 0 2009 -7 2180 77 68 33 102 59 171 127
