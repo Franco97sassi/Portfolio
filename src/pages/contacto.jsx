@@ -118,8 +118,10 @@ const Contacto = ( {isDarkMode }) => {
           sx={{
             display: "flex",
             flexDirection: "column",
-            textAlign: "center",
-            marginTop: "5px",
+            alignItems:"center",
+            justifyContent:"center",
+             textAlign: "center",
+            marginTop: "5px",  
           }}
         >
           <Typography
@@ -129,18 +131,19 @@ const Contacto = ( {isDarkMode }) => {
           >
             {t("contacto.title")}
           </Typography>
-         
+ 
           <Typography
             variant="h5"
-            sx={{
+            sx={{    
               textAlign:  "center",
-              paddingLeft: 10,
-              paddingRight: 10,
+              maxWidth: "400px",   
+    margin: "0 auto",    
+    padding: "0 10px",
             }}
           >
             {t("contacto.description")}
-          </Typography>
-          
+          </Typography>  
+           
         </Box>
         <Box
           sx={{

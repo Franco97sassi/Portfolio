@@ -71,7 +71,7 @@ function DrawerAppBar(props) {
         maxWidth: "100%",
         maxHeight: "100%",
         textAlign: "center",
-        backgroundColor: isDarkMode ? "transparent" : "#bdbdbd", // Fondo más claro cuando no está en modo oscuro
+        background: isDarkMode ? "#000000" : "#bdbdbd", // Fondo más claro cuando no está en modo oscuro
         display: "flex",
         flexDirection: "column",
       }}
@@ -192,7 +192,7 @@ function DrawerAppBar(props) {
               justifyContent: "center",
               alignItems: "center",
               textAlign: "center",
-              backgroundColor: isDarkMode ? "#212121" : "#bdbdbd", // Fondo más claro cuando no está en modo oscuro
+              background: isDarkMode ? "#000000" : "#bdbdbd", // Fondo más claro cuando no está en modo oscuro
             },
           }}
         >
