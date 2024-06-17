@@ -71,7 +71,7 @@ function DrawerAppBar(props) {
         maxWidth: "100%",
         maxHeight: "100%",
         textAlign: "center",
-        background: isDarkMode ? "#000000" : "#bdbdbd", // Fondo más claro cuando no está en modo oscuro
+        background: isDarkMode ? "#000000" : "#ffffff", // Fondo más claro cuando no está en modo oscuro
         display: "flex",
         flexDirection: "column",
       }}
@@ -121,7 +121,7 @@ function DrawerAppBar(props) {
     <Box sx={{ display: "flex" }}>
       <CssBaseline />
       <AppBar 
-        style={{ background: isDarkMode ? "#000000" : "#fafafa", boxShadow: "none" }} // Sin sombra para la barra de navegación
+        style={{ background: isDarkMode ? "#000000" : "#ffffff", boxShadow: "none" }} // Sin sombra para la barra de navegación
         component="nav"
       >
         <Toolbar>
@@ -192,7 +192,7 @@ function DrawerAppBar(props) {
               justifyContent: "center",
               alignItems: "center",
               textAlign: "center",
-              background: isDarkMode ? "#000000" : "#bdbdbd", // Fondo más claro cuando no está en modo oscuro
+              background: isDarkMode ? "#000000" : "#ffffff", // Fondo más claro cuando no está en modo oscuro
             },
           }}
         >
