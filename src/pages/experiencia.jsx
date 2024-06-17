@@ -35,7 +35,7 @@ import js from "../assets/js.png";
  import handlebars from "../assets/handlebars.png";
 
 const Experiencia = ({isDarkMode}) => {
-  const isMobile = useMediaQuery("(max-width:600px)");
+  const isMobile = useMediaQuery("(max-width:763px)");
   const { t } = useTranslation(); // Esto te da acceso a las traducciones
   const itemData = [
     { img: html, title: "Html" },
@@ -107,14 +107,12 @@ const Experiencia = ({isDarkMode}) => {
           sx={{
             display: "flex",
             flexDirection: "column",
-            paddingLeft: isMobile ? "0%" : "0%",
-          }}
+           }}
         >
           <Typography
             variant="h2"
             fontWeight="bold"
-            fontStyle="italic"
-            sx={{
+             sx={{
               textAlign: isMobile ? "center" : "center",
               paddingBottom: "1%",
             }}
@@ -122,15 +120,7 @@ const Experiencia = ({isDarkMode}) => {
                         {t('experiencia.title')}
 
           </Typography>
-          <Divider 
-        sx={{
-          width: "300px",           // Ancho del 50% del contenedor
-          margin: "0 auto",       // Centrar horizontalmente
-          borderColor: isDarkMode ? "#ffffff" : "#000000", // Cambia el color dependiendo del modo
-          borderWidth: "1px",     // Grosor del Divider
-          marginBottom: isMobile?"4%":"2%",     // Espacio debajo del Divider
-        }} 
-      />
+          
         </Box>
         <Box
           sx={{
@@ -139,8 +129,10 @@ const Experiencia = ({isDarkMode}) => {
             justifyContent: "center",
             alignItems: "center",
             flexWrap: "wrap",
-            gap: isMobile ? "150px" : "100px",
-            padding: "25px",
+            // gap: isMobile ? "150px" : "100px",
+            // padding: "25px",
+            rowGap: 10, columnGap: 50,
+paddingLeft: "50px", paddingRight: "50px"
           }}
         >
           {itemData.map((item, index) => (
@@ -148,7 +140,7 @@ const Experiencia = ({isDarkMode}) => {
                
               <Box
   sx={{
-    p: 1,
+    p: 5,
     display: "flex",
     alignItems: "center",
     transition: "transform 0.3s, box-shadow 0.3s", // Añade transición para la transformación y la sombra

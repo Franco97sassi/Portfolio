@@ -3,7 +3,7 @@
     "home": "Inicio",
     "profile": "Perfil",
     "portfolio": "Portafolio",
-    "technologies": "Tecnologías",
+    "skills": "Habilidades",
     "contact": "Contacto",
     "toggleTheme": "Cambiar Tema",
     "darkMode": "Modo Oscuro",
@@ -53,7 +53,7 @@
         "description": "Rifas El Venado es un proyecto full-stack dedicado a la venta de ropa y la organización de rifas en línea, integrado perfectamente con Mercado Pago."
        },
       {
-        "title": "Tienda de E-commerce",
+        "title": "E-commerce Store",
         "description": "Mi primer proyecto en React, una plataforma de comercio electrónico alimentada por la integración de Firebase y la API Fake Store."
        },
       {
@@ -75,7 +75,7 @@
     ]
   },
   "experiencia":{
-    "title": "Tecnologías" 
+    "title": "Habilidades" 
 
   },
   "contacto":{

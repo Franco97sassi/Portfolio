@@ -9,7 +9,7 @@ import { Box, useMediaQuery } from "@mui/material";
 import Footer from "./Footer";
 
 const General = ({ isDarkMode }) => {
-  const isMobile = useMediaQuery("(max-width:600px)");
+  const isMobile = useMediaQuery("(max-width:763px)");
 
   const sectionStyle = {
     padding: isMobile ? "20px" : "40px",
@@ -21,7 +21,7 @@ const General = ({ isDarkMode }) => {
       <Box
         sx={{
           backgroundImage: isDarkMode
-            ? "linear-gradient(#212121,#1a237e,#212121 )"
+            ? "linear-gradient(#000000,#212121,#000000 )"
             : `linear-gradient(#bdbdbd, #ffffff, #bdbdbd)`,
             transition: "background-image 0.3s",
         }}
@@ -35,7 +35,7 @@ const General = ({ isDarkMode }) => {
         <section id="portfolio" style={sectionStyle} data-aos="fade-right" data-aos-delay="200">
           <Portfolio isDarkMode={isDarkMode} />
         </section>
-        <section id="technologies" style={sectionStyle} data-aos="fade-right"data-aos-delay="200">
+        <section id="skills" style={sectionStyle} data-aos="fade-right"data-aos-delay="200">
           <Experiencia  isDarkMode={isDarkMode}/>
         </section>
         <section id="contact" style={sectionStyle} data-aos="fade-right" data-aos-duration="800">

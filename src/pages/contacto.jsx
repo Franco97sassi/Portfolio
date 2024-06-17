@@ -5,7 +5,7 @@ import { useTranslation } from "react-i18next"; // Importa el hook de traducció
  
 const Contacto = ( {isDarkMode }) => {
   const { t } = useTranslation(); // Hook de traducción
-  const isMobile = useMediaQuery("(max-width:600px)");
+  const isMobile = useMediaQuery("(max-width:763px)");
   const [showSuccessAlert, setShowSuccessAlert] = useState(false);
   const [showErrorAlert, setShowErrorAlert] = useState(false);
   const form = React.useRef(); // Ref para el formulario
@@ -125,20 +125,11 @@ const Contacto = ( {isDarkMode }) => {
           <Typography
             variant="h2"
             fontWeight="bold"
-            fontStyle="italic"
-            sx={{ textAlign:"center", paddingBottom: "1%", }}
+             sx={{ textAlign:"center", paddingBottom: "1%", }}
           >
             {t("contacto.title")}
           </Typography>
-          <Divider
-        sx={{
-          width: "180px",           // Ancho del 50% del contenedor
-          margin: "0 auto",       // Centrar horizontalmente
-          borderColor: isDarkMode ? "#ffffff" : "#000000", // Cambia el color dependiendo del modo
-          borderWidth: "1px",     // Grosor del Divider
-          marginBottom: isMobile?"4%":"2%",     // Espacio debajo del Divider
-        }} 
-      />
+         
           <Typography
             variant="h5"
             sx={{
@@ -311,7 +302,7 @@ const Contacto = ( {isDarkMode }) => {
                 marginBottom: "1%",
                 background: "#0091e9",
                 color: "white",
-                
+                height: "40px", fontSize:"14px"
               }}
               variant="contained"
               onClick={handleSubmit}

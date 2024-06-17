@@ -26,58 +26,26 @@ import web from "../assets/web.png";
 import { useTranslation } from "react-i18next"; // Asegúrate de importar esto
 
 const Portfolio = ({isDarkMode }) => {
-  const isMobile = useMediaQuery("(max-width:600px)");
+  const isMobile = useMediaQuery("(max-width:763px)");
   const { t } = useTranslation(); // Esto te da acceso a las traducciones
 
   const projectImages = [
-    {
-      img: starWars,
-      title: t("portfolio.projects.0.title"),
-      url: "https://challenge-frontend-developer-gold.vercel.app/",
-      github: "https://github.com/Franco97sassi/challengeFrontendDeveloper",
-      description: t("portfolio.projects.0.description"),
-             technologies: ["NextJs", "React", "Tailwind CSS"],
-
-     },
-    {
-      img: mdGlobal,
-      title: t("portfolio.projects.1.title"),
-      url: "https://md-global2024.vercel.app/",
-      github: "https://github.com/Franco97sassi/Md-global2024",
-      description: t("portfolio.projects.1.description"),
-      technologies: ["React"],
-    },
-    {
-      img: todoFloral,
-      title: "Todo Floral",
-       url: "https://www.todofloral.com/",
-      github: "https://github.com/Franco97sassi/TF",
-      description: t("portfolio.projects.2.description"),
-      technologies: ["React", "Material UI", "PostgreSQL"],
-    },
-    {
-      img: landing,
-      title: t("portfolio.projects.3.title"),
-      url: "https://www.techxmx.com/",
-      github: "https://github.com/Franco97sassi/Landing",
-      description: t("portfolio.projects.3.description"),
-      technologies: ["React", "EmailJS", "Material UI"],
-    },
-    {
-      img: rifas,
-      title: t("portfolio.projects.4.title"),
-      url: "https://www.rifaselvenado.com/",
-      github: "https://github.com/Franco97sassi/Rifas.git",
-      description: t("portfolio.projects.4.description"),
-      technologies: ["React", "JS", "Redux", "Material UI", "PostgreSQL"],
-    },
+    
+   
+    //   img: rifas,
+    //   title: t("portfolio.projects.4.title"),
+    //   url: "https://www.rifaselvenado.com/",
+    //   github: "https://github.com/Franco97sassi/Rifas.git",
+    //   description: t("portfolio.projects.4.description"),
+    //   technologies: ["React", "JS", "Redux", "Material UI", "PostgreSQL"],
+    // },
     {
       img: tiendaTecnologia,
       title: t("portfolio.projects.5.title"),
       url: "https://react-firebase-project-zeta.vercel.app/",
       github: "https://github.com/Franco97sassi/reactFirebaseProject",
       description: t("portfolio.projects.5.description"),
-      technologies: ["Firebase", "React", "Material UI"],
+      technologies: ["Css", "Firebase", "React"],
     },
     {
       img: windowShop,
@@ -85,23 +53,15 @@ const Portfolio = ({isDarkMode }) => {
       url: "https://franco97sassi.github.io/vanillaJsProject/",
       github: "https://github.com/Franco97sassi/vanillaJsProject",
       description: t("portfolio.projects.6.description"),
-      technologies: ["JS", "Bootstrap"],
-    },
-    {
-      img: comidas,
-      title: t("portfolio.projects.7.title"),
-      url: "https://franco97sassi.github.io/ProyectoFinalJS-Sassi/",
-      github: "https://github.com/Franco97sassi/ProyectoFinalJS-Sassi",
-      description: t("portfolio.projects.7.description"),
-      technologies: ["JS", "Bootstrap"],
+      technologies: ["Html","JS", "Bootstrap"],
     },
     {
       img: backend,
-      title: "E-Commerce Backend",
+      title: "Backend Project",
        url: "https://backend-desafios.onrender.com/",
       github: "https://github.com/Franco97sassi/Backend-Desafios",
       description: t("portfolio.projects.8.description"),
-      technologies: ["Mongo", "Bootstrap", "Jwt", "Handlebars"],
+      technologies: ["Mongo DB", "Express",  "Handlebars"],
     },
     {
       img: pythonProject,
@@ -111,29 +71,55 @@ const Portfolio = ({isDarkMode }) => {
       description: t("portfolio.projects.9.description"),
       technologies: ["Python", "Django"],
     },
+      {   img: landing,
+      title: t("portfolio.projects.3.title"),
+      url: "https://www.techxmx.com/",
+      github: "https://github.com/Franco97sassi/Landing",
+      description: t("portfolio.projects.3.description"),
+      technologies: ["React", "Material UI"],
+    },
+    {  img: mdGlobal,
+      title: t("portfolio.projects.1.title"),
+      url: "https://md-global2024.vercel.app/",
+      github: "https://github.com/Franco97sassi/Md-global2024",
+      description: t("portfolio.projects.1.description"),
+      technologies: ["React"],
+    },
+     {
+      img: todoFloral,
+      title: "Todo Floral",
+       url: "https://www.todofloral.com/",
+      github: "https://github.com/Franco97sassi/TF",
+      description: t("portfolio.projects.2.description"),
+      technologies: ["React", "Material UI", "PostgreSQL"],
+    },
+     {
+      img: starWars,
+      title: t("portfolio.projects.0.title"),
+      url: "https://challenge-frontend-developer-gold.vercel.app/",
+      github: "https://github.com/Franco97sassi/challengeFrontendDeveloper",
+      description: t("portfolio.projects.0.description"),
+             technologies: ["NextJs",   "Tailwind CSS"],
+
+     },
+    
+     
   ];
 
   return (
     <Box>
-      <Box>
-        <Typography variant="h2" fontWeight="bold" fontStyle="italic" sx={{ paddingBottom: "1%", textAlign: "center" }}>
+      <Box sx={{alignContent:"center"}}>
+        <Typography variant="h2" fontWeight="bold"   sx={{ paddingBottom: "1%", textAlign: "center" }}>
           {t("portfolio.title")}
         </Typography>
-        <Divider 
-        sx={{
-          width: "275px",           // Ancho del 50% del contenedor
-          margin: "0 auto",       // Centrar horizontalmente
-          borderColor: isDarkMode ? "#ffffff" : "#000000", // Cambia el color dependiendo del modo
-          borderWidth: "1px",     // Grosor del Divider
-          marginBottom: isMobile?"4%":"2%",     // Espacio debajo del Divider
-        }} 
-      />
+        
         <Box sx={{ display: "flex", flexWrap: "wrap", justifyContent: "center", rowGap: 10, columnGap: 50, paddingLeft: "50px", paddingRight: "50px" }}>
           {projectImages.map((project, index) => (
             <div key={index}>
               <Card
                 key={index}
-                sx={{ maxWidth: 345, backgroundImage:isDarkMode ?  "linear-gradient(#1a237e,#212121,#212121 )":"linear-gradient(gray,white,gray )", borderRadius: "2%", transition: "transform 0.3s, box-shadow 0.3s", "&:hover": { transform: "scale(1.15)", boxShadow: "0 10px 20px rgba(0,0,0,0.2)" } }}
+                sx={{ maxWidth: 345, backgroundImage:isDarkMode ?  "linear-gradient(#1a237e,#212121,#212121 )":"linear-gradient(gray,white,white )", borderRadius: "2%",
+                   transition: "transform 0.3s, box-shadow 0.3s", "&:hover": { transform: "scale(1.15)", boxShadow: "0 10px 20px rgba(0,0,0,0.2)" } }}
               >
                 <CardMedia
                   component="img"
@@ -142,7 +128,7 @@ const Portfolio = ({isDarkMode }) => {
                   image={project.img}
                   sx={{ borderBottomLeftRadius: "2%", borderBottomRightRadius: "2%" }}
                 />
-                <CardContent sx={{ textAlign: "center", height: isMobile ? "null" : "125px" }}>
+                <CardContent sx={{ textAlign: "center", height: isMobile ? "max-content" : "125px" }}>
                   <Typography fontWeight="bold"  gutterBottom variant="h4" color={isDarkMode ? "white" : "black"}>
                     {project.title}
                   </Typography>
@@ -158,8 +144,8 @@ const Portfolio = ({isDarkMode }) => {
     justifyContent: "space-between",
     gap: "50px",
     flexWrap: "wrap",
-    marginTop: "10px",
-    height: "100px", // Ajusta el alto de los botones aquí
+    marginTop:isMobile?"0px": "10px",
+    height: isMobile?"max-content":"50px", // Ajusta el alto de los botones aquí
 
   }}
 >

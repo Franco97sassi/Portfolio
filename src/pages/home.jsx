@@ -9,7 +9,7 @@ import GithubIcon from "../assets/githubIcon";
 import EmailIcon from "../assets/EmailIcon";
 
 const Home = () => {
-  const isMobile = useMediaQuery("(max-width:600px)");
+  const isMobile = useMediaQuery("(max-width:763px)");
   const lg = useMediaQuery("(min-width:1600px)");
   const { t } = useTranslation(); // Hook de traducción
 
@@ -56,7 +56,7 @@ const Home = () => {
   const AnimatedJobTitle = ({ text }) => (
     <Typography variant={textSize3} paddingBottom={2} textAlign="center">
       {text.split("").map((char, index) => (
-        <motion.span    key={index} variants={letterVariants}>
+        <motion.span key={index} variants={letterVariants}>
           {char}
         </motion.span>
       ))}
@@ -99,7 +99,7 @@ const Home = () => {
                   gap: "10px",
                   flexDirection: "column",
                   justifyContent: "center",
-                  alignItems: "center",
+                  alignItems: "center", 
                 }}
               >
                 <Box sx={{ display: "flex" }}>
@@ -130,10 +130,8 @@ const Home = () => {
                   </Button>
                   <Button
                     component="a"
-                    href="https://drive.google.com/file/d/1rmhZd1-tvjz85cce9azqUs5yy8fMlSuo/view?usp=sharing"
-                   
+                    href="https://drive.google.com/file/d/1UJCIApPqfdEDT02xSTHTZUK5JNq3aXlD/view?usp=sharing"
                     sx={{
-                      
                       "&:hover": {
                         backgroundColor: "lightblue",
                       },
@@ -142,14 +140,14 @@ const Home = () => {
                     <CvIcon />
                   </Button>
                 </Box>
-                <Box>
+                <Box >
                   <Button
                     component="a"
                     href="mailto:franco.sassi97@gmail.com"
                     variant="contained"
                     sx={{
-                      background: "#0091ea",
-height:"max-content",
+                       background: "#0091ea",
+                      height: "max-content",
                       borderRadius: "50px",
                       "&:hover": {
                         backgroundColor: "blue",
@@ -157,7 +155,7 @@ height:"max-content",
                     }}
                   >
                     <EmailIcon />
-                    <Typography sx={{ padding: "10px" }}>
+                    <Typography sx={{ padding: "10px",color:"white" }}>
                       franco.sassi97@gmail.com
                     </Typography>
                   </Button>

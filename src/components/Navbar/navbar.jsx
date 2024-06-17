@@ -22,7 +22,7 @@ import eng from "../../assets/eng.png";
 import es from "../../assets/esp.png";
 
 const drawerWidth = 240;
-const navItems = ["home", "profile", "portfolio", "technologies", "contact"];
+const navItems = ["home", "profile", "portfolio", "skills", "contact"];
  
 function DrawerAppBar(props) {
   const { window, toggleTheme, isDarkMode } = props;
@@ -121,7 +121,7 @@ function DrawerAppBar(props) {
     <Box sx={{ display: "flex" }}>
       <CssBaseline />
       <AppBar
-        style={{ backgroundColor: isDarkMode ? "#121212" : "#bdbdbd", boxShadow: "none" }} // Sin sombra para la barra de navegación
+        style={{ backgroundColor: isDarkMode ? "#000000" : "#bdbdbd",boxShadow:"none" }} // Sin sombra para la barra de navegación
         component="nav"
       >
         <Toolbar>

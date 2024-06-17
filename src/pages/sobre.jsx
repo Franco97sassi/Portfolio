@@ -2,7 +2,7 @@
 import React from 'react';
 import { Box, Divider, Typography, useMediaQuery } from "@mui/material";
 import { useTranslation } from "react-i18next";
-import fotoTechX from "../assets/fotoTechX.jpg";
+import fotoTechX from "../assets/fotoPerfil.jpg";
 import Timeline from '@mui/lab/Timeline';
 import TimelineItem from '@mui/lab/TimelineItem';
 import TimelineSeparator from '@mui/lab/TimelineSeparator';
@@ -11,7 +11,7 @@ import TimelineContent from '@mui/lab/TimelineContent';
 import TimelineDot from '@mui/lab/TimelineDot';
 
 const Sobre = ({isDarkMode}) => {
-  const isMobile = useMediaQuery("(max-width:600px)");
+  const isMobile = useMediaQuery("(max-width:763px)");
   const { t } = useTranslation(); // Hook de traducción
   const isExtraLarge = useMediaQuery("(min-width:1440px)"); // Nueva media query para xl
   const imageWidth = isExtraLarge ? 350 : 275;
@@ -38,15 +38,7 @@ const Sobre = ({isDarkMode}) => {
       >
         {t('sobre.title')} {/* Título traducido */}
       </Typography>
-      <Divider 
-        sx={{
-          width: "230px",           // Ancho del 50% del contenedor
-          margin: "0 auto",       // Centrar horizontalmente
-          borderColor: isDarkMode ? "#ffffff" : "#000000", // Cambia el color dependiendo del modo
-          borderWidth: "1px",     // Grosor del Divider
-          marginBottom: isMobile?"4%":"2%",     // Espacio debajo del Divider
-        }} 
-      />
+       
       <Box
         sx={{
           display: "flex",
@@ -77,7 +69,7 @@ const Sobre = ({isDarkMode}) => {
         </Box>
         <Box
           sx={{
-            width: "50%",
+            width: isMobile?"75%":"50%",
             gap: "10px",
             display: "flex",
             flexDirection: "column",
@@ -96,19 +88,19 @@ const Sobre = ({isDarkMode}) => {
             <Typography
               variant="h4"
               fontWeight="bold"
-              fontStyle="italic"
-              sx={{ textDecoration: "underline", color: "#03a9f4" }}
+               
+              sx={{ textDecoration: "underline", color: "#03a9f4",paddingBottom: "10px" , }}
             >
               {t('sobre.achievementsTitle')} {/* Título de logros traducido */}
             </Typography>
             <Typography
               variant="body1"
               component="li"
-              sx={{
+              sx={{paddingBottom: "10px" ,
                 color: "#03a9f4",
                 fontWeight: "bold",
-                "&:hover": {
-                  color: "white",
+               "&:hover": {
+                  color: isDarkMode?"white":"black",
                 },
               }}
             >
@@ -117,11 +109,11 @@ const Sobre = ({isDarkMode}) => {
             <Typography
               variant="body1"
               component="li"
-              sx={{
+              sx={{paddingBottom: "10px" ,
                 color: "#03a9f4",
                 fontWeight: "bold",
                 "&:hover": {
-                  color: "white",
+                  color: isDarkMode?"white":"black",
                 },
               }}
             >
@@ -130,11 +122,11 @@ const Sobre = ({isDarkMode}) => {
             <Typography
               variant="body1"
               component="li"
-              sx={{
+              sx={{paddingBottom: "10px" ,
                 color: "#03a9f4",
                 fontWeight: "bold",
                 "&:hover": {
-                  color: "white",
+                  color: isDarkMode?"white":"black",
                 },
               }}
             >
@@ -143,11 +135,11 @@ const Sobre = ({isDarkMode}) => {
             <Typography
               variant="body1"
               component="li"
-              sx={{
+              sx={{paddingBottom: "10px" ,
                 color: "#03a9f4",
                 fontWeight: "bold",
                 "&:hover": {
-                  color: "white",
+                  color: isDarkMode?"white":"black",
                 },
               }}
             >
