@@ -99,7 +99,7 @@ const Portfolio = ({isDarkMode }) => {
       url: "https://challenge-frontend-developer-gold.vercel.app/",
       github: "https://github.com/Franco97sassi/challengeFrontendDeveloper",
       description: t("portfolio.projects.0.description"),
-             technologies: ["NextJs",   "Tailwind CSS"],
+             technologies: ["Next",   "Tailwind CSS"],
 
      },
     
