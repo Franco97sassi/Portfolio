@@ -71,7 +71,7 @@ function DrawerAppBar(props) {
         maxWidth: "100%",
         maxHeight: "100%",
         textAlign: "center",
-        background: isDarkMode ? "#000000" : "#ffffff", // Fondo más claro cuando no está en modo oscuro
+        background: isDarkMode ? "#212121" : "#ffffff", // Fondo más claro cuando no está en modo oscuro
         display: "flex",
         flexDirection: "column",
       }}
@@ -130,8 +130,7 @@ function DrawerAppBar(props) {
             aria-label="open drawer"
             edge="start"
             onClick={handleDrawerToggle}
-            sx={{ mr: 2, display: { sm: "none" } }}
-          >
+            sx={{ mr: 2, display: { sm: "none" }, color: isDarkMode ? "white" : "black" }}          >
             <MenuIcon />
           </IconButton>
 
@@ -192,7 +191,7 @@ function DrawerAppBar(props) {
               justifyContent: "center",
               alignItems: "center",
               textAlign: "center",
-              background: isDarkMode ? "#000000" : "#ffffff", // Fondo más claro cuando no está en modo oscuro
+              background: isDarkMode ? "#212121" : "#ffffff", // Fondo más claro cuando no está en modo oscuro
             },
           }}
         >
