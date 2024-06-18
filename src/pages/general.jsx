@@ -22,9 +22,9 @@ const General = ({ isDarkMode }) => {
         sx={{
           backgroundImage: isDarkMode
             ? "linear-gradient(#000000,#212121,#000000 )"
-            : `linear-gradient(#fafafa,#eceff1
+            : `linear-gradient(#ffffff,#eceff1
 
-, #fafafa)`,
+, #ffffff)`,
             transition: "background-image 0.3s",
         }}
       >
