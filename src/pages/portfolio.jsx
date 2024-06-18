@@ -173,9 +173,11 @@ const Portfolio = ({isDarkMode }) => {
                     <Button onClick={() => window.open(project.github, "_blank")}>
                       <img src={repoBlue} width={isMobile ? "35px" : "50px"} alt="GitHub Repo" />
                     </Button>
-                    <Button onClick={() => window.open(project.url, "_blank")}>
-                      <img src={web} width={isMobile ? "35px" : "50px"} alt="Website" />
-                    </Button>
+                    {project.url && (
+                      <Button onClick={() => window.open(project.url, '_blank')}>
+                        <img src={web} width={isMobile ? '35px' : '50px'} alt="Website" />
+                      </Button>
+                    )}
                   </Box>
                 </CardActions>
               </Card>
