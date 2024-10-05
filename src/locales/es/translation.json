@@ -71,6 +71,11 @@
        {
         "title": "Farm Project",
         "description": "Página web programada en Django con Python. Esta web tendrá administración, perfiles de usuario, registro, páginas y formularios."
+       },
+       {
+        "title": "Passwored",
+        "description":
+        "Passwored es una aplicación que bloquea el acceso a las demás aplicaciones del celular o tablet de tu hijo"
        }
     ]
   },

@@ -70,7 +70,12 @@
        {
         "title": "Farm Project",
         "description": "Website programmed in Django with Python. This website will feature admin functionality, user profiles, registration, pages, and forms."
-       }
+       },
+       {
+        "title": "Passwored",
+        "description": "Passwored is an app that locks access to other apps on your child's phone or tablet."
+      }
+      
     ]
   },
   "experiencia":{
